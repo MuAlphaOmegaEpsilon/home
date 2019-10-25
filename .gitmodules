@@ -1,6 +1,6 @@
 [submodule "dotfiles"]
-	path = dotfiles
+	path = .config
 	url = git@github.com:MuAlphaOmegaEpsilon/dotfiles.git
 [submodule "executables"]
-	path = executables
+	path = .local
 	url = git@github.com:MuAlphaOmegaEpsilon/executables
