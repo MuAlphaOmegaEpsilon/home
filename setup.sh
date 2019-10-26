@@ -5,6 +5,7 @@ set -euf
 cd "$(dirname "$0")"
 FILE_DIR="$(pwd)"
 
+# Setup symbolic links in HOME directory
 set +e
 unlink "${HOME}"/developers	2> /dev/null
 unlink "${HOME}"/projects	2> /dev/null
@@ -18,8 +19,19 @@ ln -s -r "${FILE_DIR}"/config						"${XDG_CONFIG_HOME}"
 ln -s -r "${XDG_CONFIG_HOME}"/profile				"${HOME}"/.profile
 ln -s -r "${XDG_CONFIG_HOME}"/ssh					"${HOME}"/.ssh
 
-ln -s -r "${FILE_DIR}"/developers					"${HOME}"/developers
-ln -s -r "${HOME}"/developers/MuAlphaOmegaEpsilon	"${HOME}"/projects
+ln -s -r "${FILE_DIR}"/developers					"${XDG_DEVS_HOME}"
+ln -s -r "${XDG_DEVS_HOME}"/MuAlphaOmegaEpsilon		"${HOME}"/projects
 
 ln -s -r "${FILE_DIR}"/local						"${XDG_LOCAL_HOME}"
+
+
+
+# Setup neovim plugins
+NEOVIM_PLGUINS="${XDG_CONFIG_HOME}"/nvim/plugin
+
+set +e
+unlink "${NEOVIM_PLUGINS}"/nerdtree	2> /dev/null
+set -e
+
+ln -s -r "${XDG_DEVS_HOME}"/scrooloose/nerdtree		"${NEOVIM_PLUGINS}"/nerdtree
 
