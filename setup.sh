@@ -27,7 +27,7 @@ ln -s -r "${FILE_DIR}"/local						"${XDG_LOCAL_HOME}"
 
 
 # Setup neovim plugins
-NEOVIM_PLGUINS="${XDG_CONFIG_HOME}"/nvim/plugin
+NEOVIM_PLUGINS="${XDG_CONFIG_HOME}"/nvim/plugin
 
 set +e
 unlink "${NEOVIM_PLUGINS}"/nerdtree	2> /dev/null
