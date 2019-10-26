@@ -4,3 +4,6 @@
 [submodule "local"]
 	path = local
 	url = git@github.com:MuAlphaOmegaEpsilon/local
+[submodule "developers/scrooloose/nerdtree"]
+	path = developers/scrooloose/nerdtree
+	url = git@github.com:scrooloose/nerdtree
