@@ -1,0 +1,6 @@
+[submodule "config"]
+	path = config
+	url = git@github.com:MuAlphaOmegaEpsilon/config
+[submodule "local"]
+	path = local
+	url = git@github.com:MuAlphaOmegaEpsilon/local
