@@ -25,13 +25,6 @@ ln -s -r "${XDG_DEVS_HOME}"/MuAlphaOmegaEpsilon		"${HOME}"/projects
 ln -s -r "${FILE_DIR}"/local						"${XDG_LOCAL_HOME}"
 
 
-
-# Setup neovim plugins
-NEOVIM_PLUGINS="${XDG_CONFIG_HOME}"/nvim/plugin
-
-set +e
-unlink "${NEOVIM_PLUGINS}"/nerdtree	2> /dev/null
-set -e
-
-ln -s -r "${XDG_DEVS_HOME}"/scrooloose/nerdtree		"${NEOVIM_PLUGINS}"/nerdtree
+# Setup neovim
+./config/nvim/setup.sh
 
