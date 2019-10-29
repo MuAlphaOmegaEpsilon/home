@@ -7,3 +7,6 @@
 [submodule "developers/scrooloose/nerdtree"]
 	path = developers/scrooloose/nerdtree
 	url = git@github.com:scrooloose/nerdtree
+[submodule "developers/dracula/vim"]
+	path = developers/dracula/vim
+	url = git@github.com:dracula/vim
