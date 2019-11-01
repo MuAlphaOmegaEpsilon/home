@@ -37,3 +37,6 @@
 [submodule "developers/MuAlphaOmegaEpsilon/FSEngine"]
 	path = developers/MuAlphaOmegaEpsilon/FSEngine
 	url = git@github.com:MuAlphaOmegaEpsilon/FSEngine
+[submodule "developers/Shougo/deoplete.nvim"]
+	path = developers/Shougo/deoplete.nvim
+	url = git@github.com:Shougo/deoplete.nvim
