@@ -7,3 +7,6 @@
 [submodule "developers/scrooloose/nerdtree"]
 	path = developers/scrooloose/nerdtree
 	url = git@github.com:scrooloose/nerdtree
+[submodule "developers/sickill/vim-monokai"]
+	path = developers/sickill/vim-monokai
+	url = git@github.com:sickill/vim-monokai
