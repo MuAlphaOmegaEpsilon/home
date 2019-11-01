@@ -40,3 +40,6 @@
 [submodule "developers/Shougo/deoplete.nvim"]
 	path = developers/Shougo/deoplete.nvim
 	url = git@github.com:Shougo/deoplete.nvim
+[submodule "developers/octol/vim-cpp-enhanced-highlight"]
+	path = developers/octol/vim-cpp-enhanced-highlight
+	url = git@github.com:octol/vim-cpp-enhanced-highlight
