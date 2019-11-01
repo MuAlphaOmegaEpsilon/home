@@ -10,3 +10,30 @@
 [submodule "developers/sickill/vim-monokai"]
 	path = developers/sickill/vim-monokai
 	url = git@github.com:sickill/vim-monokai
+[submodule "developers/MuAlphaOmegaEpsilon/buildmode"]
+	path = developers/MuAlphaOmegaEpsilon/buildmode
+	url = git@github.com:MuAlphaOmegaEpsilon/buildmode
+[submodule "developers/MuAlphaOmegaEpsilon/minlog"]
+	path = developers/MuAlphaOmegaEpsilon/minlog
+	url = git@github.com:MuAlphaOmegaEpsilon/minlog
+[submodule "developers/MuAlphaOmegaEpsilon/vengine"]
+	path = developers/MuAlphaOmegaEpsilon/vengine
+	url = git@github.com:MuAlphaOmegaEpsilon/vengine
+[submodule "developers/MuAlphaOmegaEpsilon/sinecrunch"]
+	path = developers/MuAlphaOmegaEpsilon/sinecrunch
+	url = git@github.com:MuAlphaOmegaEpsilon/sinecrunch
+[submodule "developers/MuAlphaOmegaEpsilon/experiments-cpp"]
+	path = developers/MuAlphaOmegaEpsilon/experiments-cpp
+	url = git@github.com:MuAlphaOmegaEpsilon/experiments-cpp
+[submodule "developers/MuAlphaOmegaEpsilon/ConstexprDSUtils"]
+	path = developers/MuAlphaOmegaEpsilon/ConstexprDSUtils
+	url = git@github.com:MuAlphaOmegaEpsilon/ConstexprDSUtils
+[submodule "developers/MuAlphaOmegaEpsilon/CirDeVec"]
+	path = developers/MuAlphaOmegaEpsilon/CirDeVec
+	url = git@github.com:MuAlphaOmegaEpsilon/CirDeVec
+[submodule "developers/MuAlphaOmegaEpsilon/BranchHinting"]
+	path = developers/MuAlphaOmegaEpsilon/BranchHinting
+	url = git@github.com:MuAlphaOmegaEpsilon/BranchHinting
+[submodule "developers/MuAlphaOmegaEpsilon/FSEngine"]
+	path = developers/MuAlphaOmegaEpsilon/FSEngine
+	url = git@github.com:MuAlphaOmegaEpsilon/FSEngine
