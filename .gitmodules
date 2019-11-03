@@ -7,9 +7,6 @@
 [submodule "developers/scrooloose/nerdtree"]
 	path = developers/scrooloose/nerdtree
 	url = git@github.com:scrooloose/nerdtree
-[submodule "developers/sickill/vim-monokai"]
-	path = developers/sickill/vim-monokai
-	url = git@github.com:sickill/vim-monokai
 [submodule "developers/MuAlphaOmegaEpsilon/buildmode"]
 	path = developers/MuAlphaOmegaEpsilon/buildmode
 	url = git@github.com:MuAlphaOmegaEpsilon/buildmode
@@ -37,9 +34,3 @@
 [submodule "developers/MuAlphaOmegaEpsilon/FSEngine"]
 	path = developers/MuAlphaOmegaEpsilon/FSEngine
 	url = git@github.com:MuAlphaOmegaEpsilon/FSEngine
-[submodule "developers/Shougo/deoplete.nvim"]
-	path = developers/Shougo/deoplete.nvim
-	url = git@github.com:Shougo/deoplete.nvim
-[submodule "developers/octol/vim-cpp-enhanced-highlight"]
-	path = developers/octol/vim-cpp-enhanced-highlight
-	url = git@github.com:octol/vim-cpp-enhanced-highlight
