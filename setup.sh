@@ -21,8 +21,3 @@ ln -s -r "${FILE_DIR}"/developers					"${XDG_DEVS_HOME}"
 ln -s -r "${XDG_DEVS_HOME}"/MuAlphaOmegaEpsilon		"${HOME}"/projects
 
 ln -s -r "${FILE_DIR}"/local						"${XDG_LOCAL_HOME}"
-
-
-# Setup neovim
-./config/nvim/setup.sh
-
