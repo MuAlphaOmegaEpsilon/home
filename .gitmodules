@@ -31,3 +31,6 @@
 [submodule "developers/MuAlphaOmegaEpsilon/FSEngine"]
 	path = developers/MuAlphaOmegaEpsilon/FSEngine
 	url = git@github.com:MuAlphaOmegaEpsilon/FSEngine
+[submodule "developers/MaskRay/ccls"]
+	path = developers/MaskRay/ccls
+	url = git@github.com:MaskRay/ccls
