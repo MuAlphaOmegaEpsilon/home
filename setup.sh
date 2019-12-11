@@ -17,6 +17,7 @@ set -e
 
 ln -s -r "${FILE_DIR}"/config						"${XDG_CONFIG_HOME}"
 ln -s -r "${XDG_CONFIG_HOME}"/profile				"${HOME}"/.profile
+ln -s -r "${XDG_CONFIG_HOME}"/profile				"${HOME}"/.bashrc
 ln -s -r "${XDG_CONFIG_HOME}"/dircolors				"${HOME}"/.dircolors
 
 ln -s -r "${FILE_DIR}"/developers					"${XDG_DEVS_HOME}"
