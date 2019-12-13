@@ -34,3 +34,6 @@
 [submodule "developers/cheat/cheatsheets"]
 	path = developers/cheat/cheatsheets
 	url = git@github.com:cheat/cheatsheets
+[submodule "developers/MuAlphaOmegaEpsilon/curriculum-vitae"]
+	path = developers/MuAlphaOmegaEpsilon/curriculum-vitae
+	url = git@github.com:MuAlphaOmegaEpsilon/curriculum-vitae
