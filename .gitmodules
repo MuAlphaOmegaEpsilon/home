@@ -31,3 +31,6 @@
 [submodule "developers/MuAlphaOmegaEpsilon/FSEngine"]
 	path = developers/MuAlphaOmegaEpsilon/FSEngine
 	url = git@github.com:MuAlphaOmegaEpsilon/FSEngine
+[submodule "developers/cheat/cheatsheets"]
+	path = developers/cheat/cheatsheets
+	url = git@github.com:cheat/cheatsheets
