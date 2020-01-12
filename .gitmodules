@@ -37,3 +37,12 @@
 [submodule "developers/MuAlphaOmegaEpsilon/curriculum-vitae"]
 	path = developers/MuAlphaOmegaEpsilon/curriculum-vitae
 	url = git@github.com:MuAlphaOmegaEpsilon/curriculum-vitae
+[submodule "developers/MuAlphaOmegaEpsilon/algorythm"]
+	path = developers/MuAlphaOmegaEpsilon/algorythm
+	url = github:MuAlphaOmegaEpsilon/algorythm
+[submodule "developers/MuAlphaOmegaEpsilon/cmake"]
+	path = developers/MuAlphaOmegaEpsilon/cmake
+	url = github:MuAlphaOmegaEpsilon/cmake
+[submodule "developers/MuAlphaOmegaEpsilon/cn-arch"]
+	path = developers/MuAlphaOmegaEpsilon/cn-arch
+	url = git@github.com:MuAlphaOmegaEpsilon/cn-arch
