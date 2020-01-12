@@ -46,3 +46,6 @@
 [submodule "developers/MuAlphaOmegaEpsilon/cn-arch"]
 	path = developers/MuAlphaOmegaEpsilon/cn-arch
 	url = git@github.com:MuAlphaOmegaEpsilon/cn-arch
+[submodule "developers/MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io"]
+	path = developers/MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
+	url = git@github.com:MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
