@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for color in 0 1 2 3 4 5 6 7
+do
+	tput setab "${color}"
+	clear
+	sleep 1
+done
+
+tput sgr0
+clear

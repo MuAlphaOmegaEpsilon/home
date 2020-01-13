@@ -1,0 +1,80 @@
+[user]
+	name = MuAlphaOmegaEpsilon
+	email = tommasobonvicini@gmail.com
+
+[core]
+	editor = nano
+
+[credential]
+	helper = cache --timeout=3600
+
+[diff]
+	noprefix = true
+
+[rebase]
+	autosquash = true
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[url "git@github.com:"]
+	insteadOf = gh/
+
+[alias]
+	aliases = config --get-regexp alias
+
+	b = branch
+	ba = branch --all
+
+	cm = commit -m
+	cf = commit --fixup
+
+	contributions = shortlog --numbered
+	contributors = shortlog --summary --numbered
+
+	d = diff
+	dc = diff --cached
+
+	l = log --oneline
+	ll = log
+	lp = log -p
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+	ls = ls-files
+	ign = ls-files -o -i --exclude-standard
+
+	pl = pull --prune
+
+	ps = push
+	psf = push --force-with-lease
+	psu = push -u origin
+
+	r = rebase
+	ri = rebase -i
+
+	res = reset
+	resh = reset --hard
+
+	s = status -s
+	sl = status
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = 4
+	local = 4 bold
+	remote = 1
+
+[color "diff"]
+	old = 1
+	new = 4
+	frag = 2
+	meta = 5
+
+[color "status"]
+	added = 4
+	changed = 1
+	untracked = 2 bold
+[cola]
+	spellcheck = false

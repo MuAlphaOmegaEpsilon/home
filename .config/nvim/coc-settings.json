@@ -1,0 +1,18 @@
+{
+	"languageserver":
+	{
+		"clangd":
+		{
+			"command": "clangd",
+			"args": ["--background-index"],
+			"filetypes": ["c","h","cpp","hpp","cc","hh","cxx","hxx","objc","objcpp"],
+			"initializationOptions":
+			{
+				"cache":
+				{
+					"directory": "/tmp/clangd"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,108 @@
+output eDP-1 {
+	scale 2
+	subpixel rgb
+	background $HOME/images/background.jpg fill	
+}
+
+input "1118:2024:Microsoft_Surface_Type_Cover_Touchpad" {
+	   tap enabled
+       accel_profile adaptive
+       natural_scroll enabled	
+}
+
+input * xkb_layout "it"
+
+bar swaybar0 {
+	position top
+	font Terminus 24px
+	mode dock
+	separator_symbol |
+	pango_markup enabled
+
+	status_padding 0
+	status_command $XDG_CONFIG_HOME/sway/statusbar.sh
+
+	bindsym button1 exec "swaynag -t warning -m 'Do you really wanna quit?' -b 'Yes, quit!' 'swaymsg exit'"
+
+	colors {
+		background #000000FF
+		separator #00000000
+		statusline #00000000
+	}
+}
+
+# Try to run in a pure wayland environment
+xwayland disable
+
+#--------------------#
+#---- APPEARANCE ----#
+#--------------------#
+
+# Remove border from windows
+for_window [class="^.*"] border none
+default_border none
+default_floating_border normal
+
+hide_edge_borders smart
+
+smart_borders on
+smart_gaps on
+
+#--------------------#
+#--- KEY BINDINGS ---#
+#--------------------#
+
+# Assign the Windows key as the main modifier
+set $mod Mod4
+
+bindsym --to-code {
+	# Focus windows using vim-style
+	$mod+h focus left
+	$mod+l focus right
+	$mod+k focus up
+	$mod+j focus down
+
+	# Kill window in focus
+	$mod+q kill
+
+	# Lock the screen
+	$mod+Shift+l exec swaylock -c "#000000"
+
+	# Enter resize mode
+	$mod+r mode "resize"
+
+	# Make the current window in focus fullscreen
+	$mod+f fullscreen
+
+	# Exit from Sway
+	$mod+Control+Backspace exec swaymsg exit, mode "default"
+
+	# Open new terminal window
+	$mod+Return exec weston-terminal
+
+	# $mod+F1 exec light -U 5
+	# $mod+F2 exec light -A 5
+
+	XF86AudioMute exec amixer set Master toggle
+	XF86AudioRaiseVolume exec amixer set Master +5
+	XF86AudioLowerVolume exec amixer set Master -5
+}
+
+mode "resize" {
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
+	bindsym j resize shrink width 10 px or 10 ppt
+	bindsym k resize grow width 10 px or 10 ppt
+
+	# Go back to default mode
+	bindsym $mod+r mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+#--------------------#
+#------ CREDITS -----#
+#--------------------#
+
+# Some kind of inspiration has been taken from these sources down here:
+# github.com/sk0x1234/swaydotfiles/sway/config 

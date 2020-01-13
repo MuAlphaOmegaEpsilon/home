@@ -1,0 +1,5 @@
+#!/bin/sh
+
+printf 'List of packages installed:\n'
+printf '[SIZE]\t[NAME]\n'
+dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -nr

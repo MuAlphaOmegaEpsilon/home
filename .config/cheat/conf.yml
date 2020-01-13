@@ -1,0 +1,5 @@
+cheatpaths:
+  - name: communit							# a name for the cheatpath
+    path: ~/developers/cheat/cheatsheets	# the path's location on the filesystem
+    tags: [ community ]						# these tags will be applied to all sheets on the path
+    readonly: true							# if true, `cheat` will not create new cheatsheets here

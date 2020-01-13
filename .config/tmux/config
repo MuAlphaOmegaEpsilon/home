@@ -1,0 +1,11 @@
+set -g base-index 1
+
+set-option -sg escape-time 0
+
+setw -g automatic-rename off
+set -g mouse on
+
+bind-key h split-window -h
+bind-key v split-window -v
+unbind %
+unbind '"'

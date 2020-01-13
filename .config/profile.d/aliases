@@ -1,0 +1,33 @@
+#!/usr/bin/sh
+
+# Add color support
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# cmake
+alias cmakej='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja'
+alias cmakebt='ctest -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --build-and-test . build --parallel --build-generator Ninja --test-command ctest '
+
+# date
+alias hours='date +%T'
+alias day='date +%A'
+alias month='date +%B'
+alias year='date +%Y'
+
+# ls
+alias ll='ls -lh'
+alias la='ls -A'
+alias lla='ls -lAh'
+
+# neofetch
+alias neofetch='neofetch --ascii ${XDG_CONFIG_HOME}/neofetch/$(hostname)_image'
+
+# rm
+alias rm='rm --preserve-root'
+
+# tree
+alias tree='tree --dirsfirst'

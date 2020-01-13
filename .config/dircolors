@@ -1,0 +1,666 @@
+# Core
+BLK                   00;37;40
+CAPABILITY            00;24;40
+CHR                   01;33;40
+DIR                   01;35;40
+DOOR                  01;32;40
+EXEC                  01;31;40
+FIFO                  00;33;40
+FILE                  00;37;40
+LINK                  target
+NORMAL                00;37;40
+ORPHAN                05;37;40
+OTHER_WRITABLE        00;30;41
+SETGID                00;30;42
+SETUID                00;30;43
+SOCK                  00;35;44
+STICKY                00;30;45
+STICKY_OTHER_WRITABLE 00;30;46
+MULTIHARDLINK         00;30;47
+
+*LS_COLORS            00;30;44
+
+# Documents
+*README               01;33;40
+*README.rst           01;33;40
+*LICENSE              01;33;40
+*COPYING              01;33;40
+*INSTALL              01;33;40
+*COPYRIGHT            01;33;40
+*AUTHORS              01;33;40
+*HISTORY              01;33;40
+*CONTRIBUTORS         01;33;40
+*PATENTS              01;33;40
+*VERSION              01;33;40
+*NOTICE               01;33;40
+*CHANGES              01;33;40
+# Markup
+.etx                  00;32;40
+.info                 00;32;40
+.markdown             00;32;40
+.md                   00;32;40
+.mkd                  00;32;40
+.nfo                  00;32;40
+.pod                  00;32;40
+.tex                  00;32;40
+.textile              00;32;40
+# Plain-text
+.txt                  00;37;40
+.log                  00;37;40
+# Key-value
+.json                 00;33;40
+.msg                  00;33;40
+.pgn                  00;33;40
+.rss                  00;33;40
+.xml                  00;33;40
+.yaml                 00;33;40
+.yml                  00;33;40
+.RData                00;33;40
+.rdata                00;33;40
+# }}}
+# binary {{{2
+.cbr                  141
+.cbz                  141
+.chm                  141
+.djvu                 141
+.pdf                  141
+.PDF                  141
+# words {{{3
+.docm                 111;4
+.doc                  111
+.docx                 111
+.eps                  111
+.ps                   111
+.odb                  111
+.odt                  111
+.rtf                  111
+# presentation {{{3
+.odp                  166
+.pps                  166
+.ppt                  166
+.pptx                 166
+#   Powerpoint show
+.ppts                 166
+#   Powerpoint with enabled macros
+.pptxm                166;4
+#   Powerpoint show with enabled macros
+.pptsm                166;4
+# spreadsheet {{{3
+.csv                  78
+#   Open document spreadsheet
+.ods                  112
+.xla                  76
+#   Excel spreadsheet
+.xls                  112
+.xlsx                 112
+#   Excel spreadsheet with macros
+.xlsxm                112;4
+#   Excel module
+.xltm                 73;4
+.xltx                 73
+# }}}
+# }}}
+# configs {{{2
+*cfg                  1
+*conf                 1
+*rc                   1
+.ini                  1
+.plist                1
+#   vim
+.viminfo              1
+#   cisco VPN client configuration
+.pcf                  1
+#   adobe photoshop proof settings file
+.psf                  1
+# }}}
+# }}}
+# code {{{1
+# version control {{{2
+.git                  197
+.gitignore            240
+.gitattributes        240
+.gitmodules           240
+
+# shell {{{2
+.awk                  172
+.bash                 172
+.bat                  172
+.BAT                  172
+.sed                  172
+.sh                   172
+.zsh                  172
+.vim                  172
+
+# interpreted {{{2
+.ahk                  41
+# python
+.py                   41
+# perl
+.pl                   208
+.PL                   160
+.t                    114
+# sql
+.msql                 222
+.mysql                222
+.pgsql                222
+.sql                  222
+#   Tool Command Language
+.tcl                  64;1
+# R language
+.r                    49
+.R                    49
+# GrADS script
+.gs                   81
+
+# compiled {{{2
+#
+#   assembly language
+.asm                  81
+#   LISP
+.cl                   81
+.lisp                 81
+#   lua
+.lua                  81
+#   Moonscript
+.moon                 81
+#   C
+.c                    81
+.C                    81
+.h                    110
+.H                    110
+.tcc                  110
+#   C++
+.c++                  81
+.h++                  110
+.hpp                  110
+.hxx                  110
+.ii                   110
+#   method file for Objective C
+.M                    110
+.m                    110
+#   Csharp
+.cc                   81
+.cs                   81
+.cp                   81
+.cpp                  81
+.cxx                  81
+#   Crystal
+.cr                   81
+#   Google golang
+.go                   81
+#   fortran
+.f                    81
+.for                  81
+.ftn                  81
+#   pascal
+.s                    110
+.S                    110
+#   Rust
+.rs                   81
+#   Swift
+.swift                219
+#   ?
+.sx                   81
+#   interface file in GHC - https://github.com/trapd00r/LS_COLORS/pull/9
+.hi                   110
+#   haskell
+.hs                   81
+.lhs                  81
+
+# binaries {{{2
+# compiled apps for interpreted languages
+.pyc                  240
+# }}}
+# html {{{2
+.css                  125;1
+.less                 125;1
+.sass                 125;1
+.scss                 125;1
+.htm                  125;1
+.html                 125;1
+.jhtm                 125;1
+.mht                  125;1
+.eml                  125;1
+.mustache             125;1
+# }}}
+# java {{{2
+.coffee               074;1
+.java                 074;1
+.js                   074;1
+.jsm                  074;1
+.jsm                  074;1
+.jsp                  074;1
+# }}}
+# php {{{2
+.php                  81
+#   CakePHP view scripts and helpers
+.ctp                  81
+#   Twig template engine
+.twig                 81
+# }}}
+# vb/a {{{2
+.vb                   81
+.vba                  81
+.vbs                  81
+# 2}}}
+# Build stuff {{{2
+*Dockerfile           155
+.dockerignore         240
+*Makefile             155
+*MANIFEST             243
+*pm_to_blib           240
+# automake
+.am                   242
+.in                   242
+.hin                  242
+.scan                 242
+.m4                   242
+.old                  242
+.out                  242
+.SKIP                 244
+# }}}
+# graphics {{{1
+.bmp                  97
+.tiff                 97
+.tif                  97
+.TIFF                 97
+.cdr                  97
+.gif                  97
+.ico                  97
+.jpeg                 97
+.JPG                  97
+.jpg                  97
+.nth                  97
+.png                  97
+.psd                  97
+.xpm                  97
+# }}}
+# vector {{{1
+.ai                   99
+.eps                  99
+.epsf                 99
+.drw                  99
+.ps                   99
+.svg                  99
+# }}}
+# video {{{1
+.avi                  114
+.divx                 114
+.IFO                  114
+.m2v                  114
+.m4v                  114
+.mkv                  114
+.MOV                  114
+.mov                  114
+.mp4                  114
+.mpeg                 114
+.mpg                  114
+.ogm                  114
+.rmvb                 114
+.sample               114
+.wmv                  114
+  # mobile/streaming {{{2
+.3g2                  115
+.3gp                  115
+.gp3                  115
+.webm                 115
+.gp4                  115
+.asf                  115
+.flv                  115
+.ts                   115
+.ogv                  115
+.f4v                  115
+  # }}}
+  # lossless {{{2
+.VOB                  115;1
+.vob                  115;1
+# }}}
+# audio {{{1
+.3ga                  137;1
+.S3M                  137;1
+.aac                  137;1
+.au                   137;1
+.dat                  137;1
+.dts                  137;1
+.fcm                  137;1
+.m4a                  137;1
+.mid                  137;1
+.midi                 137;1
+.mod                  137;1
+.mp3                  137;1
+.mp4a                 137;1
+.oga                  137;1
+.ogg                  137;1
+.opus                 137;1
+.s3m                  137;1
+.sid                  137;1
+.wma                  137;1
+# lossless
+.ape                  136;1
+.aiff                 136;1
+.cda                  136;1
+.flac                 136;1
+.alac                 136;1
+.midi                 136;1
+.pcm                  136;1
+.wav                  136;1
+.wv                   136;1
+.wvc                  136;1
+
+# }}}
+# fonts {{{1
+.afm                  66
+.fon                  66
+.fnt                  66
+.pfb                  66
+.pfm                  66
+.ttf                  66
+.otf                  66
+#   postscript fonts
+.PFA                  66
+.pfa                  66
+# }}}
+# archives {{{1
+.7z                   40
+.a                    40
+.arj                  40
+.bz2                  40
+.cpio                 40
+.gz                   40
+.lrz                  40
+.lz                   40
+.lzma                 40
+.lzo                  40
+.rar                  40
+.s7z                  40
+.sz                   40
+.tar                  40
+.tgz                  40
+.xz                   40
+.z                    40
+.Z                    40
+.zip                  40
+.zipx                 40
+.zoo                  40
+.zpaq                 40
+.zz                   40
+  # packaged apps {{{2
+.apk                  215
+.deb                  215
+.rpm                  215
+.jad                  215
+.jar                  215
+.cab                  215
+.pak                  215
+.pk3                  215
+.vdf                  215
+.vpk                  215
+.bsp                  215
+.dmg                  215
+  # }}}
+  # segments from 0 to three digits after first extension letter {{{2
+.r[0-9]{0,2}          239
+.zx[0-9]{0,2}         239
+.z[0-9]{0,2}          239
+# partial files
+.part                 239
+  # }}}
+# partition images {{{2
+.dmg                  124
+.iso                  124
+.bin                  124
+.nrg                  124
+.qcow                 124
+.sparseimage          124
+.toast                124
+.vcd                  124
+.vmdk                 124
+# }}}
+# databases {{{2
+.accdb                60
+.accde                60
+.accdr                60
+.accdt                60
+.db                   60
+.fmp12                60
+.fp7                  60
+.localstorage         60
+.mdb                  60
+.mde                  60
+.sqlite               60
+.typelib              60
+# NetCDF database
+.nc                   60
+# }}}
+# tempfiles {{{1
+# undo files
+.pacnew               33
+.un~                  241
+.orig                 241
+# backups
+.BUP                  241
+.bak                  241
+.o                    241 #   *nix Object file (shared libraries, core dumps etc)
+.rlib                 241 #   Static rust library
+# temporary files
+.swp                  244
+.swo                  244
+.tmp                  244
+.sassc                244
+# state files
+.pid                  248
+.state                248
+*lockfile             248
+# error logs
+.err                  160;1
+.error                160;1
+.stderr               160;1
+# state dumps
+.dump                 241
+.stackdump            241
+.zcompdump            241
+.zwc                  241
+# tcpdump, network traffic capture
+.pcap                 29
+.cap                  29
+.dmp                  29
+# macOS
+.DS_Store             239
+.localized            239
+.CFUserTextEncoding   239
+# }}}
+# hosts {{{1
+# /etc/hosts.{deny,allow}
+.allow                112
+.deny                 196
+# }}}
+# systemd {{{1
+# http://www.freedesktop.org/software/systemd/man/systemd.unit.html
+.service              45
+*@.service            45
+.socket               45
+.swap                 45
+.device               45
+.mount                45
+.automount            45
+.target               45
+.path                 45
+.timer                45
+.snapshot             45
+# }}}
+# metadata {{{1
+.application          116
+.cue                  116
+.description          116
+.directory            116
+.m3u                  116
+.m3u8                 116
+.md5                  116
+.properties           116
+.sfv                  116
+.srt                  116
+.theme                116
+.torrent              116
+.urlview              116
+# }}}
+# encrypted data {{{1
+.asc                  192;3
+.bfe                  192;3
+.enc                  192;3
+.gpg                  192;3
+.signature            192;3
+.sig                  192;3
+.p12                  192;3
+.pem                  192;3
+.pgp                  192;3
+.asc                  192;3
+.enc                  192;3
+.sig                  192;3
+# 1}}}
+# emulators {{{1
+.32x                  213
+.cdi                  213
+.fm2                  213
+.rom                  213
+.sav                  213
+.st                   213
+  # atari
+.a00                  213
+.a52                  213
+.A64                  213
+.a64                  213
+.a78                  213
+.adf                  213
+.atr                  213
+  # nintendo
+.gb                   213
+.gba                  213
+.gbc                  213
+.gel                  213
+.gg                   213
+.ggl                  213
+.ipk                  213 # Nintendo (DS Packed Images)
+.j64                  213
+.nds                  213
+.nes                  213
+  # Sega
+.sms                  213
+# }}}
+# unsorted {{{1
+#
+#   Portable Object Translation for GNU Gettext
+.pot                  7
+#   CAD files for printed circuit boards
+.pcb                  7
+#   groff (rendering app for texinfo)
+.mm                   7
+#   perldoc
+.pod                  7
+#   GIMP brush
+.gbr                  7
+# printer spool file
+.spl                  7
+#   GIMP project file
+.scm                  7
+# RStudio project file
+.Rproj                11
+#   Nokia Symbian OS files
+.sis                  7
+
+.1p                   7
+.3p                   7
+.cnc                  7
+.def                  7
+.ex                   7
+.example              7
+.feature              7
+.ger                  7
+.map                  7
+.mf                   7
+.mfasl                7
+.mi                   7
+.mtx                  7
+.pc                   7
+.pi                   7
+.plt                  7
+.pm                   7
+.rb                   7
+.rdf                  7
+.rst                  7
+.ru                   7
+.sch                  7
+.sty                  7
+.sug                  7
+.t                    7
+.tdy                  7
+.tfm                  7
+.tfnt                 7
+.tg                   7
+.vcard                7
+.vcf                  7
+.xln                  7
+#   AppCode files
+.iml                  166
+#   Xcode files
+.xcconfig             1
+.entitlements         1
+.strings              1
+.storyboard           196
+.xcsettings           1
+.xib                  208
+# }}}
+# termcap {{{1
+TERM ansi
+TERM color-xterm
+TERM con132x25
+TERM con132x30
+TERM con132x43
+TERM con132x60
+TERM con80x25
+TERM con80x28
+TERM con80x30
+TERM con80x43
+TERM con80x50
+TERM con80x60
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM Eterm
+TERM eterm-color
+TERM gnome
+TERM gnome-256color
+TERM jfbterm
+TERM konsole
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mach-color
+TERM mlterm
+TERM putty
+TERM rxvt
+TERM rxvt-256color
+TERM rxvt-cygwin
+TERM rxvt-cygwin-native
+TERM rxvt-unicode
+TERM rxvt-unicode-256color
+TERM rxvt-unicode256
+TERM screen
+TERM screen-256color
+TERM screen-256color-bce
+TERM screen-bce
+TERM screen-w
+TERM screen.linux
+TERM screen.rxvt
+TERM terminator
+TERM vt100
+TERM xterm
+TERM xterm-16color
+TERM xterm-256color
+TERM xterm-88color
+TERM xterm-color
+TERM xterm-debian
+# }}}
+
+
+# vim: ft=dircolors:fdm=marker:et:sw=2:

@@ -1,0 +1,37 @@
+000,255,255,255,080,100,050,170,128,175,255,255,020,018,070,255
+000,070,155,255,255,200,050,170,128,105,090,225,190,140,070,255
+000,070,050,040,130,255,050,170,128,225,160,130,080,200,255,255
+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+ |   |   |  BG SECTION   |   |   |   |   |  FG SECTION   |   |
+ |   |   |	 |   |   |   |   |   |   |   |   |   |	 |	 |	 |
+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   White
+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   Blue
+ |   |   |   |   |   |   |   |   |   |   |   |   |   PrussianBlue
+ |   |   |   |   |   |   |   |   |   |   |   |   DarkGreen
+ |   |   |   |   |   |   |   |   |   |   |   PastelYellow
+ |   |   |   |   |   |   |   |   |   |   Pink
+ |   |   |   |   |   |   |   |   |   Purple
+ |   |   |   |   |   |   |   |   Grey
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   LightGrey
+ |   |   |   |   |   |   DarkGrey
+ |   |   |   |   |   LightBlue
+ |   |   |   |   LightGreen
+ |   |   |   Yellow
+ |   |   Orange
+ |   Red
+ Black
+
+
+I am using two scripts to improve my iteration
+time to test these colors:
+- showcolors: shows all the 16 colors applied
+			  to texts and all the 8 colors
+			  applied to backgrounds
+- cyclecolors: iterates over the 8 colors for
+			   the background filling the
+			   screen with each one for
+			   1 second

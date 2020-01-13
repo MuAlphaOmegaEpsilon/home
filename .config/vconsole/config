@@ -1,0 +1,3 @@
+KEYMAP=it
+FONT=/home/maze/.local/share/fonts/PSF/Lat7-Terminus32x16.psf.gz
+FONTSIZE=32

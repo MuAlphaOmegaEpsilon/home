@@ -1,0 +1,14 @@
+#!/bin/sh
+set -euf
+
+PERCENTAGE=$1
+
+if [ "$PERCENTAGE" -lt 1 ]; then
+	echo "The specified percentage was too low: the value has been set to the minimum.";
+	VALUE=1;
+else
+	MAX_VALUE=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+	VALUE=$(( PERCENTAGE * MAX_VALUE / 100 ))
+fi
+
+echo "$VALUE" | sudo tee /sys/class/backlight/intel_backlight/brightness
