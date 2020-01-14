@@ -1,45 +1,45 @@
 [submodule "developers/MuAlphaOmegaEpsilon/buildmode"]
-	path = developers/MuAlphaOmegaEpsilon/buildmode
+	path = prj/buildmode
 	url = git@github.com:MuAlphaOmegaEpsilon/buildmode
 [submodule "developers/MuAlphaOmegaEpsilon/minlog"]
-	path = developers/MuAlphaOmegaEpsilon/minlog
+	path = prj/minlog
 	url = git@github.com:MuAlphaOmegaEpsilon/minlog
 [submodule "developers/MuAlphaOmegaEpsilon/vengine"]
-	path = developers/MuAlphaOmegaEpsilon/vengine
+	path = prj/vengine
 	url = git@github.com:MuAlphaOmegaEpsilon/vengine
 [submodule "developers/MuAlphaOmegaEpsilon/sinecrunch"]
-	path = developers/MuAlphaOmegaEpsilon/sinecrunch
+	path = prj/sinecrunch
 	url = git@github.com:MuAlphaOmegaEpsilon/sinecrunch
 [submodule "developers/MuAlphaOmegaEpsilon/experiments-cpp"]
-	path = developers/MuAlphaOmegaEpsilon/experiments-cpp
+	path = prj/experiments-cpp
 	url = git@github.com:MuAlphaOmegaEpsilon/experiments-cpp
 [submodule "developers/MuAlphaOmegaEpsilon/ConstexprDSUtils"]
-	path = developers/MuAlphaOmegaEpsilon/ConstexprDSUtils
+	path = prj/ConstexprDSUtils
 	url = git@github.com:MuAlphaOmegaEpsilon/ConstexprDSUtils
 [submodule "developers/MuAlphaOmegaEpsilon/CirDeVec"]
-	path = developers/MuAlphaOmegaEpsilon/CirDeVec
+	path = prj/CirDeVec
 	url = git@github.com:MuAlphaOmegaEpsilon/CirDeVec
 [submodule "developers/MuAlphaOmegaEpsilon/BranchHinting"]
-	path = developers/MuAlphaOmegaEpsilon/BranchHinting
+	path = prj/BranchHinting
 	url = git@github.com:MuAlphaOmegaEpsilon/BranchHinting
 [submodule "developers/MuAlphaOmegaEpsilon/FSEngine"]
-	path = developers/MuAlphaOmegaEpsilon/FSEngine
+	path = prj/FSEngine
 	url = git@github.com:MuAlphaOmegaEpsilon/FSEngine
 [submodule "developers/cheat/cheatsheets"]
 	path = developers/cheat/cheatsheets
 	url = git@github.com:cheat/cheatsheets
 [submodule "developers/MuAlphaOmegaEpsilon/curriculum-vitae"]
-	path = developers/MuAlphaOmegaEpsilon/curriculum-vitae
+	path = prj/curriculum-vitae
 	url = git@github.com:MuAlphaOmegaEpsilon/curriculum-vitae
 [submodule "developers/MuAlphaOmegaEpsilon/algorythm"]
-	path = developers/MuAlphaOmegaEpsilon/algorythm
+	path = prj/algorythm
 	url = github:MuAlphaOmegaEpsilon/algorythm
 [submodule "developers/MuAlphaOmegaEpsilon/cmake"]
-	path = developers/MuAlphaOmegaEpsilon/cmake
+	path = prj/cmake
 	url = github:MuAlphaOmegaEpsilon/cmake
 [submodule "developers/MuAlphaOmegaEpsilon/cn-arch"]
-	path = developers/MuAlphaOmegaEpsilon/cn-arch
+	path = prj/cn-arch
 	url = git@github.com:MuAlphaOmegaEpsilon/cn-arch
 [submodule "developers/MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io"]
-	path = developers/MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
+	path = prj/mualphaomegaepsilon.github.io
 	url = git@github.com:MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
