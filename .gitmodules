@@ -43,3 +43,6 @@
 [submodule "developers/MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io"]
 	path = prj/mualphaomegaepsilon.github.io
 	url = git@github.com:MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
+[submodule ".ssh"]
+	path = .ssh
+	url = git@github.com:MuAlphaOmegaEpsilon/.ssh
