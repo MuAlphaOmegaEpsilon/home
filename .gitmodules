@@ -1,59 +1,45 @@
-[submodule "prj/buildmode"]
-	path = prj/buildmode
+[submodule "developers/MuAlphaOmegaEpsilon/buildmode"]
+	path = developers/MuAlphaOmegaEpsilon/buildmode
 	url = git@github.com:MuAlphaOmegaEpsilon/buildmode
-[submodule "prj/minlog"]
-	path = prj/minlog
+[submodule "developers/MuAlphaOmegaEpsilon/minlog"]
+	path = developers/MuAlphaOmegaEpsilon/minlog
 	url = git@github.com:MuAlphaOmegaEpsilon/minlog
-[submodule "prj/vengine"]
-	path = prj/vengine
+[submodule "developers/MuAlphaOmegaEpsilon/vengine"]
+	path = developers/MuAlphaOmegaEpsilon/vengine
 	url = git@github.com:MuAlphaOmegaEpsilon/vengine
-[submodule "prj/sinecrunch"]
-	path = prj/sinecrunch
+[submodule "developers/MuAlphaOmegaEpsilon/sinecrunch"]
+	path = developers/MuAlphaOmegaEpsilon/sinecrunch
 	url = git@github.com:MuAlphaOmegaEpsilon/sinecrunch
-[submodule "prj/experiments-cpp"]
-	path = prj/experiments-cpp
+[submodule "developers/MuAlphaOmegaEpsilon/experiments-cpp"]
+	path = developers/MuAlphaOmegaEpsilon/experiments-cpp
 	url = git@github.com:MuAlphaOmegaEpsilon/experiments-cpp
-[submodule "prj/ConstexprDSUtils"]
-	path = prj/ConstexprDSUtils
+[submodule "developers/MuAlphaOmegaEpsilon/ConstexprDSUtils"]
+	path = developers/MuAlphaOmegaEpsilon/ConstexprDSUtils
 	url = git@github.com:MuAlphaOmegaEpsilon/ConstexprDSUtils
-[submodule "prj/CirDeVec"]
-	path = prj/CirDeVec
+[submodule "developers/MuAlphaOmegaEpsilon/CirDeVec"]
+	path = developers/MuAlphaOmegaEpsilon/CirDeVec
 	url = git@github.com:MuAlphaOmegaEpsilon/CirDeVec
-[submodule "prj/BranchHinting"]
-	path = prj/BranchHinting
+[submodule "developers/MuAlphaOmegaEpsilon/BranchHinting"]
+	path = developers/MuAlphaOmegaEpsilon/BranchHinting
 	url = git@github.com:MuAlphaOmegaEpsilon/BranchHinting
-[submodule "prj/FSEngine"]
-	path = prj/FSEngine
+[submodule "developers/MuAlphaOmegaEpsilon/FSEngine"]
+	path = developers/MuAlphaOmegaEpsilon/FSEngine
 	url = git@github.com:MuAlphaOmegaEpsilon/FSEngine
-[submodule "prj/curriculum-vitae"]
-	path = prj/curriculum-vitae
-	url = git@github.com:MuAlphaOmegaEpsilon/curriculum-vitae
-[submodule "prj/algorythm"]
-	path = prj/algorythm
-	url = github:MuAlphaOmegaEpsilon/algorythm
-[submodule "prj/cmake"]
-	path = prj/cmake
-	url = github:MuAlphaOmegaEpsilon/cmake
-[submodule "prj/cn-arch"]
-	path = prj/cn-arch
-	url = git@github.com:MuAlphaOmegaEpsilon/cn-arch
-[submodule "prj/mualphaomegaepsilon.github.io"]
-	path = prj/mualphaomegaepsilon.github.io
-	url = git@github.com:MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
-
-[submodule "devs/cheat/cheatsheets"]
-	path = devs/cheat/cheatsheets
+[submodule "developers/cheat/cheatsheets"]
+	path = developers/cheat/cheatsheets
 	url = git@github.com:cheat/cheatsheets
-
-[submodule ".config/nvim/pack/plugins/start/lightline"]
-	path = .config/nvim/pack/plugins/start/lightline
-	url = git@github.com:itchyny/lightline.vim
-[submodule ".config/nvim/pack/plugins/start/cpp-enhanced-highlight"]
-	path = .config/nvim/pack/plugins/start/cpp-enhanced-highlight
-	url = git@github.com:octol/vim-cpp-enhanced-highlight
-[submodule ".config/nvim/pack/plugins/start/coc"]
-	path = .config/nvim/pack/plugins/start/coc
-	url = git@github.com:neoclide/coc.nvim
-[submodule ".config/nvim/pack/plugins/start/vim-hardtime"]
-	path = .config/nvim/pack/plugins/start/vim-hardtime
-	url = git@github.com:takac/vim-hardtime
+[submodule "developers/MuAlphaOmegaEpsilon/curriculum-vitae"]
+	path = developers/MuAlphaOmegaEpsilon/curriculum-vitae
+	url = git@github.com:MuAlphaOmegaEpsilon/curriculum-vitae
+[submodule "developers/MuAlphaOmegaEpsilon/algorythm"]
+	path = developers/MuAlphaOmegaEpsilon/algorythm
+	url = github:MuAlphaOmegaEpsilon/algorythm
+[submodule "developers/MuAlphaOmegaEpsilon/cmake"]
+	path = developers/MuAlphaOmegaEpsilon/cmake
+	url = github:MuAlphaOmegaEpsilon/cmake
+[submodule "developers/MuAlphaOmegaEpsilon/cn-arch"]
+	path = developers/MuAlphaOmegaEpsilon/cn-arch
+	url = git@github.com:MuAlphaOmegaEpsilon/cn-arch
+[submodule "developers/MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io"]
+	path = developers/MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
+	url = git@github.com:MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
