@@ -49,3 +49,7 @@
 [submodule "work"]
 	path = work
 	url = git@github.com:MuAlphaOmegaEpsilon/work
+[submodule ".config/private.d"]
+	path = .config/private.d
+	url = git@github.com:MuAlphaOmegaEpsilon/private.d
+	branch = master
