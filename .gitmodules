@@ -1,54 +1,71 @@
 [submodule "buildmode"]
 	path = prj/buildmode
 	url = git@github.com:MuAlphaOmegaEpsilon/buildmode
+	branch = master
 [submodule "minlog"]
 	path = prj/minlog
 	url = git@github.com:MuAlphaOmegaEpsilon/minlog
+	branch = master
 [submodule "vengine"]
 	path = prj/vengine
 	url = git@github.com:MuAlphaOmegaEpsilon/vengine
+	branch = master
 [submodule "sinecrunch"]
 	path = prj/sinecrunch
 	url = git@github.com:MuAlphaOmegaEpsilon/sinecrunch
+	branch = master
 [submodule "experiments-cpp"]
 	path = prj/experiments-cpp
 	url = git@github.com:MuAlphaOmegaEpsilon/experiments-cpp
+	branch = master
 [submodule "ConstexprDSUtils"]
 	path = prj/ConstexprDSUtils
 	url = git@github.com:MuAlphaOmegaEpsilon/ConstexprDSUtils
+	branch = master
 [submodule "CirDeVec"]
 	path = prj/CirDeVec
 	url = git@github.com:MuAlphaOmegaEpsilon/CirDeVec
+	branch = master
 [submodule "BranchHinting"]
 	path = prj/BranchHinting
 	url = git@github.com:MuAlphaOmegaEpsilon/BranchHinting
+	branch = master
 [submodule "FSEngine"]
 	path = prj/FSEngine
 	url = git@github.com:MuAlphaOmegaEpsilon/FSEngine
+	branch = master
 [submodule "developers/cheat/cheatsheets"]
 	path = 3rd-party/cheat/cheatsheets
 	url = git@github.com:cheat/cheatsheets
+	branch = master
 [submodule "curriculum-vitae"]
 	path = prj/curriculum-vitae
 	url = git@github.com:MuAlphaOmegaEpsilon/curriculum-vitae
+	branch = master
 [submodule "algorythm"]
 	path = prj/algorythm
 	url = github:MuAlphaOmegaEpsilon/algorythm
+	branch = master
 [submodule "cmake"]
 	path = prj/cmake
 	url = github:MuAlphaOmegaEpsilon/cmake
+	branch = master
 [submodule "cn-arch"]
 	path = prj/cn-arch
 	url = git@github.com:MuAlphaOmegaEpsilon/cn-arch
+	branch = master
 [submodule "mualphaomegaepsilon.github.io"]
 	path = prj/mualphaomegaepsilon.github.io
 	url = git@github.com:MuAlphaOmegaEpsilon/mualphaomegaepsilon.github.io
+	branch = master
 [submodule ".ssh"]
 	path = .ssh
 	url = git@github.com:MuAlphaOmegaEpsilon/.ssh
+	branch = master
 [submodule "work"]
 	path = work
 	url = git@github.com:MuAlphaOmegaEpsilon/work
+	branch = master
 [submodule ".config/private.d"]
 	path = .config/private.d
 	url = git@github.com:MuAlphaOmegaEpsilon/private.d
