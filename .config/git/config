@@ -34,6 +34,8 @@
 
 	d = diff
 	dc = diff --cached
+	ds = diff --stat
+	dss = diff --shortstat
 
 	l = log --oneline
 	ll = log
