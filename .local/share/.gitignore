@@ -1,5 +1,0 @@
-*
-
-!.gitignore
-!/defaults/*
-!/nvim/site/**
