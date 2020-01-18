@@ -16,41 +16,50 @@ let colors_name = "maze_colorscheme"
 "	05 LightBlue	13 PrussianBlue
 "	06 DarkGrey		14 Blue
 "	07 LightGrey	15 White
+"
+"	00 Black		08 Grey
+"	01 Red			09 Pink
+"	02 LightGreen	10 DarkGreen
+"	03 Yellow		11 PastelYellow
+"	04 Orange		12 Blue
+"	05 DarkGrey		13 Purple
+"	06 LightBlue	14 PrussianBlue
+"	07 LightGrey	15 White
 
 hi Normal		ctermfg=07
-hi TrailingWhitespace		ctermbg=04
-hi Cursor 					cterm=reverse
+hi TrailingWhitespace		ctermbg=02
+hi Cursor					cterm=reverse
 hi Visual					cterm=reverse
 hi Comment		ctermfg=08
 
-hi Constant		ctermfg=09	"	any constant
+hi Constant		ctermfg=13	"	any constant
 hi String		ctermfg=11	"	"Hello world!"
-hi Character	ctermfg=02	"	'a'
-hi Number		ctermfg=09	" 	1, 2, 3
-hi Boolean		ctermfg=09	" 	true, false
-hi Float		ctermfg=09	" 	10.3f
+hi Character	ctermfg=04	"	'a'
+hi Number		ctermfg=13	"	1, 2, 3
+hi Boolean		ctermfg=13	"	true, false
+hi Float		ctermfg=13	"	10.3f
 
-hi PreProc		ctermfg=14	"	generic PreProcessor keyword
-hi Include		ctermfg=14	"	#include
-hi Define		ctermfg=14	"	#define
-hi Macro		ctermfg=14	"	same as Define
-hi PreCondit	ctermfg=14	"	#if, #else, #endif
+hi PreProc		ctermfg=12	"	generic PreProcessor keyword
+hi Include		ctermfg=12	"	#include
+hi Define		ctermfg=12	"	#define
+hi Macro		ctermfg=12	"	same as Define
+hi PreCondit	ctermfg=12	"	#if, #else, #endif
 
-hi Identifier	ctermfg=04	"	any variable name
-hi Function		ctermfg=13	"	function name
+hi Identifier	ctermfg=02	"	any variable name
+hi Function		ctermfg=14	"	function name
 
-hi Statement	ctermfg=10	"	any statement	
-hi Conditional	ctermfg=10	"	if, then, else, endif, switch
-hi Repeat		ctermfg=10	"	for, do, while
-hi Label		ctermfg=13	"	case, default
-hi Operator		ctermfg=13	"	sizeof, +, *
-hi Keyword		ctermfg=04	"	any other keyword
-hi Exception	ctermfg=10	"	try, catch, throw
+hi Statement	ctermfg=12	"	any statement	
+hi Conditional	ctermfg=12	"	if, then, else, endif, switch
+hi Repeat		ctermfg=12	"	for, do, while
+hi Label		ctermfg=14	"	case, default
+hi Operator		ctermfg=14	"	sizeof, +, *
+hi Keyword		ctermfg=02	"	any other keyword
+hi Exception	ctermfg=09	"	try, catch, throw
 
-hi Type			ctermfg=05	"	int, long, double
-hi StorageClass	ctermfg=10	"	static, register, voltatile
-hi Structure	ctermfg=10	"	struct, union, enum
-hi Typedef		ctermfg=10	"	typedef
+hi Type			ctermfg=06	"	int, long, double
+hi StorageClass	ctermfg=12	"	static, register, voltatile
+hi Structure	ctermfg=12	"	struct, union, enum
+hi Typedef		ctermfg=12	"	typedef
 
 hi Special		ctermfg=15	"	any special symbol
 hi SpecialChar	ctermfg=15	"	special character in a constant
@@ -59,9 +68,9 @@ hi Delimiter	ctermfg=15	"	character that needs attention
 hi SpecialComment ctermfg=15 "	special things inside a comment
 hi Debug		ctermfg=15	"	debugging statements
 
-hi Underlined	ctermfg=15 ctermbg=05	"	text that stands out, HTML links
+hi Underlined	ctermfg=15 ctermbg=06	"	text that stands out, HTML links
 
-hi SignColumn	ctermbg=06
+hi SignColumn	ctermbg=05
 
 hi LineNr		ctermfg=00 ctermbg=07
 " hi Cursor		ctermfg=
@@ -70,9 +79,9 @@ hi LineNr		ctermfg=00 ctermbg=07
 
 hi MatchParen	ctermfg=00 ctermbg=07	"	Highlight to apply to matching parenthesis
 
-hi Pmenu		ctermfg=15 ctermbg=06
+hi Pmenu		ctermfg=15 ctermbg=05
 hi PmenuSel		ctermfg=00 ctermbg=07
-hi PmenuSbar	           ctermbg=06
+hi PmenuSbar	           ctermbg=05
 hi PmenuThumb	           ctermbg=07
 
 " C
@@ -85,25 +94,25 @@ hi PmenuThumb	           ctermbg=07
 " hi cppExceptions	ctermfg=	"	throw, try, catch
 " hi cppOperator	ctermfg=	"	typeid, and, bitor, xor_eq
 " hi cppStatement	ctermfg=	"	new, delete, this, friend, using
-hi cppModifier		ctermfg=10	"	inline, virtual, explicit, export, override, final
+hi cppModifier		ctermfg=12	"	inline, virtual, explicit, export, override, final
 " hi cppType		ctermfg=	"	nullptr_t, auto
 " hi cppStorageClass	ctermfg=	"	mutable, constexpr, decltype, thread_local
 " hi cppStructure	ctermfg=	"	class, typename, template, namespace
 
-hi Error		ctermfg=01 ctermbg=06
-hi SpellBad		ctermfg=01 ctermbg=06
-hi Warning		ctermfg=02 ctermbg=06
-hi SpellCap		ctermfg=02 ctermbg=06
-hi Todo			ctermfg=03 ctermbg=06
+hi Error		ctermfg=01 ctermbg=05
+hi SpellBad		ctermfg=01 ctermbg=05
+hi Warning		ctermfg=04 ctermbg=05
+hi SpellCap		ctermfg=04 ctermbg=05
+hi Todo			ctermfg=03 ctermbg=05
 
 "--- COC.nvim ---
-hi CocErrorSign      ctermfg=01 ctermbg=06
+hi CocErrorSign      ctermfg=01 ctermbg=05
 hi CocErrorHighlight ctermfg=00 ctermbg=01
-hi CocWarningSign    ctermfg=02 ctermbg=06
-hi CocWarningHighlight ctermfg=00 ctermbg=02
-hi CocHintSign       ctermfg=03 ctermbg=06
+hi CocWarningSign    ctermfg=04 ctermbg=05
+hi CocWarningHighlight ctermfg=00 ctermbg=04
+hi CocHintSign       ctermfg=03 ctermbg=05
 hi CocHintHighlight  ctermfg=00 ctermbg=03
-hi CocInfoSign       ctermfg=02 ctermbg=06
+hi CocInfoSign       ctermfg=04 ctermbg=05
 
 "--- COC-YANK ---
 hi HighlightedyankRegion ctermfg=01 ctermbg=07
