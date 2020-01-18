@@ -42,10 +42,8 @@ if [ -n "${BASH_VERSION:-}" ]; then
 	neofetch
 fi
 
-PLATFORM_BIN="${XDG_LOCAL_HOME}/bin_$(uname -m)"
 export EDITOR=nano
 export MOZ_ENABLE_WAYLAND=1						# Enable Wayland usage for Mozilla Firefox
-export PATH="${PLATFORM_BIN}:${PATH}"			# Include user binary files in PATH
 export PATH="${XDG_LOCAL_HOME}/bin:${PATH}"		# Include generic executables files in PATH
 export PATH="${XDG_LOCAL_HOME}/shell:${PATH}"	# Include user shell files in PATH
 export PATH="${XDG_LOCAL_HOME}/shell_$(hostname):${PATH}" # Include user machine-specific shell files in PATH
