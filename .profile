@@ -7,7 +7,7 @@ export XDG_DEVS_HOME="${HOME}/developers"		# Where git users directories should 
 if [ "${TERM}" = "linux" ]; then /usr/bin/setvtrgb "${XDG_CONFIG_HOME}"/vtrgb/maze; fi
 
 if [ -z "${TMUX:-}" ] && [ -n "${PS1:-}" ]; then
-	exec /usr/bin/tmux -f "${XDG_CONFIG_HOME}/tmux/config" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR}"
+	exec /usr/bin/tmux -f "${XDG_CONFIG_HOME}/tmux/config" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR:-}"
 	exit
 fi
 
