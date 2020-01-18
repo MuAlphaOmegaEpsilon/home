@@ -31,6 +31,7 @@ if [ -n "${BASH_VERSION:-}" ]; then
 
 	if [ -f /etc/bash.bashrc ]; then . /etc/bash.bashrc; fi
 	if [ -f /usr/share/defaults/etc/bash.bashrc ]; then	. /usr/share/defaults/etc/bash.bashrc; fi
+	for file in "${XDG_CONFIG_HOME}"/profile.d/autocomplete/*; do . "${file}"; done
 
 	[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
