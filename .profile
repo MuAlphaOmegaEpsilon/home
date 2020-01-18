@@ -13,7 +13,7 @@ fi
 
 if [ -f /etc/profile ]; then . /etc/profile; fi
 
-for file in $(ls -pL "${XDG_CONFIG_HOME}"/profile.d | grep -v /); do . "${XDG_CONFIG_HOME}/profile.d/${file}"; done
+. "${XDG_CONFIG_HOME}"/profile.d/aliases
 for file in "${XDG_CONFIG_HOME}"/private.d/*; do . "${file}"; done
 for file in "${XDG_CONFIG_HOME}"/profile.d/"$(hostname)"/*; do . "${file}"; done
 
