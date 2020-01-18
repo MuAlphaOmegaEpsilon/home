@@ -4,7 +4,10 @@ export XDG_LOCAL_HOME="${HOME}/.local"			# Where user main dirs should be stored
 export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be stored
 export XDG_DEVS_HOME="${HOME}/developers"		# Where git users directories should be stored
 
-if [ "${TERM}" = "linux" ]; then /usr/bin/setvtrgb "${XDG_CONFIG_HOME}"/vtrgb/maze; fi
+if [ "${TERM}" = "linux" ]; then
+	$(command -v setfont) /usr/share/consolefonts/Lat7-Terminus20x10.psf.gz;
+	$(command -v setvtrgb) "${XDG_CONFIG_HOME}"/vtrgb/maze;
+fi
 
 if [ -z "${TMUX:-}" ] && [ -n "${PS1:-}" ]; then
 	exec /usr/bin/tmux -f "${XDG_CONFIG_HOME}/tmux/config" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR:-}"
