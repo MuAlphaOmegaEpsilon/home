@@ -2,7 +2,7 @@ export XDG_CONFIG_HOME="${HOME}/.config"		# Where user configuration files shoul
 export XDG_CACHE_HOME="${HOME}/.cache"			# Where user non-essential data files should be stored
 export XDG_LOCAL_HOME="${HOME}/.local"			# Where user main dirs should be stored
 export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be stored
-export XDG_DEVS_HOME="${HOME}/developers"		# Where git users directories should be stored
+export XDG_3RD_PARTY="${HOME}/3rd-party"		# Where 3rd party git users directories should be stored
 
 if [ "${TERM}" = "linux" ]; then
 	$(command -v setfont) /usr/share/consolefonts/Lat7-Terminus20x10.psf.gz;
