@@ -14,7 +14,7 @@ fi
 if [ -f /etc/profile ]; then . /etc/profile; fi
 
 for file in $(ls -pL "${XDG_CONFIG_HOME}"/profile.d | grep -v /); do . "${XDG_CONFIG_HOME}/profile.d/${file}"; done
-for file in "${XDG_CONFIG_HOME}"/profile.d/private/*; do . "${file}"; done
+for file in "${XDG_CONFIG_HOME}"/private.d/*; do . "${file}"; done
 for file in "${XDG_CONFIG_HOME}"/profile.d/"$(hostname)"/*; do . "${file}"; done
 
 if [ -z "${XDG_SESSION_DESKTOP:-}" ]; then tabs 4; fi	# Set tabulation width
