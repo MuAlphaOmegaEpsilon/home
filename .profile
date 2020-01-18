@@ -47,5 +47,5 @@ export EDITOR=nano
 export MOZ_ENABLE_WAYLAND=1						# Enable Wayland usage for Mozilla Firefox
 export PATH="${XDG_LOCAL_HOME}/bin:${PATH}"		# Include generic executables files in PATH
 export PATH="${XDG_LOCAL_HOME}/shell:${PATH}"	# Include user shell files in PATH
-export PATH="${XDG_LOCAL_HOME}/shell_$(hostname):${PATH}" # Include user machine-specific shell files in PATH
+export PATH="${XDG_LOCAL_HOME}/shell/$(hostname):${PATH}" # Include user machine-specific shell files in PATH
 export PS1="> "									# Customize prompt
