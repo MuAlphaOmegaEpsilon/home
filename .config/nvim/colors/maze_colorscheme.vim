@@ -6,35 +6,15 @@ endif
 
 let colors_name = "maze_colorscheme"
 
-"	Darker			Brighter
-"
-"	00 Black		08 Grey
-"	01 Red			09 Purple
-"	02 Orange		10 Pink
-"	03 Yellow		11 PastelYellow
-"	04 LightGreen	12 DarkGreen
-"	05 LightBlue	13 PrussianBlue
-"	06 DarkGrey		14 Blue
-"	07 LightGrey	15 White
-"
-"	00 Black		08 Grey
-"	01 Red			09 Pink
-"	02 LightGreen	10 DarkGreen
-"	03 Yellow		11 PastelYellow
-"	04 Orange		12 Blue
-"	05 DarkGrey		13 Purple
-"	06 LightBlue	14 PrussianBlue
-"	07 LightGrey	15 White
-
 hi Normal		ctermfg=07
-hi TrailingWhitespace		ctermbg=02
+hi TrailingWhitespace		ctermbg=04
 hi Cursor					cterm=reverse
 hi Visual					cterm=reverse
 hi Comment		ctermfg=08
 
 hi Constant		ctermfg=13	"	any constant
 hi String		ctermfg=11	"	"Hello world!"
-hi Character	ctermfg=04	"	'a'
+hi Character	ctermfg=11	"	'a'
 hi Number		ctermfg=13	"	1, 2, 3
 hi Boolean		ctermfg=13	"	true, false
 hi Float		ctermfg=13	"	10.3f
@@ -48,18 +28,18 @@ hi PreCondit	ctermfg=12	"	#if, #else, #endif
 hi Identifier	ctermfg=02	"	any variable name
 hi Function		ctermfg=14	"	function name
 
-hi Statement	ctermfg=12	"	any statement	
-hi Conditional	ctermfg=12	"	if, then, else, endif, switch
-hi Repeat		ctermfg=12	"	for, do, while
+hi Statement	ctermfg=09	"	any statement	
+hi Conditional	ctermfg=09	"	if, then, else, endif, switch
+hi Repeat		ctermfg=09	"	for, do, while
 hi Label		ctermfg=14	"	case, default
 hi Operator		ctermfg=14	"	sizeof, +, *
 hi Keyword		ctermfg=02	"	any other keyword
 hi Exception	ctermfg=09	"	try, catch, throw
 
 hi Type			ctermfg=06	"	int, long, double
-hi StorageClass	ctermfg=12	"	static, register, voltatile
-hi Structure	ctermfg=12	"	struct, union, enum
-hi Typedef		ctermfg=12	"	typedef
+hi StorageClass	ctermfg=09	"	static, register, voltatile
+hi Structure	ctermfg=09	"	struct, union, enum
+hi Typedef		ctermfg=09	"	typedef
 
 hi Special		ctermfg=15	"	any special symbol
 hi SpecialChar	ctermfg=15	"	special character in a constant
@@ -68,7 +48,7 @@ hi Delimiter	ctermfg=15	"	character that needs attention
 hi SpecialComment ctermfg=15 "	special things inside a comment
 hi Debug		ctermfg=15	"	debugging statements
 
-hi Underlined	ctermfg=15 ctermbg=06	"	text that stands out, HTML links
+hi Underlined	ctermfg=15 ctermbg=05	"	text that stands out, HTML links
 
 hi SignColumn	ctermbg=05
 
@@ -94,7 +74,7 @@ hi PmenuThumb	           ctermbg=07
 " hi cppExceptions	ctermfg=	"	throw, try, catch
 " hi cppOperator	ctermfg=	"	typeid, and, bitor, xor_eq
 " hi cppStatement	ctermfg=	"	new, delete, this, friend, using
-hi cppModifier		ctermfg=12	"	inline, virtual, explicit, export, override, final
+hi cppModifier		ctermfg=09	"	inline, virtual, explicit, export, override, final
 " hi cppType		ctermfg=	"	nullptr_t, auto
 " hi cppStorageClass	ctermfg=	"	mutable, constexpr, decltype, thread_local
 " hi cppStructure	ctermfg=	"	class, typename, template, namespace

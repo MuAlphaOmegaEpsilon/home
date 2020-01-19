@@ -12,8 +12,7 @@ public:
 
 	extern int counte = 5;
 	const float counte = PI;
-	const char* stringe = "";
-	auto raw_str = R"String"
+	const char* string = "asdada";
 }
 
 namespace Vulkan
