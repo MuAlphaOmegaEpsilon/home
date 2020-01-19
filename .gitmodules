@@ -74,3 +74,11 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/lightline
 	url = git@github.com:itchyny/lightline.vim
 	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/coc"]
+	path = .local/share/nvim/site/pack/git-plugins/start/coc
+	url = git@github.com:neoclide/coc.nvim
+	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/cpp-enhanced-highlight"]
+	path = .local/share/nvim/site/pack/git-plugins/start/cpp-enhanced-highlight
+	url = git@github.com:octol/vim-cpp-enhanced-highlight
+	branch = master
