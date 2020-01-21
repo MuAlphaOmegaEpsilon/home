@@ -9,8 +9,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # cmake
-alias cmakej='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja'
 alias cmakebt='ctest -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --build-and-test . build --parallel --build-generator Ninja --test-command ctest '
+alias cmakej='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja'
+alias cmakeiwyu='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja -DCMAKE_C_COMPILER_VERSION=clang-8 -DCMAKE_CXX_COMPILER_VERSION=clang++-8 -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE=iwyu'
 
 # date
 alias hours='date +%T'
