@@ -5,7 +5,12 @@
 .config/skypeforlinux
 .thunderbird
 .vscode
+*gnome*
 snap
 Telegram*
 .local/bin
 .local/lib
+.local/share/cache2
+.local/share/nvim/shada
+.local/share/session*
+.local/share/Trash
