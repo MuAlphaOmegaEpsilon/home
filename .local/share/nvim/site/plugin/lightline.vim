@@ -2,18 +2,18 @@
 
 " Colors		 FOREGROUND BACKGROUND
 let s:mode_rpl = [['', 00], ['', 01]] " Black on red
-let s:mode_nrm = [['', 00], ['', 02]] " Black on orange
+let s:mode_nrm = [['', 00], ['', 04]] " Black on orange
 let s:mode_cmd = [['', 00], ['', 03]] " Black on yellow
-let s:mode_ins = [['', 00], ['', 04]] " Black on green
+let s:mode_ins = [['', 00], ['', 02]] " Black on green
 let s:mode_vsl = [['', 00], ['', 07]] " Black on light grey
-let s:mode_tab = [['', 00], ['', 05]] " Black on light blue
-let s:mode_ict = [['', 15], ['', 06]] " White on dark grey
-let s:file_inf = [['', 07], ['', 06]] " Light grey on dark grey 
-let s:middle   = [['', 07], ['', 06]] " Light grey on dark grey
-let s:percent  = [['', 05], ['', 06]] " Blue on dark grey
-let s:position = [['', 10], ['', 06]] " Pink on dark grey
-let s:error    = [['', 01], ['', 06]] " Red on dark grey
-let s:warning  = [['', 03], ['', 06]] " Yellow on dark grey
+let s:mode_tab = [['', 00], ['', 06]] " Black on light blue
+let s:mode_ict = [['', 15], ['', 05]] " White on dark grey
+let s:file_inf = [['', 07], ['', 05]] " Light grey on dark grey
+let s:middle   = [['', 07], ['', 05]] " Light grey on dark grey
+let s:percent  = [['', 06], ['', 05]] " Blue on dark grey
+let s:position = [['', 09], ['', 05]] " Pink on dark grey
+let s:error    = [['', 01], ['', 05]] " Red on dark grey
+let s:warning  = [['', 03], ['', 05]] " Yellow on dark grey
 
 let s:p = {'normal': {}, 'command': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left     = [ s:mode_nrm, s:file_inf ]
