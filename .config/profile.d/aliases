@@ -18,6 +18,8 @@ alias day='date +%A'
 alias month='date +%B'
 alias year='date +%Y'
 
+alias god-gdb='echo -1 | sudo tee /proc/sys/kernel/perf_event_paranoid >/dev/null && echo 0 | sudo tee /proc/sys/kernel/kptr_restrict >/dev/null'
+
 # ls
 alias ll='ls -lh'
 alias la='ls -A'
