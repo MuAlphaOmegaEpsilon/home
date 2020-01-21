@@ -7,6 +7,8 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
+map <C-e> :CocCommand explorer --toggle<CR>
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
