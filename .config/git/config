@@ -80,3 +80,6 @@
 	untracked = 2 bold
 [cola]
 	spellcheck = false
+	fontdiff = Monospace,12,-1,5,50,0,0,0,0,0
+	hidpi = 1.5
+	theme = flat-dark-grey
