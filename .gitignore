@@ -2,7 +2,7 @@
 .config/google-chrome*
 .config/libreoffice
 .config/skypeforlinux
-.debug/
+.debug
 .local/bin
 .local/lib
 .local/share/cache2
@@ -10,6 +10,7 @@
 .local/share/session*
 .local/share/Trash
 .mozilla
+.npm
 .thunderbird
 .vscode
 *gnome*
