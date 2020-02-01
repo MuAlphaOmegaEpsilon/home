@@ -63,21 +63,6 @@
 [color]
 	ui = auto
 
-[color "branch"]
-	current = 4
-	local = 4 bold
-	remote = 1
-
-[color "diff"]
-	old = 1
-	new = 4
-	frag = 2
-	meta = 5
-
-[color "status"]
-	added = 4
-	changed = 1
-	untracked = 2 bold
 [cola]
 	spellcheck = false
 	fontdiff = Monospace,12,-1,5,50,0,0,0,0,0
