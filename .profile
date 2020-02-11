@@ -5,22 +5,22 @@ export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be s
 export XDG_3RD_PARTY="${HOME}/3rd-party"		# Where 3rd party git users directories should be stored
 
 if [ "${TERM}" = "linux" ]; then
-	$(command -v setfont) /usr/share/consolefonts/Lat7-Terminus20x10.psf.gz;
+	$(command -v setfont) /usr/share/consolefonts/Lat15-Terminus20x10.psf.gz;
 	$(command -v setvtrgb) "${XDG_CONFIG_HOME}"/vtrgb/maze;
 fi
 
 if [ -z "${TMUX:-}" ] && [ -n "${PS1:-}" ]; then
 	exec /usr/bin/tmux -f "${XDG_CONFIG_HOME}/tmux/config" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR:-}"
+	tabs 4
 	exit
 fi
 
-if [ -f /etc/profile ]; then . /etc/profile; fi
-
 . "${XDG_CONFIG_HOME}"/profile.d/aliases
+. "${XDG_CONFIG_HOME}"/profile.d/env
 for file in "${XDG_CONFIG_HOME}"/private.d/*; do . "${file}"; done
 for file in "${XDG_CONFIG_HOME}"/profile.d/"$(hostname)"/*; do . "${file}"; done
 
-if [ -z "${XDG_SESSION_DESKTOP:-}" ]; then tabs 4; fi	# Set tabulation width
+if [ -f /etc/profile ]; then . /etc/profile; fi
 
 if [ -n "${BASH_VERSION:-}" ]; then
 	shopt -s autocd								# Automatically cd into a directory
