@@ -1,7 +1,2 @@
 #!/bin/sh
-if [ -z "${1:-}" ]; then
-	echo Please pass at least one parameter.
-	exit 1
-fi
-
-watchexec "clear && c++ -c -S -fno-ident -finhibit-size-directive -fno-PIC -fno-rtti -fno-exceptions -fno-asynchronous-unwind-tables -fno-stack-protector -fcf-protection=none -fno-dwarf2-cfi-asm -o- $@ | c++filt | source-highlight -s asm -f esc | grep -v '.section\|.text\|.globl\|.type\|.file\|.weak\|.p2align'"
+watchexec --clear --ignore a.out "c++ $1 ${CPP_ARGS} && c++ $1 ${CPP_A_ARGS} | c++filt | grep -v \".section\|.text\|.globl\|.type\|.file\|.weak\|.align\|.p2align\" | bat --language asm --tabs 4 -n --paging never"
