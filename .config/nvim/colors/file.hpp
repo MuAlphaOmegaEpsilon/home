@@ -1,22 +1,24 @@
-#include "something.h"
-#include <stdio.h>
+#include <iostream>
+#include <stdint.h>
+#include <unistd.h>
 
 #define PI 3.14f
 
 class SuperObject
 {
 public:
-	virtual constexpr SuperObject() = default
-	explicit constexpr SuperObject(int a) = delete
-    [[nodiscard]] bool OtherMethod() noexcept { return false; }
+	constexpr SuperObject() = default;
+	explicit constexpr SuperObject(int a) = delete;
+    [[nodiscard]] virtual bool OtherMethod() noexcept { return false; }
 
-	extern int counte = 5;
-	const float counte = PI;
-	const char* string = "asdada";
-}
+	int count = 5;
+	const float special = PI;
+	const char* mystring = "Unbelievable!";
+};
 
 namespace Vulkan
 {
+	extern int* opaque_ptr;
 	namespace Implementation
 	{
 		int a = 2;
@@ -25,29 +27,46 @@ namespace Vulkan
 
 int b = Vulkan::Implementation::a;
 
-using Impl = Vulkan::Implementation;
+using namespace Vulkan::Implementation;
+
+enum CustomEnum : uint_fast64_t
+{
+	first,
+	second,
+	third,
+	fourth,
+	fifth
+};
 
 template <typename T>
 T superTempl(int* A)
 {
-    if (std::is_constant_evaluated())
-        for(int i = 0; i < 100; i++)
-		    i = i + 7;
-    static_cast<int>(jjj);
-	sizeof(SuperObject);
+	unlink("randomfile.txt");
+ 	A = new int[128];
+
+	T result = 0;
+    for(int i = 0; i < 128; i++)
+	    result += A[i];
+
+    result += static_cast<int>(CustomEnum::first);
+    result += static_cast<int>(CustomEnum::fourth);
+	result -= sizeof(sizeof(A));
     typeid(SuperObject).name();
 	std::cout << "PROVA!" << std::endl;
-	switch ()
+
+	switch (*new CustomEnum())
 	{
-    case default:
-			return G;
+	case CustomEnum::second:
+			break;
+    default:
+			result += 5;
 	}
 
-	throw();
+	throw("Throwing random things around, 'cause why not!?'");
 
 	delete A;
-	return new T();
+	return result;
 }
 
-#define PRETTIFY __LINE__ __FILE__
-
+#warning "Testing warning highlights"
+#error "Testing errors highlights"
