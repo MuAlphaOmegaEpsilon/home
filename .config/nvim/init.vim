@@ -1,17 +1,17 @@
 " Highlight related settings
 syntax on
 colorscheme maze_colorscheme
-set hlsearch		" Highlight matches when searching
+
+" Highlight matches when searching
+set hlsearch
 
 " Prevent neovim from polluting the filesystem with unwanted extra files
-set nobackup
-set nowritebackup
-set noswapfile
+set nobackup nowritebackup noswapfile
 
-" There's already lightline, no need to show the mode
+" Since lightline is in use, there's no need to show the mode twice
 set noshowmode
 
-" 8 color terminal
+" 8 colors terminal, bash based
 set t_Co=8
 set shell=/bin/bash
 
@@ -32,17 +32,16 @@ set ignorecase
 set smartcase
 
 " Improve pane splitting rules
-set splitright
-set splitbelow
+set splitright splitbelow
 
-" Enable display of line number on the left column
-set number
-set relativenumber
+" Enable display of relative line numbering on the left column
+set number relativenumber
 
 " Improve scrolling
 set scrolloff=3		" Show N more rows when scrolling up/down
 set sidescrolloff=5	" Show N more columns when scrolling left/right
 
+" Highlight trailing whitespace
 match TrailingWhitespace /\s\+$/
 
 " Enable filetype related features
@@ -57,17 +56,16 @@ let g:loaded_netrwPlugin=1
 " Map common commands to shortcuts
 " Quit (CTRL+q)
 nmap <C-q> :q!<CR>
-imap <C-q> <ESC>:q!<CR>
+imap <C-q> <C-ESC><C-q>
 " Save (CTRL+s)
 nmap <C-s> :w<CR>
-imap <C-s> <ESC>:w<CR>i
+imap <C-s> <C-ESC><C-s>i
 " Paste (CTRL+v)
 nmap <C-v> gP
-imap <C-v> <ESC>gPi
+imap <C-v> <C-ESC><C-v>i
 " Find (CTRL+f)
 nmap <C-f> :noh<CR>:/
-imap <C-f> :<ESC>:noh<CR>:/
-
+imap <C-f> <C-ESC><C-f>
 " Map pane switching to more simple keys
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
