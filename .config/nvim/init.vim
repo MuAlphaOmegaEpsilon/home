@@ -53,6 +53,11 @@ filetype indent on
 let g:loaded_netrw=1
 let g:loaded_netrwPlugin=1
 
+" Automatically open CocExplorer
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CocCommand explorer | endif
+
+set wildmenu
+
 " Map common commands to shortcuts
 " Quit (CTRL+q)
 nmap <C-q> :q!<CR>
@@ -66,8 +71,57 @@ imap <C-v> <C-ESC><C-v>i
 " Find (CTRL+f)
 nmap <C-f> :noh<CR>:/
 imap <C-f> <C-ESC><C-f>
+" Replace all instances under the cursor (S)
+nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>//g<Left><Left>
+" Show documentation in preview window (K)
+nmap <silent> K :call <SID>show_documentation()<CR>
+" Trigger completion <CTRL+Space>
+imap <silent><expr> <C-space> coc#refresh()
+" Close PopUpMenu without going back to Normal mode
+inoremap <silent><expr> <ESC> pumvisible() ? "\<C-E>" : "\<ESC>"
+" Apply currently selected hint inside PopUpMenu (Enter)
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Open file-explorer (CTRL+e)
+map <C-e> :CocCommand explorer --toggle<CR>
+" Tilde (F12)
+imap <F12> ~
+" Shift plus simple motion applies selection
+nmap <S-Left> v<Left>
+nmap <S-Right> v<Right>
+nmap <S-Up> v<Up>
+nmap <S-Down> v<Down>
 " Map pane switching to more simple keys
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+" Copy selection when in Visual mode (CTRL+c)
+vmap <C-c> y<ESC>
+" Cut selection when in Visual mode (CTRL+x)
+vmap <C-x> d<ESC>
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Normal mode tabbing/untabbing
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+" Insert mode untabbing
+inoremap <S-Tab> <C-d>
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+" set shortmess+=c
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  endif
+endfunction
+
+" A few settings currently disabled
+" set hidden	" Coc recommends the usage of hidden
+
