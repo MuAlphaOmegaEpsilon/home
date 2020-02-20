@@ -1,11 +1,60 @@
+# Number windows starting from 1
 set -g base-index 1
+setw -g pane-base-index 1
 
-set-option -sg escape-time 0
+set -g display-panes-time 6000
+set -g display-time 6000
 
-setw -g automatic-rename off
+set -sg repeat-time 100
+# Faster key repetition, also fixes neovim running inside tmux
+set -s escape-time 10
+
+# Constrain window size based on client connected to the same window
+setw -g aggressive-resize on
+
+set -sg automatic-rename on
+
+# Monitor activity
+setw -g monitor-activity on
+set -g visual-activity on
+
 set -g mouse on
+# setw -g xterm-keys on
+# set -g status-right "#(~/.config/tmux/status dir git mail clock)"
 
-bind-key h split-window -h
-bind-key v split-window -v
+# Window coloring, also highlight current selected windows
+set -g window-active-style bg=black
+set -g window-style bg=5
+set -g pane-border-style bg=5
+# Status bar coloring
+set -g status-style bg=black,fg=white
+
+set -g status-right "#[fg=white] #(date +'%A, %B %d, %Y') %H:%M"
+
+bind r source-file ~/.config/tmux/config \; display-message "Reloaded TMUX config" 
+
+# new splits open with current path
+bind v split-window -c "#{pane_current_path}" -v
+bind h split-window -c "#{pane_current_path}" -h
 unbind %
 unbind '"'
+
+# Smart pane switching with awareness of Vim splits.
+# See: https://github.com/christoomey/vim-tmux-navigator
+# is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+#     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+# bind -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
+# bind -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
+# bind -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
+# bind -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
+# bind -n 'C-\' if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
+# bind -T copy-mode-vi C-h select-pane -L
+# bind -T copy-mode-vi C-j select-pane -D
+# bind -T copy-mode-vi C-k select-pane -U
+# bind -T copy-mode-vi C-l select-pane -R
+# bind -T copy-mode-vi 'C-\' select-pane -l
+
+
+set-option -g status-interval 5
+set-option -g automatic-rename on
+set-option -g automatic-rename-format '#{b:pane_current_path}'
