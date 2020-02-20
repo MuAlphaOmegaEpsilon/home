@@ -34,6 +34,30 @@ let s:p.normal.warning  = [ s:warning ]
 let s:p.tabline.tabsel  = [ s:mode_vsl ]
 
 let g:lightline#colorscheme#maze_lightline#palette = lightline#colorscheme#flatten(s:p)
+
+" Set color to the components:
 let g:lightline = {
 	\ 'colorscheme': 'maze_lightline',
 	\ }
+let g:lightline.active = {
+	\ 'left': [ [ 'mode', 'paste' ],
+	\			[ 'coc_errors', 'coc_warnings' ],
+	\           [ 'readonly', 'filename', 'modified' ],
+	\			[ 'coc_status' ]],
+	\ 'right': [ [ 'lineinfo' ],
+	\            [ 'percent' ],
+	\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+	\ }
+let g:lightline.inactive = {
+	\ 'left': [ [ 'filename' ] ],
+	\ 'right': [ [ 'lineinfo' ],
+	\            [ 'percent' ] ]
+	\ }
+let g:lightline.tabline = {
+	\ 'left': [ [ 'tabs' ] ],
+	\ 'right': [ [ 'close' ] ]
+	\ }
+" Define coc_errors, coc_warnings, coc_ok and coc_status
+" https://github.com/josa42/vim-lightline-coc
+call lightline#coc#register()
+
