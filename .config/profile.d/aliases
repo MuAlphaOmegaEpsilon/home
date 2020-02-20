@@ -34,6 +34,10 @@ alias rm='rm --preserve-root'
 
 alias runaout='watchexec --clear --ignore *pp ./a.out'
 
+# tmux
+alias tmux-default-cfg='tmux -Lfoo -f/dev/null start\; show -gw'
+alias tmux-current-cfg='tmux -Lfoo -f/dev/null start\; show -g'
+
 # tree
 alias tree='tree --dirsfirst'
 
