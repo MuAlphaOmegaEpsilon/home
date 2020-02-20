@@ -82,3 +82,12 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/cpp-enhanced-highlight
 	url = git@github.com:octol/vim-cpp-enhanced-highlight
 	branch = master
+[submodule "prj/thin"]
+	path = prj/thin
+	url = git@github.com:MuAlphaOmegaEpsilon/thin
+[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-lightline-coc"]
+	path = .local/share/nvim/site/pack/git-plugins/start/vim-lightline-coc
+	url = git@github.com:josa42/vim-lightline-coc
+[submodule ".local/share/nvim/site/pack/git-plugins/start/fzf.vim"]
+	path = .local/share/nvim/site/pack/git-plugins/start/fzf.vim
+	url = git@github.com:junegunn/fzf.vim
