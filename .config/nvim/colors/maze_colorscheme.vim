@@ -57,6 +57,10 @@ hi LineNr		ctermfg=00 ctermbg=07
 " hi StatusLine		ctermfg=
 " hi StatusLineNC	ctermfg=
 
+hi DiffAdd		ctermfg=02 ctermbg=05
+hi DiffChange	ctermfg=07 ctermbg=05
+hi DiffDelete	ctermfg=01 ctermbg=05
+
 hi MatchParen	ctermfg=00 ctermbg=07	"	Highlight to apply to matching parenthesis
 
 hi Pmenu		ctermfg=15 ctermbg=05
@@ -77,7 +81,7 @@ hi PmenuThumb	           ctermbg=07
 hi cppModifier		ctermfg=09	"	inline, virtual, explicit, export, override, final
 " hi cppType		ctermfg=	"	nullptr_t, auto
 " hi cppStorageClass	ctermfg=	"	mutable, constexpr, decltype, thread_local
-" hi cppStructure	ctermfg=	"	class, typename, template, namespace
+" hi cppStructure		ctermfg=09	"	class, typename, template, namespace
 
 hi Error		ctermfg=01 ctermbg=05
 hi SpellBad		ctermfg=01 ctermbg=05
@@ -95,4 +99,4 @@ hi CocHintHighlight  ctermfg=00 ctermbg=03
 hi CocInfoSign       ctermfg=04 ctermbg=05
 
 "--- COC-YANK ---
-hi HighlightedyankRegion ctermfg=01 ctermbg=07
+hi HighlightedyankRegion ctermfg=03 ctermbg=07
