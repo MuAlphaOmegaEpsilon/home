@@ -36,3 +36,6 @@ alias runaout='watchexec --clear --ignore *pp ./a.out'
 
 # tree
 alias tree='tree --dirsfirst'
+
+# wget2
+alias wget='wget2'
