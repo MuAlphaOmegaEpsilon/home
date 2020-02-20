@@ -28,7 +28,7 @@ hi PreCondit	ctermfg=12	"	#if, #else, #endif
 hi Identifier	ctermfg=02	"	any variable name
 hi Function		ctermfg=14	"	function name
 
-hi Statement	ctermfg=09	"	any statement	
+hi Statement	ctermfg=09	"	any statement
 hi Conditional	ctermfg=09	"	if, then, else, endif, switch
 hi Repeat		ctermfg=09	"	for, do, while
 hi Label		ctermfg=14	"	case, default
@@ -66,7 +66,7 @@ hi PmenuThumb	           ctermbg=07
 
 " C
 " hi cConstant	ctermfg=	"	__PRETTY_FUNCTION__
-" hi cOperator	ctermfg=	"	static_assert		
+" hi cOperator	ctermfg=	"	static_assert
 
 " C++
 " hi cppAccess		ctermfg=	"	public, protected, private
