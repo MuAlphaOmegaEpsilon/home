@@ -1,2 +1,2 @@
 #!/bin/sh
-watchexec --clear --ignore a.out "c++ $1 ${CPP_ARGS} && c++ $1 ${CPP_A_ARGS} | c++filt | grep -v \".section\|.text\|.globl\|.type\|.file\|.weak\|.align\|.p2align\" | bat --language asm --tabs 4 -n --paging never"
+watchexec --clear --ignore a.out --ignore *.o  --ignore *.gch "c++ ${CPP_ARGS} $1 && c++ ${CPP_A_ARGS} $1 | c++filt | grep -v \".section\|.text\|.globl\|.type\|.file\|.weak\|.align\|.p2align\" | bat --language asm --tabs 4 -n --paging never"
