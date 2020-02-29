@@ -15,8 +15,6 @@
 	"git.removedSign.text": "-",
 	"git.changedSign.text": "≈",
 
-	"pairs.enableCharacters": [	"(", "[", "{", "'", "\"", "`" ],
-
 	"yank.priority": 10,
 	"yank.highlight.duration": 400,
 	"yank.limit": 2,
