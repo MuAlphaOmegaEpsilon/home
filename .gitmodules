@@ -85,9 +85,16 @@
 [submodule "prj/thin"]
 	path = prj/thin
 	url = git@github.com:MuAlphaOmegaEpsilon/thin
+	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/vim-lightline-coc"]
 	path = .local/share/nvim/site/pack/git-plugins/start/vim-lightline-coc
 	url = git@github.com:josa42/vim-lightline-coc
+	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/fzf.vim"]
 	path = .local/share/nvim/site/pack/git-plugins/start/fzf.vim
 	url = git@github.com:junegunn/fzf.vim
+	branch = master
+[submodule "3rd-party/llvm"]
+	path = 3rd-party/llvm
+	url = https://git.llvm.org/git/llvm.git
+	branch = master
