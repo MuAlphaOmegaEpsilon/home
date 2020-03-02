@@ -60,6 +60,8 @@
 	s = status -s
 	sl = status
 
+	odoo = "!f() { for repo in $(locate -b \"\\.git\" 2> /dev/null); do cd \"$(dirname ${repo})\"; DATES=$(git log --all --no-merges --since 'last month' --author \"$(git config user.name)\" --pretty=format:'%cd' --date=short | uniq); if [ -n \"${DATES}\" ]; then tput rev; pwd; tput sgr0; for date in ${DATES}; do tput setaf 1; echo \"${date}\"; tput sgr0; git log --all --no-merges --since 'last month' --author \"$(git config user.name)\" --pretty=format:'%cd%s' --date=short | grep \"${date}\" | colrm 1 10; done; echo; fi; done; }; f;"
+
 [color]
 	ui = auto
 
