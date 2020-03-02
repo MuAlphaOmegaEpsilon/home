@@ -86,10 +86,10 @@ map <C-e> :CocCommand explorer --toggle<CR>
 " Tilde (F12)
 imap <F12> ~
 " Shift plus simple motion applies selection
-nmap <S-Left> v<Left>
-nmap <S-Right> v<Right>
-nmap <S-Up> v<Up>
-nmap <S-Down> v<Down>
+imap <S-Left> <ESC>v<Left>
+imap <S-Right> <ESC>v<Right>
+imap <S-Up> <ESC>v<Up>
+imap <S-Down> <ESC>v<Down>
 " Map pane switching to more simple keys
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -99,14 +99,18 @@ map <C-h> <C-w>h
 vmap <C-c> y<ESC>
 " Cut selection when in Visual mode (CTRL+x)
 vmap <C-x> d<ESC>
-" Remap keys for gotos
+" Cut entire line when in insert mode (Shift+Canc)
+imap <S-Del> <ESC>ddi
+"Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-" Normal mode tabbing/untabbing
+" Normal and Visual mode tabbing/untabbing
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
+vnoremap <Tab> >>
+vnoremap <S-Tab> <<
 " Insert mode untabbing
 inoremap <S-Tab> <C-d>
 
