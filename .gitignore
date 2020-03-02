@@ -1,3 +1,4 @@
+.bash_history
 .buildroot*
 .cache
 .cmake
@@ -5,6 +6,7 @@
 .config/GIMP
 .config/google-chrome*
 .config/libreoffice
+.config/Postman
 .config/skypeforlinux
 .debug
 .launchpadlib
@@ -16,6 +18,7 @@
 .local/share/*.list
 .local/share/*.sqlite
 .local/share/*.txt
+.local/share/applications
 .local/share/cache2
 .local/share/CMakeTools
 .local/share/datareporting
@@ -24,6 +27,7 @@
 .local/share/icc
 .local/share/icons
 .local/share/keyrings
+.local/share/mime
 .local/share/nvim/shada
 .local/share/OfflineCache
 .local/share/pkcs11.txt
@@ -37,6 +41,7 @@
 .local/share/tracker
 .local/share/Trash
 .local/share/webkitgtk
+.local/share/wine
 .local/share/xorg
 .mozilla
 .npm
