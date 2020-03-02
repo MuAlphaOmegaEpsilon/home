@@ -9,9 +9,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # cmake
-alias cmakebt='ctest --progress --build-and-test . build --build-generator Ninja --test-command ctest '
-alias cmakej='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja'
-alias cmakeiwyu='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja -DCMAKE_C_COMPILER=clang-8 -DCMAKE_CXX_COMPILER=clang++-8 -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE=iwyu'
+alias cmakebt='ctest --build-and-test . build --build-generator Ninja --test-command ctest'
+alias cmakej='cmake ${CMAKE_LLVM} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja'
 
 # date
 alias hours='date +%T'
@@ -32,14 +31,16 @@ alias neofetch='neofetch --ascii ${XDG_CONFIG_HOME}/neofetch/$(hostname)_image'
 # rm
 alias rm='rm --preserve-root'
 
-alias runaout='watchexec --clear --ignore *pp ./a.out'
-
 # tmux
 alias tmux-default-cfg='tmux -Lfoo -f/dev/null start\; show -gw'
 alias tmux-current-cfg='tmux -Lfoo -f/dev/null start\; show -g'
 
 # tree
 alias tree='tree --dirsfirst'
+
+# watchexec helpers
+alias runaout='watchexec --clear --ignore *pp ./a.out'
+alias runcmakebt='watchexec --clear --ignore build "ctest --build-and-test . build --build-generator Ninja --test-command ctest"'
 
 # wget2
 alias wget='wget2'
