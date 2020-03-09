@@ -98,3 +98,7 @@
 	path = 3rd-party/llvm
 	url = https://git.llvm.org/git/llvm.git
 	branch = master
+[submodule "3rd-party/GammaRay"]
+	path = 3rd-party/GammaRay
+	url = git@github.com:KDAB/GammaRay
+	branch = master
