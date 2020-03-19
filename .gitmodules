@@ -102,3 +102,11 @@
 	path = 3rd-party/GammaRay
 	url = git@github.com:KDAB/GammaRay
 	branch = master
+[submodule "3rd-party/iOS-Utilities"]
+	path = 3rd-party/iOS-Utilities
+	url = git@github.com:matteyeux/iOS-Utilities
+	branch = master
+[submodule "3rd-party/cctools-port"]
+	path = 3rd-party/cctools-port
+	url = git@github.com:tpoechtrager/cctools-port
+	branch = master
