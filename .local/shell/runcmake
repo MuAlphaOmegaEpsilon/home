@@ -1,0 +1,2 @@
+#!/bin/sh
+watchexec --clear --ignore $1 --ignore a.out "mkdir -p $1 && cmake -G Ninja -B $1 && cmake --build $1 $2"

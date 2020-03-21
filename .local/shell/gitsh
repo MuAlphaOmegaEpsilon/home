@@ -1,0 +1,80 @@
+#!/bin/sh
+set -euf
+
+# Constants for --help
+VERSION="gitsh 0.1"
+DESCRIPTION="
+A tool that exposes a suite of commands to retrieve a variety of informations about git repositories."
+USAGE="
+  gitsh --help
+  gitsh [OPTIONS]"
+OPTIONS="
+  --help:           Print this help and exit
+  --branch:         Show the current git branch
+  --repo:           Show the git repository directory name
+  --repo-branch     Show the current git repo and branch
+  --repo-path:      Show the git repository absolute path
+  --edited:         Show the number of edited files
+  --staged:         Show the number of staged files
+  --staged-in:      Show the number of constructively staged files (added, modified)
+  --staged-out:     Show the number of destructively staged files (deleted)
+  --untracked:      Show the number of untracked files
+  -w:               Print a whitespace
+  "
+DEPENDENCIES="
+  git:              Hard requirement"
+
+extractValue()
+{
+	echo "$1" | cut --delimiter = --field 2
+}
+
+branch()
+{
+	git branch | grep "*" | colrm 1 2
+}
+repopath()
+{
+	git worktree list --porcelain 2> /dev/null | grep worktree | cut --delimiter=" " --fields 2
+}
+repo()
+{
+	basename $(repopath) 2> /dev/null
+}
+edited()
+{
+	git status --porcelain 2> /dev/null | colrm 3 | colrm 1 1 | grep -v " \|?" | wc -l
+}
+staged()
+{
+	git status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?" | wc -l
+}
+stagedin()
+{
+	git status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|D" | wc -l
+}
+stagedout()
+{
+	git status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|m\|M\|A" | wc -l
+}
+untracked()
+{
+	git status --porcelain 2> /dev/null | colrm 2 | grep ? | wc -l
+}
+
+for arg in "${@:---help}"; do
+	case "${arg}" in
+		--help) printf "%s%s\n\nUSAGE:%s\n\nOPTIONS:%s\n\nDEPENDENCIES:%s\n" "${VERSION}" "${DESCRIPTION}" "${USAGE}" "${OPTIONS}" "${DEPENDENCIES}"; exit;;
+		--branch) branch;; # echo ▸$(git branch | grep "*" | colrm 1 2);;
+		--repo) repo;;
+		--repo-branch) echo "$(repo)▸$(branch)";;
+		--repo-path) repopath;;
+		--edited) edited;;
+		--staged) staged;;
+		--staged-in) stagedin;;
+		--staged-out) stagedout;;
+		--untracked) untracked;;
+		-w) printf " ";;
+		*) cd ${arg};;
+	esac
+done
