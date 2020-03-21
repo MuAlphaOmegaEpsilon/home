@@ -38,6 +38,7 @@
 	dss = diff --shortstat
 
 	l = log --oneline
+	lc = log --oneline master..
 	ll = log
 	lp = log -p
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
