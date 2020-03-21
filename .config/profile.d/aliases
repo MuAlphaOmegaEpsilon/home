@@ -1,7 +1,7 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 # Add color support
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -9,8 +9,14 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # cmake
-alias cmakebt='ctest --build-and-test . build --build-generator Ninja --test-command ctest'
-alias cmakej='cmake ${CMAKE_LLVM} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja'
+alias cmakej="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja"
+alias cmakebt='ctest --build-and-test . build --build-generator Ninja --test-command ctest --output-on-failure'
+alias cmakeqt14and='cmakej -DQt5_DIR=${XDG_LOCAL_HOME}/lib/Qt/5.14.1/android/lib/cmake/Qt5'
+alias cmakeqt14gcc='cmakej -DQt5_DIR=${XDG_LOCAL_HOME}/lib/Qt/5.14.1/gcc_64/lib/cmake/Qt5'
+alias cmakeqt12gcc='cmakej -DQt5_DIR=${XDG_LOCAL_HOME}/lib/Qt/5.12.3/gcc_64/lib/cmake/Qt5'
+
+# darling
+alias dsh='env -i HOME=${HOME} DPREFIX=${DPREFIX} TERM=${TERM} darling shell'
 
 # date
 alias hours='date +%T'
@@ -18,7 +24,7 @@ alias day='date +%A'
 alias month='date +%B'
 alias year='date +%Y'
 
-alias god-gdb='echo -1 | sudo tee /proc/sys/kernel/perf_event_paranoid >/dev/null && echo 0 | sudo tee /proc/sys/kernel/kptr_restrict >/dev/null'
+alias god-gdb='echo -1 | sudo tee /proc/sys/kernel/perf_event_paranoid >/dev/null && echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope >/dev/null && echo 0 | sudo tee /proc/sys/kernel/kptr_restrict >/dev/null'
 
 # ls
 alias ll='ls -lh'
@@ -40,7 +46,7 @@ alias tree='tree --dirsfirst'
 
 # watchexec helpers
 alias runaout='watchexec --clear --ignore *pp ./a.out'
-alias runcmakebt='watchexec --clear --ignore build "ctest --build-and-test . build --build-generator Ninja --test-command ctest"'
+alias runcmakebt='watchexec --clear --ignore build "ctest --build-and-test . build --build-generator Ninja --test-command ctest --output-on-failure"'
 
 # wget2
 alias wget='wget2'
