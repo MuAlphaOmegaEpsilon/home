@@ -39,6 +39,9 @@ let g:lightline#colorscheme#maze_lightline#palette = lightline#colorscheme#flatt
 let g:lightline = {
 	\ 'colorscheme': 'maze_lightline',
 	\ }
+let g:lightline.component = {
+	\ 'lineinfo': "%{printf('%d/%d:%d', line('.'),  line('$'), col('.'))}",
+	\ }
 let g:lightline.active = {
 	\ 'left': [ [ 'mode', 'paste' ],
 	\			[ 'coc_errors', 'coc_warnings' ],
