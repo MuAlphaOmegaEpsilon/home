@@ -12,6 +12,8 @@ set -s escape-time 10
 # Constrain window size based on client connected to the same window
 setw -g aggressive-resize on
 
+setw -q -g utf8 off
+
 set -sg automatic-rename on
 
 # Monitor activity
@@ -19,19 +21,26 @@ setw -g monitor-activity on
 set -g visual-activity on
 
 set -g mouse on
-# setw -g xterm-keys on
-# set -g status-right "#(~/.config/tmux/status dir git mail clock)"
+setw -g xterm-keys on
 
 # Window coloring, also highlight current selected windows
 set -g window-active-style bg=black
 set -g window-style bg=5
 set -g pane-border-style bg=5
 # Status bar coloring
-set -g status-style bg=black,fg=white
+set -g window-status-current-style 'fg=white,bold'
+set -g status-style "bg=black,fg=white"
+set -g status-left "#[fg=black,bg=white] #S #[fg=white,bg=5] #(/home/maze/.local/shell/gitsh #{pane_current_path} --repo-branch) #[fg=green]#(/home/maze/.local/shell/gitsh #{pane_current_path} --staged-in)▲ #[fg=red]#(/home/maze/.local/shell/gitsh #{pane_current_path} --staged-out)▼ #[fg=4]#(/home/maze/.local/shell/gitsh #{pane_current_path} --edited)* #[fg=5,bold]#(/home/maze/.local/shell/gitsh #{pane_current_path} --untracked)? #[bg=black] "
+set -g status-left-length 0
+set -g status-right "#(date +'%d%b %Y') %H:%M  #[fg=black,bg=yellow] #(/home/maze/.local/shell/#(hostname)/battery) "
+set -g status-right-length 0
 
-set -g status-right "#[fg=white] #(date +'%A, %B %d, %Y') %H:%M"
+bind r source-file ~/.config/tmux/config \; display-message "Reloaded TMUX config"
 
-bind r source-file ~/.config/tmux/config \; display-message "Reloaded TMUX config" 
+set -g lock-after-time 300
+set -g lock-command "tmux detach"
+
+set -g visual-activity both
 
 # new splits open with current path
 bind v split-window -c "#{pane_current_path}" -v
@@ -55,6 +64,7 @@ unbind '"'
 # bind -T copy-mode-vi 'C-\' select-pane -l
 
 
-set-option -g status-interval 5
-set-option -g automatic-rename on
-set-option -g automatic-rename-format '#{b:pane_current_path}'
+set -g status-interval 5
+set -g automatic-rename on
+set -g automatic-rename-format '#{b:pane_current_path}'
+
