@@ -110,3 +110,6 @@
 	path = 3rd-party/cctools-port
 	url = git@github.com:tpoechtrager/cctools-port
 	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-cmake-syntax"]
+	path = .local/share/nvim/site/pack/git-plugins/start/vim-cmake-syntax
+	url = git@github.com:pboettch/vim-cmake-syntax
