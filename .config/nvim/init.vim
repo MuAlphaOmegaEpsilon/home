@@ -24,6 +24,14 @@ set smartindent		" Automatically increase/decrease indentation relative to { } b
 set cindent			" A stricter smartindent which works better for the C language
 set shiftround		" Round tabs to a multiple of shiftwidth
 
+" Better autocompletion
+set wildmenu
+set wildmode=list:longest,full
+" set completeopt=longest,menuone
+
+" Automatically write file on buffer closing
+set autowrite
+
 " Don't wrap line
 set nowrap
 
@@ -38,7 +46,7 @@ set splitright splitbelow
 set number relativenumber
 
 " Improve scrolling
-set scrolloff=3		" Show N more rows when scrolling up/down
+set scrolloff=10	" Show N more rows when scrolling up/down
 set sidescrolloff=5	" Show N more columns when scrolling left/right
 
 " Highlight trailing whitespace
@@ -54,9 +62,7 @@ let g:loaded_netrw=1
 let g:loaded_netrwPlugin=1
 
 " Automatically open CocExplorer
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CocCommand explorer | endif
-
-set wildmenu
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CocCommand explorer
 
 " Map common commands to shortcuts
 " Quit (CTRL+q)
@@ -85,7 +91,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 map <C-e> :CocCommand explorer --toggle<CR>
 " Tilde (F12)
 imap <F12> ~
-" Shift plus simple motion applies selection
+" Shift plus simple arrow motion applies selection
 imap <S-Left> <ESC>v<Left>
 imap <S-Right> <ESC>v<Right>
 imap <S-Up> <ESC>v<Up>
@@ -109,16 +115,21 @@ nmap <silent> gr <Plug>(coc-references)
 " Normal and Visual mode tabbing/untabbing
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
-vnoremap <Tab> >>
-vnoremap <S-Tab> <<
+vmap <Tab> >
+vmap <S-Tab> <
+" Tab/untab without killing the selection in vmode
+vmap < <gv
+vmap > >gv
 " Insert mode untabbing
 inoremap <S-Tab> <C-d>
+" Remove highlight when esc is pressed
+map <silent><ESC> :noh<CR>
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 
 " don't give |ins-completion-menu| messages.
-" set shortmess+=c
+set shortmess+=c
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
