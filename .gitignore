@@ -1,3 +1,4 @@
+.android
 .bash_history
 .buildroot*
 .cache
@@ -43,6 +44,7 @@
 .local/share/cache2
 .local/share/CMakeTools
 .local/share/compatibility.ini
+.local/share/darling
 .local/share/data
 .local/share/datareporting
 .local/share/desktop-directories
@@ -55,6 +57,7 @@
 .local/share/icons
 .local/share/keyrings
 .local/share/mime
+.local/share/minecraft
 .local/share/nano
 .local/share/nvim/shada
 .local/share/nvim/log
@@ -83,6 +86,9 @@
 .pki
 .thunderbird
 .vscode
+Desktop
+Downloads
+Pictures
 *gnome*
 snap
 Telegram*
