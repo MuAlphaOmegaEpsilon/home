@@ -74,10 +74,6 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/lightline
 	url = git@github.com:itchyny/lightline.vim
 	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/coc"]
-	path = .local/share/nvim/site/pack/git-plugins/start/coc
-	url = git@github.com:neoclide/coc.nvim
-	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/cpp-enhanced-highlight"]
 	path = .local/share/nvim/site/pack/git-plugins/start/cpp-enhanced-highlight
 	url = git@github.com:octol/vim-cpp-enhanced-highlight
@@ -85,10 +81,6 @@
 [submodule "prj/thin"]
 	path = prj/thin
 	url = git@github.com:MuAlphaOmegaEpsilon/thin
-	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-lightline-coc"]
-	path = .local/share/nvim/site/pack/git-plugins/start/vim-lightline-coc
-	url = git@github.com:josa42/vim-lightline-coc
 	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/fzf.vim"]
 	path = .local/share/nvim/site/pack/git-plugins/start/fzf.vim
@@ -110,9 +102,23 @@
 	path = 3rd-party/cctools-port
 	url = git@github.com:tpoechtrager/cctools-port
 	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-cmake-syntax"]
-	path = .local/share/nvim/site/pack/git-plugins/start/vim-cmake-syntax
-	url = git@github.com:pboettch/vim-cmake-syntax
 [submodule "3rd-party/apple-libtapi"]
 	path = 3rd-party/apple-libtapi
 	url = git@github.com:tpoechtrager/apple-libtapi.git
+[submodule "3rd-party/quark"]
+	path = 3rd-party/quark
+	url = git@github.com:comelz/quark
+[submodule "3rd-party/ds4drv-cemuhook"]
+	path = 3rd-party/ds4drv-cemuhook
+	url = git@github.com:John-Appleseed/ds4drv-cemuhook
+	branch = master
+[submodule "3rd-party/isign"]
+	path = 3rd-party/isign
+	url = git@github:appknow/isign
+[submodule ".local/share/nvim/site/pack/git-plugins/start/nvim-lsp"]
+	path = .local/share/nvim/site/pack/git-plugins/start/nvim-lsp
+	url = git@github.com:neovim/nvim-lsp
+[submodule ".certs"]
+	path = .certs
+	url = git@github.com:MuAlphaOmegaEpsilon/.certs
+	branch = master
