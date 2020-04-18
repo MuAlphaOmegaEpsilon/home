@@ -8,21 +8,26 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias cd="(tmux source-file ~/.config/tmux/config &) && cd"
+
 # cmake
 alias cmakej="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja"
-alias cmakebt='ctest --build-and-test . build --build-generator Ninja --test-command ctest --output-on-failure'
+alias cmakebt='ctest --timeout 1 --build-and-test . build --build-generator Ninja --test-command ctest --output-on-failure'
 alias cmakeqt14and='cmakej -DQt5_DIR=${XDG_LOCAL_HOME}/lib/Qt/5.14.1/android/lib/cmake/Qt5'
 alias cmakeqt14gcc='cmakej -DQt5_DIR=${XDG_LOCAL_HOME}/lib/Qt/5.14.1/gcc_64/lib/cmake/Qt5'
 alias cmakeqt12gcc='cmakej -DQt5_DIR=${XDG_LOCAL_HOME}/lib/Qt/5.12.3/gcc_64/lib/cmake/Qt5'
 
 # darling
-alias dsh='env -i HOME=${HOME} DPREFIX=${DPREFIX} TERM=${TERM} darling shell'
+alias darling='env -i HOME=${HOME} DPREFIX=${DPREFIX} TERM=${TERM} PATH=${PATH} darling'
 
 # date
 alias hours='date +%T'
 alias day='date +%A'
 alias month='date +%B'
 alias year='date +%Y'
+
+alias gdb='gdb --silent'
+alias gdba='gdb --args'
 
 alias god-gdb='echo -1 | sudo tee /proc/sys/kernel/perf_event_paranoid >/dev/null && echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope >/dev/null && echo 0 | sudo tee /proc/sys/kernel/kptr_restrict >/dev/null'
 
