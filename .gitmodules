@@ -105,9 +105,11 @@
 [submodule "3rd-party/apple-libtapi"]
 	path = 3rd-party/apple-libtapi
 	url = git@github.com:tpoechtrager/apple-libtapi.git
+	branch = master
 [submodule "3rd-party/quark"]
 	path = 3rd-party/quark
 	url = git@github.com:comelz/quark
+	branch = master
 [submodule "3rd-party/ds4drv-cemuhook"]
 	path = 3rd-party/ds4drv-cemuhook
 	url = git@github.com:John-Appleseed/ds4drv-cemuhook
@@ -115,10 +117,16 @@
 [submodule "3rd-party/isign"]
 	path = 3rd-party/isign
 	url = git@github:appknow/isign
+	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/nvim-lsp"]
 	path = .local/share/nvim/site/pack/git-plugins/start/nvim-lsp
 	url = git@github.com:neovim/nvim-lsp
+	branch = master
 [submodule ".certs"]
 	path = .certs
 	url = git@github.com:MuAlphaOmegaEpsilon/.certs
+	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-highlightedyank"]
+	path = .local/share/nvim/site/pack/git-plugins/start/vim-highlightedyank
+	url = git@github.com:machakann/vim-highlightedyank
 	branch = master
