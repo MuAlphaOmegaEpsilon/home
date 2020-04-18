@@ -57,16 +57,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" Disable netrw
-let g:loaded_netrw=1
-let g:loaded_netrwPlugin=1
-
-" Automatically open CocExplorer
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | CocCommand explorer
-
 " Map common commands to shortcuts
 " Quit (CTRL+q)
-nmap <C-q> :q!<CR>
+nmap <C-q> :q<CR>
 imap <C-q> <C-ESC><C-q>
 " Save (CTRL+s)
 nmap <C-s> :w<CR>
@@ -78,17 +71,17 @@ imap <C-v> <C-ESC><C-v>i
 nmap <C-f> :noh<CR>:/
 imap <C-f> <C-ESC><C-f>
 " Replace all instances under the cursor (S)
-nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>//g<Left><Left>
+" nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>//g<Left><Left>
 " Show documentation in preview window (K)
-nmap <silent> K :call <SID>show_documentation()<CR>
+nmap h :h .expand('<cword>')<CR>
 " Trigger completion <CTRL+Space>
-imap <silent><expr> <C-space> coc#refresh()
+" imap <silent><expr> <C-space> coc#refresh()
 " Close PopUpMenu without going back to Normal mode
-inoremap <silent><expr> <ESC> pumvisible() ? "\<C-E>" : "\<ESC>"
+" inoremap <silent><expr> <ESC> pumvisible() ? "\<C-E>" : "\<ESC>"
 " Apply currently selected hint inside PopUpMenu (Enter)
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Open file-explorer (CTRL+e)
-map <C-e> :CocCommand explorer --toggle<CR>
+"map <C-e> :CocCommand explorer --toggle<CR>
 " Tilde (F12)
 imap <F12> ~
 " Shift plus simple arrow motion applies selection
@@ -137,6 +130,10 @@ function! s:show_documentation()
   endif
 endfunction
 
-" A few settings currently disabled
-" set hidden	" Coc recommends the usage of hidden
-
+"--- C++ enhanced syntax highlighting ---
+let g:cpp_class_decl_highlight = 1
+let g:cpp_class_scope_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1

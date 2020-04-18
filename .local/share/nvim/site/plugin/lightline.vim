@@ -1,5 +1,3 @@
-" Lightline
-
 " Colors		 FOREGROUND BACKGROUND
 let s:mode_rpl = [['', 00], ['', 01]] " Black on red
 let s:mode_nrm = [['', 00], ['', 04]] " Black on orange
@@ -60,7 +58,3 @@ let g:lightline.tabline = {
 	\ 'left': [ [ 'tabs' ] ],
 	\ 'right': [ [ 'close' ] ]
 	\ }
-" Define coc_errors, coc_warnings, coc_ok and coc_status
-" https://github.com/josa42/vim-lightline-coc
-call lightline#coc#register()
-
