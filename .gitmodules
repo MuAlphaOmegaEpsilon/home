@@ -86,10 +86,6 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/fzf.vim
 	url = git@github.com:junegunn/fzf.vim
 	branch = master
-[submodule "3rd-party/llvm"]
-	path = 3rd-party/llvm
-	url = https://git.llvm.org/git/llvm.git
-	branch = master
 [submodule "3rd-party/GammaRay"]
 	path = 3rd-party/GammaRay
 	url = git@github.com:KDAB/GammaRay
