@@ -53,7 +53,7 @@ hi Underlined	ctermfg=15 ctermbg=05	"	text that stands out, HTML links
 hi SignColumn	ctermbg=05
 
 hi LineNr		ctermfg=00 ctermbg=07
-" hi Cursor		ctermfg=
+hi CursorLine	cterm=none ctermbg=05
 " hi StatusLine		ctermfg=
 " hi StatusLineNC	ctermfg=
 
@@ -89,14 +89,14 @@ hi Warning		ctermfg=04 ctermbg=05
 hi SpellCap		ctermfg=04 ctermbg=05
 hi Todo			ctermfg=03 ctermbg=05
 
-"--- COC.nvim ---
-hi CocErrorSign      ctermfg=01 ctermbg=05
-hi CocErrorHighlight ctermfg=00 ctermbg=01
-hi CocWarningSign    ctermfg=04 ctermbg=05
-hi CocWarningHighlight ctermfg=00 ctermbg=04
-hi CocHintSign       ctermfg=03 ctermbg=05
-hi CocHintHighlight  ctermfg=00 ctermbg=03
-hi CocInfoSign       ctermfg=04 ctermbg=05
+"--- nvim-lsp ---
+hi LspDiagnosticsError		ctermfg=01
+hi LspDiagnosticsWarning	ctermfg=04
+hi LspDiagnosticHint      	ctermfg=03
+hi LspDiagnosticInformation	ctermfg=04
+hi LspReferenceText			ctermbg=03
+hi LspReferenceRead			ctermbg=03
+hi LspReferenceWrite		ctermbg=03
 
-"--- COC-YANK ---
+"--- yank highlighted region ---
 hi HighlightedyankRegion ctermfg=03 ctermbg=07

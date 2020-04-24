@@ -35,9 +35,11 @@ set autowrite
 " Don't wrap line
 set nowrap
 
+" Highlight current cursor line
+" set cursorline
+
 " Improve searching
-set ignorecase
-set smartcase
+set ignorecase smartcase
 
 " Improve pane splitting rules
 set splitright splitbelow
@@ -49,6 +51,9 @@ set number relativenumber
 set scrolloff=10	" Show N more rows when scrolling up/down
 set sidescrolloff=5	" Show N more columns when scrolling left/right
 
+" Show matching parenthesis
+set showmatch
+
 " Highlight trailing whitespace
 match TrailingWhitespace /\s\+$/
 
@@ -58,30 +63,31 @@ filetype plugin on
 filetype indent on
 
 " Map common commands to shortcuts
-" Quit (CTRL+q)
+" Quit
 nmap <C-q> :q<CR>
-imap <C-q> <C-ESC><C-q>
-" Save (CTRL+s)
+imap <C-q> <ESC><C-q>
+" Select all
+nmap <C-a> gg V G
+imap <C-a> <ESC><C-a>
+" Save
 nmap <C-s> :w<CR>
-imap <C-s> <C-ESC><C-s>i
-" Paste (CTRL+v)
+imap <C-s> <ESC><C-s>i
+" Paste
 nmap <C-v> gP
-imap <C-v> <C-ESC><C-v>i
-" Find (CTRL+f)
+imap <C-v> <ESC><C-v>i
+" Find
 nmap <C-f> :noh<CR>:/
-imap <C-f> <C-ESC><C-f>
-" Replace all instances under the cursor (S)
-" nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>//g<Left><Left>
-" Show documentation in preview window (K)
-nmap h :h .expand('<cword>')<CR>
-" Trigger completion <CTRL+Space>
-" imap <silent><expr> <C-space> coc#refresh()
+imap <C-f> <ESC><C-f>
+" Replace all instances under the cursor
+nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
+" Show the nvim documentation of the item under the cursor
+nmap H :execute 'h ' .expand('<cword>')<CR>
 " Close PopUpMenu without going back to Normal mode
 " inoremap <silent><expr> <ESC> pumvisible() ? "\<C-E>" : "\<ESC>"
 " Apply currently selected hint inside PopUpMenu (Enter)
 " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Open file-explorer (CTRL+e)
-"map <C-e> :CocCommand explorer --toggle<CR>
+" Open file-explorer
+map <C-e> :Explore<CR>
 " Tilde (F12)
 imap <F12> ~
 " Shift plus simple arrow motion applies selection
@@ -94,20 +100,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-h> <C-w>h
-" Copy selection when in Visual mode (CTRL+c)
-vmap <C-c> y<ESC>
-" Cut selection when in Visual mode (CTRL+x)
-vmap <C-x> d<ESC>
 " Cut entire line when in insert mode (Shift+Canc)
 imap <S-Del> <ESC>ddi
-"Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 " Normal and Visual mode tabbing/untabbing
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
+"nnoremap <Tab> >>
+"nnoremap <S-Tab> <<
 vmap <Tab> >
 vmap <S-Tab> <
 " Tab/untab without killing the selection in vmode
@@ -116,19 +113,23 @@ vmap > >gv
 " Insert mode untabbing
 inoremap <S-Tab> <C-d>
 " Remove highlight when esc is pressed
-map <silent><ESC> :noh<CR>
+nmap <silent><ESC> :noh<CR>
+" Language server protocol mappings
+nmap gdec  <cmd>lua vim.lsp.buf.declaration()<CR>
+nmap gdef  <cmd>lua vim.lsp.buf.definition()<CR>
+nmap K     <cmd>lua vim.lsp.buf.hover()<CR>
+nmap gim   <cmd>lua vim.lsp.buf.implementation()<CR>
+nmap <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nmap 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nmap gr    <cmd>lua vim.lsp.buf.references()<CR>
+nmap g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
+autocmd FileType cpp set formatprg=clang-format-10
 
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
+let g:netrw_banner=0
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  endif
-endfunction
+"--- Highlighted yank region ---
+let g:highlightedyank_highlight_duration = 1000
 
 "--- C++ enhanced syntax highlighting ---
 let g:cpp_class_decl_highlight = 1
