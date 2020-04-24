@@ -1,6 +1,6 @@
 " Highlight related settings
 syntax on
-colorscheme maze_colorscheme
+colorscheme maze
 
 " Highlight matches when searching
 set hlsearch
@@ -26,14 +26,18 @@ set shiftround		" Round tabs to a multiple of shiftwidth
 
 " Better autocompletion
 set wildmenu
-set wildmode=list:longest,full
-" set completeopt=longest,menuone
+set wildmode=full
+set wildignore=".git/*,.clangd/*,build/*"
+set completeopt=menuone,preview,noinsert
 
 " Automatically write file on buffer closing
 set autowrite
 
 " Don't wrap line
 set nowrap
+
+" Don't redraw during macros and stuff
+set lazyredraw
 
 " Highlight current cursor line
 " set cursorline

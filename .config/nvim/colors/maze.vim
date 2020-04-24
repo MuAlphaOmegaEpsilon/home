@@ -4,7 +4,7 @@ if exists("syntax_on")
     syntax reset
 endif
 
-let colors_name = "maze_colorscheme"
+let colors_name = "maze"
 
 hi Normal		ctermfg=07
 hi TrailingWhitespace		ctermbg=04
