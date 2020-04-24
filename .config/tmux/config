@@ -37,8 +37,8 @@ set -g status-right-length 0
 
 bind r source-file ~/.config/tmux/config \; display-message "Reloaded TMUX config"
 
-set -g lock-after-time 300
-set -g lock-command "tmux detach"
+# set -g lock-after-time 300
+# set -g lock-command "tmux detach"
 
 set -g visual-activity both
 
