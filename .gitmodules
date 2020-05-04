@@ -18,10 +18,6 @@
 	path = prj/experiments-cpp
 	url = git@github.com:MuAlphaOmegaEpsilon/experiments-cpp
 	branch = master
-[submodule "ConstexprDSUtils"]
-	path = prj/ConstexprDSUtils
-	url = git@github.com:MuAlphaOmegaEpsilon/ConstexprDSUtils
-	branch = master
 [submodule "CirDeVec"]
 	path = prj/CirDeVec
 	url = git@github.com:MuAlphaOmegaEpsilon/CirDeVec
@@ -78,10 +74,6 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/cpp-enhanced-highlight
 	url = git@github.com:octol/vim-cpp-enhanced-highlight
 	branch = master
-[submodule "prj/thin"]
-	path = prj/thin
-	url = git@github.com:MuAlphaOmegaEpsilon/thin
-	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/fzf.vim"]
 	path = .local/share/nvim/site/pack/git-plugins/start/fzf.vim
 	url = git@github.com:junegunn/fzf.vim
@@ -125,4 +117,8 @@
 [submodule ".local/share/nvim/site/pack/git-plugins/start/vim-highlightedyank"]
 	path = .local/share/nvim/site/pack/git-plugins/start/vim-highlightedyank
 	url = git@github.com:machakann/vim-highlightedyank
+	branch = master
+[submodule "prj/tdsa"]
+	path = prj/tdsa
+	url = git@github.com:MuAlphaOmegaEpsilon/tdsa
 	branch = master
