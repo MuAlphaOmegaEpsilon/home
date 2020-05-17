@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+if [ -z "${1:-}" ]; then
+	echo "Convert video files into webm files, using the VP9 codec and a bitrate of 7Mbps, which appears to be the threshold under which Google Photos stops smearing your video quality."
+	printf "\n\tUSAGE: googlevideo path/to/filename\n\n"
+fi
+
+# parallel ffmpeg -i {} -b:v 7M -c:v libx265 -c:a eac3 -b:a 224k -f mp4 -preset medium -tag:v hvc1 -pass 1 -passlogfile {/.} -an /dev/null -y ::: "$@"
+# parallel ffmpeg -i {} -b:v 7M -c:v libx265 -c:a eac3 -b:a 224k -f mp4 -preset medium -tag:v hvc1 -pass 2 -passlogfile {/.} {/.}.mp4 ::: "$@"
+
+for FILENAME in $(ls *.log | colrm 9); do
+	ffmpeg -i ../videorimasti/"${FILENAME}".* -b:v 7M -c:v libx265 -c:a eac3 -b:a 224k -f mp4 -preset medium -tag:v hvc1 -pass 2 -passlogfile "${FILENAME}" "${FILENAME}".mp4
+	rm "${FILENAME}"-0.log
+done

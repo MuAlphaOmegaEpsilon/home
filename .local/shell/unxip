@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ -z "$1" ] && echo "usage: unxip /path/to/archive.xip" && exit 1
+
+[ ! -f "$1" ] && echo "$1 not found." && exit 1
+
+[ -f "Content" ] || [ -f "Metadata" ] && echo "Content or Metadata already exists." && exit 1
+
+xar -xf "$1" && pbzx Content | sudo tar x --strip-components=1
+
+rm "Content" "Metadata"
