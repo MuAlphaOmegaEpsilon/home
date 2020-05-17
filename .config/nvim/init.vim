@@ -116,8 +116,8 @@ inoremap <S-Tab> <C-d>
 " Remove highlight when esc is pressed
 nmap <silent><ESC> :noh<CR>
 " Language server protocol mappings
-nmap gdec  <cmd>lua vim.lsp.buf.declaration()<CR>
-nmap gdef  <cmd>lua vim.lsp.buf.definition()<CR>
+nmap gc  <cmd>lua vim.lsp.buf.declaration()<CR>
+nmap gd  <cmd>lua vim.lsp.buf.definition()<CR>
 nmap K     <cmd>lua vim.lsp.buf.hover()<CR>
 nmap gim   <cmd>lua vim.lsp.buf.implementation()<CR>
 nmap <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
