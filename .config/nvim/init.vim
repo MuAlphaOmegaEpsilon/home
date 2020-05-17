@@ -76,9 +76,6 @@ imap <C-a> <ESC><C-a>
 " Save
 nmap <C-s> :w<CR>
 imap <C-s> <ESC><C-s>i
-" Paste
-nmap <C-v> gP
-imap <C-v> <ESC><C-v>i
 " Find
 nmap <C-f> :noh<CR>:/
 imap <C-f> <ESC><C-f>
