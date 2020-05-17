@@ -120,7 +120,7 @@ nmap gc  <cmd>lua vim.lsp.buf.declaration()<CR>
 nmap gd  <cmd>lua vim.lsp.buf.definition()<CR>
 nmap K     <cmd>lua vim.lsp.buf.hover()<CR>
 nmap gim   <cmd>lua vim.lsp.buf.implementation()<CR>
-nmap <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+"nmap <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nmap 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nmap gr    <cmd>lua vim.lsp.buf.references()<CR>
 nmap g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
