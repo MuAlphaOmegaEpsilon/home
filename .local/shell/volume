@@ -1,0 +1,10 @@
+#!/bin/sh
+set -euf
+
+VOLUME=${1:-}
+
+if [ -z "${VOLUME}" ]; then
+	amixer --card 0 get Master | grep "%" | cut -d [ -f 2 | cut -d ] -f 1
+else
+	amixer --card 0 set Master $VOLUME% 1> /dev/null
+fi
