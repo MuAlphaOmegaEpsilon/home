@@ -1,2 +1,5 @@
 #!/bin/sh
-sudo esptool.py -p /dev/ttyUSB0 write_flash -fs 1MB -fm dout 0x0 ~/Desktop/tasmota-IT.bin
+sudo esptool.py \
+	-p /dev/ttyUSB0 write_flash \
+	-fs 1MB \
+	-fm dout 0x0 ~/Desktop/tasmota-IT.bin
