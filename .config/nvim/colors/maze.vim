@@ -61,7 +61,8 @@ hi DiffAdd		ctermfg=02 ctermbg=05
 hi DiffChange	ctermfg=07 ctermbg=05
 hi DiffDelete	ctermfg=01 ctermbg=05
 
-hi MatchParen	ctermfg=00 ctermbg=07	"	Highlight to apply to matching parenthesis
+hi MatchParen	ctermfg=15 ctermbg=00	"	Highlight to apply to matching parenthesis
+hi YankRegion	ctermfg=03 ctermbg=07
 
 hi Pmenu		ctermfg=15 ctermbg=05
 hi PmenuSel		ctermfg=00 ctermbg=07
@@ -98,5 +99,3 @@ hi LspReferenceText			ctermbg=03
 hi LspReferenceRead			ctermbg=03
 hi LspReferenceWrite		ctermbg=03
 
-"--- yank highlighted region ---
-hi HighlightedyankRegion ctermfg=03 ctermbg=07

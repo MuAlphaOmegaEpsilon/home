@@ -55,9 +55,6 @@ set number relativenumber
 set scrolloff=10	" Show N more rows when scrolling up/down
 set sidescrolloff=5	" Show N more columns when scrolling left/right
 
-" Show matching parenthesis
-set showmatch
-
 " Highlight trailing whitespace
 match TrailingWhitespace /\s\+$/
 
@@ -83,6 +80,8 @@ imap <C-f> <ESC><C-f>
 nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
 " Show the nvim documentation of the item under the cursor
 nmap H :execute 'h ' .expand('<cword>')<CR>
+" Manually trigger completion
+inoremap <silent><expr> <C-p> completion#trigger_completion()
 " Close PopUpMenu without going back to Normal mode
 " inoremap <silent><expr> <ESC> pumvisible() ? "\<C-E>" : "\<ESC>"
 " Apply currently selected hint inside PopUpMenu (Enter)
@@ -125,7 +124,9 @@ nmap 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nmap gr    <cmd>lua vim.lsp.buf.references()<CR>
 nmap g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
+" Set the default format tools
 autocmd FileType cpp set formatprg=clang-format-10
+autocmd FileType cmake set formatprg=clang-format
 " Enable integrated highlight on yank
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
