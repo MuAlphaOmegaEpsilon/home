@@ -1,0 +1,16 @@
+adjust-extension=on
+continue
+hsts-file=/home/maze/.cache/wget2/hsts
+max-redirect=3
+no-cookies
+no-parent
+ocsp-file=/home/maze/.cache/wget2/ocsp
+progress=bar
+random-wait
+retry-connrefused=on
+robots=off
+server-response=on
+timestamping
+timeout=1
+tries=3
+
