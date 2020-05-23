@@ -114,10 +114,6 @@
 	path = .certs
 	url = git@github.com:MuAlphaOmegaEpsilon/.certs
 	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-highlightedyank"]
-	path = .local/share/nvim/site/pack/git-plugins/start/vim-highlightedyank
-	url = git@github.com:machakann/vim-highlightedyank
-	branch = master
 [submodule "prj/tdsa"]
 	path = prj/tdsa
 	url = git@github.com:MuAlphaOmegaEpsilon/tdsa
@@ -133,4 +129,16 @@
 [submodule "prj/logos"]
 	path = prj/logos
 	url = git@github.com:MuAlphaOmegaEpsilon/logos
+	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/ultisnips"]
+	path = .local/share/nvim/site/pack/git-plugins/start/ultisnips
+	url = git@github.com:sirver/ultisnips
+	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/qt-support.vim"]
+	path = .local/share/nvim/site/pack/git-plugins/start/qt-support.vim
+	url = git@github.com:fedorenchik/qt-support.vim
+	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-tmux"]
+	path = .local/share/nvim/site/pack/git-plugins/start/vim-tmux
+	url = git@github.com:tmux-plugins/vim-tmux
 	branch = master

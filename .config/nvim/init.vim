@@ -126,11 +126,11 @@ nmap gr    <cmd>lua vim.lsp.buf.references()<CR>
 nmap g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
 autocmd FileType cpp set formatprg=clang-format-10
+" Enable integrated highlight on yank
+autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
 let g:netrw_banner=0
 
-"--- Highlighted yank region ---
-let g:highlightedyank_highlight_duration = 1000
 
 "--- C++ enhanced syntax highlighting ---
 let g:cpp_class_decl_highlight = 1
