@@ -132,6 +132,11 @@ autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 
 
 let g:netrw_banner=0
 
+"--- Completion neovim ---
+" let g:completion_enable_support = 'UltiSnips'
+
+"--- Ultisnips ---
+" let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/ultisnips/']
 
 "--- C++ enhanced syntax highlighting ---
 let g:cpp_class_decl_highlight = 1
