@@ -38,10 +38,6 @@
 	path = prj/curriculum-vitae
 	url = git@github.com:MuAlphaOmegaEpsilon/curriculum-vitae
 	branch = master
-[submodule "algorythm"]
-	path = prj/algorythm
-	url = github:MuAlphaOmegaEpsilon/algorythm
-	branch = master
 [submodule "cmake"]
 	path = prj/cmake
 	url = github:MuAlphaOmegaEpsilon/cmake
