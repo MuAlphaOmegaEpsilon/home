@@ -55,6 +55,3 @@ alias tree='tree --dirsfirst'
 # watchexec helpers
 alias runaout='watchexec --clear --ignore *pp ./a.out'
 alias runcmakebt='watchexec --clear --ignore build "ctest --build-and-test . build --build-generator Ninja --test-command ctest --output-on-failure"'
-
-# wget2
-alias wget='wget2'
