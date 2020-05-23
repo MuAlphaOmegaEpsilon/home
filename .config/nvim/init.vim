@@ -30,6 +30,9 @@ set wildmode=full
 set wildignore=".git/*,.clangd/*,build/*"
 set completeopt=menuone,preview,noinsert
 
+" Don't show extra message on completion
+" set shortmess+=c
+
 " Automatically write file on buffer closing
 set autowrite
 
