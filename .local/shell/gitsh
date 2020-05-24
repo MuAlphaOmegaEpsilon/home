@@ -2,7 +2,7 @@
 set -euf
 
 # Constants for --help
-VERSION="gitsh 0.1"
+VERSION="gitsh 0.2"
 DESCRIPTION="
 A tool that exposes a suite of commands to retrieve a variety of informations about git repositories."
 USAGE="
@@ -10,6 +10,8 @@ USAGE="
   gitsh [OPTIONS]"
 OPTIONS="
   --help:           Print this help and exit
+  --ahead:          Show the number of commits ahead compared to upstream
+  --behind:         Show the number of commits behind compared to upstream
   --branch:         Show the current git branch
   --repo:           Show the git repository directory name
   --repo-branch     Show the current git repo and branch
@@ -27,6 +29,16 @@ DEPENDENCIES="
 extractValue()
 {
 	echo "$1" | cut --delimiter = --field 2
+}
+
+ahead()
+{
+	git rev-list --left-right --count HEAD...@{upstream} | cut -f 1
+}
+
+behind()
+{
+	git rev-list --left-right --count HEAD...@{upstream} | cut -f 2
 }
 
 branch()
@@ -65,7 +77,9 @@ untracked()
 for arg in "${@:---help}"; do
 	case "${arg}" in
 		--help) printf "%s%s\n\nUSAGE:%s\n\nOPTIONS:%s\n\nDEPENDENCIES:%s\n" "${VERSION}" "${DESCRIPTION}" "${USAGE}" "${OPTIONS}" "${DEPENDENCIES}"; exit;;
-		--branch) branch;; # echo ▸$(git branch | grep "*" | colrm 1 2);;
+		--ahead) ahead;;
+		--behind) behind;;
+		--branch) branch;;
 		--repo) repo;;
 		--repo-branch) echo "$(repo)▸$(branch)";;
 		--repo-path) repopath;;
