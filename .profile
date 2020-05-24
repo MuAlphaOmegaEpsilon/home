@@ -51,4 +51,15 @@ export MOZ_ENABLE_WAYLAND=1						# Enable Wayland usage for Mozilla Firefox
 export PATH="${XDG_LOCAL_HOME}/bin:${PATH}"		# Include generic executables files in PATH
 export PATH="${XDG_LOCAL_HOME}/shell:${PATH}"	# Include user shell files in PATH
 export PATH="${XDG_LOCAL_HOME}/shell/$(hostname):${PATH}" # Include user machine-specific shell files in PATH
-export PS1="> "									# Customize prompt
+export PATH="${XDG_3RD_PARTY}/cctools-port/usage_examples/ios_toolchain/target/bin:${PATH}" # Include user machine-specific shell files in PATH
+export PATH="${XDG_LOCAL_HOME}/lib/android/cmdline-tools/latest/bin:${PATH}"
+#export PATH="${XDG_3RD_PARTY}/isign/bin:${PATH}" # Include isign binaries
+
+__prompt_command() {
+	if [ "$?" -eq 0 ]; then
+		export PS1="\[$(tput bold)\]>\[$(tput sgr0)\] "
+	else
+		export PS1="\[$(tput setaf 1)\]>\[$(tput sgr0)\] "
+	fi
+}
+PROMPT_COMMAND=__prompt_command
