@@ -90,10 +90,6 @@
 	path = 3rd-party/apple-libtapi
 	url = git@github.com:tpoechtrager/apple-libtapi.git
 	branch = master
-[submodule "3rd-party/ds4drv-cemuhook"]
-	path = 3rd-party/ds4drv-cemuhook
-	url = git@github.com:John-Appleseed/ds4drv-cemuhook
-	branch = master
 [submodule "3rd-party/isign"]
 	path = 3rd-party/isign
 	url = git@github:appknow/isign
