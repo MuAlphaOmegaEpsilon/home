@@ -121,14 +121,14 @@ inoremap <S-Tab> <C-d>
 " Remove highlight when esc is pressed
 nmap <silent><ESC> :noh<CR>
 " Language server protocol mappings
-nmap gc  <cmd>lua vim.lsp.buf.declaration()<CR>
-nmap gd  <cmd>lua vim.lsp.buf.definition()<CR>
-nmap K     <cmd>lua vim.lsp.buf.hover()<CR>
-nmap gim   <cmd>lua vim.lsp.buf.implementation()<CR>
+nmap gc <cmd>lua vim.lsp.buf.declaration()<CR>
+nmap gd <cmd>lua vim.lsp.buf.definition()<CR>
+nmap K <cmd>lua vim.lsp.buf.hover()<CR>
+nmap gim <cmd>lua vim.lsp.buf.implementation()<CR>
 "nmap <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nmap 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nmap gr    <cmd>lua vim.lsp.buf.references()<CR>
-nmap g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nmap 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
+nmap gr <cmd>lua vim.lsp.buf.references()<CR>
+nmap g0 <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
 " Show diagnostic on hover
 autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()
@@ -138,6 +138,7 @@ autocmd FileType cmake set formatprg=clang-format
 " Enable integrated highlight on yank
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
+"--- Netrw ---
 let g:netrw_banner=0
 
 "--- Completion neovim ---
