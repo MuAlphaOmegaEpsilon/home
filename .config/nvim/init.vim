@@ -137,6 +137,14 @@ let g:netrw_banner=0
 
 "--- Completion neovim ---
 " let g:completion_enable_support = 'UltiSnips'
+let g:completion_chain_complete_list = {
+\ 'default' : {
+\   'default': [
+\       {'complete_items': ['lsp', 'path', 'snippet']},
+\       {'mode': '<c-p>'},
+\       {'mode': '<c-n>'}]
+\   }
+\}
 
 "--- Ultisnips ---
 " let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/ultisnips/']
