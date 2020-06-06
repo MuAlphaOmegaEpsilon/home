@@ -8,9 +8,6 @@
 [credential]
 	helper = cache --timeout=3600
 
-[diff]
-	noprefix = true
-
 [rebase]
 	autosquash = true
 
