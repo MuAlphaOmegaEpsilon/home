@@ -18,7 +18,7 @@
 	insteadOf = gh/
 
 [alias]
-	aliases = config --get-regexp alias
+	alias = config --get-regexp alias
 
 	b = branch
 	ba = branch --all
