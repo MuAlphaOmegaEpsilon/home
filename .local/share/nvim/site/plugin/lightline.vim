@@ -11,11 +11,12 @@ let s:middle   = [['', 07], ['', 05]] " Light grey on dark grey
 let s:percent  = [['', 06], ['', 05]] " Blue on dark grey
 let s:position = [['', 09], ['', 05]] " Pink on dark grey
 let s:error    = [['', 01], ['', 05]] " Red on dark grey
-let s:warning  = [['', 03], ['', 05]] " Yellow on dark grey
+let s:warning  = [['', 04], ['', 05]] " Orange on dark grey
+let s:info     = [['', 03], ['', 05]] " Green on dark grey
 
 let s:p = {'normal': {}, 'command': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-let s:p.normal.left     = [ s:mode_nrm, s:file_inf ]
-let s:p.insert.left     = [ s:mode_ins, s:file_inf ]
+let s:p.normal.left     = [ s:mode_nrm, s:error, s:warning, s:info, s:file_inf ]
+let s:p.insert.left     = [ s:mode_ins, s:error, s:warning, s:info, s:file_inf ]
 let s:p.command.left    = [ s:mode_cmd, s:file_inf ]
 let s:p.replace.left    = [ s:mode_rpl, s:file_inf ]
 let s:p.visual.left     = [ s:mode_vsl, s:file_inf ]
@@ -38,13 +39,19 @@ let g:lightline = {
 	\ 'colorscheme': 'maze_lightline',
 	\ }
 let g:lightline.component = {
+	\ 'errors': '%{luaeval("vim.lsp.util.buf_diagnostics_count(\"Error\")")}',
+	\ 'warnings': '%{luaeval("vim.lsp.util.buf_diagnostics_count(\"Warning\")")}',
+	\ 'infos': '%{luaeval("vim.lsp.util.buf_diagnostics_count(\"Information\")")}',
+	\ 'hints': '%{luaeval("vim.lsp.util.buf_diagnostics_count(\"Hint\")")}',
 	\ 'lineinfo': "%{printf('%d/%d:%d', line('.'),  line('$'), col('.'))}",
 	\ }
 let g:lightline.active = {
 	\ 'left': [ [ 'mode', 'paste' ],
-	\			[ 'coc_errors', 'coc_warnings' ],
-	\           [ 'readonly', 'filename', 'modified' ],
-	\			[ 'coc_status' ]],
+	\			[ 'errors' ],
+	\			[ 'warnings' ],
+	\			[ 'infos' ],
+	\			[ 'hints' ],
+	\           [ 'readonly', 'filename', 'modified' ]],
 	\ 'right': [ [ 'lineinfo' ],
 	\            [ 'percent' ],
 	\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
