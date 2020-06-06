@@ -23,6 +23,7 @@
 .config/Postman
 .config/qBittorrent
 .config/Qt*
+.config/Rygel
 .config/skypeforlinux
 .config/sqlitebrowser
 .config/spotify
@@ -93,6 +94,7 @@
 .local/share/webkitgtk
 .local/share/wine
 .local/share/xorg
+.minecraft
 .mozilla
 .npm
 .parallel
