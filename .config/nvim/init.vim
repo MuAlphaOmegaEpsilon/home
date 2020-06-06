@@ -28,7 +28,7 @@ set shiftround		" Round tabs to a multiple of shiftwidth
 set wildmenu
 set wildmode=full
 set wildignore=".git/*,.clangd/*,build/*"
-set completeopt=menuone,preview,noinsert
+set completeopt=menuone,noinsert,noselect
 
 " Don't show extra message on completion
 " set shortmess+=c
