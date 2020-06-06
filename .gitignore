@@ -6,6 +6,7 @@
 .cmake
 .config/asciinema
 .config/BraveSoftware
+.config/darktable
 .config/eog
 .config/FreeCAD
 .config/GIMP
@@ -13,6 +14,7 @@
 .config/google-chrome*
 .config/gtk-2.0
 .config/KDAB
+.config/launcher-main
 .config/libreoffice
 .config/menus
 .config/mimeapps.list
@@ -26,6 +28,7 @@
 .config/spotify
 .config/teamviewer
 .config/totem
+.config/unity3d
 .config/vlc
 .config/zoomus.conf
 .dboard
@@ -48,6 +51,7 @@
 .local/share/applications
 .local/share/cache2
 .local/share/CMakeTools
+.local/share/Colossal Order
 .local/share/compatibility.ini
 .local/share/darling
 .local/share/data
@@ -68,6 +72,7 @@
 .local/share/nvim/*log
 .local/share/org.kde.syntax-highlighting
 .local/share/OfflineCache
+.local/share/Paradox Interactive
 .local/share/pkcs11.txt
 .local/share/Qt
 .local/share/recently-used.xbel
@@ -78,18 +83,23 @@
 .local/share/shotwell
 .local/share/sounds
 .local/share/startupCache
+.local/share/Steam
 .local/share/storage
 .local/share/teamviewer*
 .local/share/tracker
 .local/share/Trash
 .local/share/vlc
+.local/share/vulkan
 .local/share/webkitgtk
 .local/share/wine
 .local/share/xorg
 .mozilla
 .npm
 .parallel
+.paradoxlauncher
 .pki
+.steam*
+.sudo_as_admin_successful
 .thunderbird
 .vscode
 .wget-hsts
@@ -99,4 +109,5 @@ Downloads
 Pictures
 *gnome*
 snap
+Videos
 Telegram*
