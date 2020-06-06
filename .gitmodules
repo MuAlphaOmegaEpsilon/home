@@ -138,3 +138,6 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/vim-tmux
 	url = git@github.com:tmux-plugins/vim-tmux
 	branch = master
+[submodule "3rd-party/thread"]
+	path = 3rd-party/thread
+	url = git@github.com:boostorg/thread
