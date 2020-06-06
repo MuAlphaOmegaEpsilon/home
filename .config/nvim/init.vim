@@ -58,6 +58,9 @@ set number relativenumber
 set scrolloff=10	" Show N more rows when scrolling up/down
 set sidescrolloff=5	" Show N more columns when scrolling left/right
 
+" Improve CursorHold responsiveness
+set updatetime=300
+
 " Highlight trailing whitespace
 match TrailingWhitespace /\s\+$/
 
@@ -127,6 +130,8 @@ nmap 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nmap gr    <cmd>lua vim.lsp.buf.references()<CR>
 nmap g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
+" Show diagnostic on hover
+autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()
 " Set the default format tools
 autocmd FileType cpp set formatprg=clang-format-10
 autocmd FileType cmake set formatprg=clang-format
