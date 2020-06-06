@@ -133,3 +133,6 @@
 [submodule "3rd-party/thread"]
 	path = 3rd-party/thread
 	url = git@github.com:boostorg/thread
+[submodule "3rd-party/cheatsheets"]
+	path = 3rd-party/cheatsheets
+	url = git@github.com:cheat/cheatsheets
