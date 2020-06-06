@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+cd ~/.local/share/nvim/site/pack/git-plugins/start
+
+for PLUGIN in $(ls); do
+	tput setaf 4
+	echo "${PLUGIN}"
+	tput sgr0
+	cd ~/.local/share/nvim/site/pack/git-plugins/start/${PLUGIN}
+	git pull --prune
+	cd ..
+done
+
+git add .
