@@ -132,3 +132,6 @@
 [submodule "3rd-party/cheatsheets"]
 	path = 3rd-party/cheatsheets
 	url = git@github.com:cheat/cheatsheets
+[submodule "3rd-party/test-tlb"]
+	path = 3rd-party/test-tlb
+	url = git@github.com:torvalds/test-tlb
