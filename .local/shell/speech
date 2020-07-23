@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ $# -ne 2 ]; then
+	echo "First argument should be the language (e.g en, it)"
+	echo "Second argument should be a string"
+	exit 1
+fi
+
+mplayer	-ao alsa \
+		-really-quiet \
+		-noconsolecontrols \
+		"http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$2&tl=$1" \
+		2> /dev/null
