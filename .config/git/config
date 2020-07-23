@@ -3,7 +3,7 @@
 	email = tommasobonvicini@gmail.com
 
 [core]
-	editor = nano
+	editor = nvim
 
 [credential]
 	helper = cache --timeout=3600
