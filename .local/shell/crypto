@@ -1,0 +1,46 @@
+#!/bin/sh
+
+cross() {
+	echo "$1" | cut -d : -f 2 | cut -d \" -f 2
+}
+high() {
+	printf "%.3E" $(echo "$1" | cut -d : -f 3 | cut -d \" -f 2)
+}
+low() {
+	printf "%.3E" $(echo "$1" | cut -d : -f 4 | cut -d \" -f 2)
+}
+volume() {
+	echo "$1" | cut -d : -f 5 | cut -d \" -f 2 | cut -d . -f 1
+}
+h24() {
+	DELTA=$(echo "$1" | cut -d : -f 7 | cut -d \" -f 2)
+	IS_POSITIVE=$(echo "$DELTA < 0.0" | bc)
+	if [ "$IS_POSITIVE" -eq 0 ]; then
+		tput setaf 2 # Green color
+		printf "+"
+	else
+		tput setaf 1 # Red color
+	fi
+	printf "%.1f" "$DELTA"
+	tput sgr0
+}
+print() {
+	printf "%7s %s %s %7s %s\n" $(cross "$1") $(low "$1") $(high "$1") $(volume "$1") $(h24 "$1")
+}
+
+while true; do
+	ADA=$(curl --silent https://api.bittrex.com/v3/markets/ADA-USD/summary &)
+	BAT=$(curl --silent https://api.bittrex.com/v3/markets/BAT-USD/summary &)
+	BTC=$(curl --silent https://api.bittrex.com/v3/markets/BTC-USD/summary &)
+	ETH=$(curl --silent https://api.bittrex.com/v3/markets/ETH-USD/summary &)
+	XRP=$(curl --silent https://api.bittrex.com/v3/markets/XRP-USD/summary &)
+	clear
+
+	echo "  CROSS       LOW      HIGH  VOLUME  H24"
+	print "$ADA"
+	print "$BAT"
+	print "$BTC"
+	print "$ETH"
+	print "$XRP"
+	sleep 60
+done
