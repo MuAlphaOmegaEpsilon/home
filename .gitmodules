@@ -135,3 +135,6 @@
 [submodule "3rd-party/test-tlb"]
 	path = 3rd-party/test-tlb
 	url = git@github.com:torvalds/test-tlb
+[submodule "prj/fadingshade"]
+	path = prj/fadingshade
+	url = git@github.com:MuAlphaOmegaEpsilon/fadingshade
