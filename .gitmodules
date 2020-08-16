@@ -138,3 +138,6 @@
 [submodule "prj/fadingshade"]
 	path = prj/fadingshade
 	url = git@github.com:MuAlphaOmegaEpsilon/fadingshade
+[submodule "3rd-party/gmonitor"]
+	path = 3rd-party/gmonitor
+	url = git@github.com:mountassir/gmonitor
