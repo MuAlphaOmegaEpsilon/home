@@ -122,14 +122,13 @@ inoremap <S-Tab> <C-d>
 " Remove highlight when esc is pressed
 nmap <silent><ESC> :noh<CR>
 " Language server protocol mappings
-nmap gc <cmd>lua vim.lsp.buf.declaration()<CR>
-nmap gd <cmd>lua vim.lsp.buf.definition()<CR>
-nmap K <cmd>lua vim.lsp.buf.hover()<CR>
-nmap gim <cmd>lua vim.lsp.buf.implementation()<CR>
-"nmap <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nmap 1gD <cmd>lua vim.lsp.buf.type_definition()<CR>
-nmap gr <cmd>lua vim.lsp.buf.references()<CR>
-nmap g0 <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> <C-H> <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-F> <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gq    <cmd>lua vim.lsp.buf.formatting()<CR>
+vnoremap <silent> gq    <cmd>lua vim.lsp.buf.formatting()<CR><ESC>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> gd    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 
 " Show diagnostic on hover
 autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()
