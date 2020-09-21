@@ -114,10 +114,10 @@ map <C-h> <C-w>h
 nmap <S-Del> <ESC>dd
 imap <S-Del> <ESC>ddi
 " Normal and Visual mode tabbing/untabbing
-"nnoremap <Tab> >>
-"nnoremap <S-Tab> <<
-vmap <Tab> >
-vmap <S-Tab> <
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >
+vnoremap <S-Tab> <
 " Tab/untab without killing the selection in vmode
 vmap > >gv
 vmap < <gv
