@@ -91,7 +91,7 @@ nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Lef
 " Manually trigger completion
 inoremap <silent><expr> <C-p> completion#trigger_completion()
 " Close PopUpMenu without going back to Normal mode
-" inoremap <silent><expr> <ESC> pumvisible() ? "\<C-E>" : "\<ESC>"
+inoremap <silent><expr> <ESC> pumvisible() ? "\<C-E>" : "\<ESC>"
 " Apply currently selected hint inside PopUpMenu (Enter)
 " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Open file-explorer
