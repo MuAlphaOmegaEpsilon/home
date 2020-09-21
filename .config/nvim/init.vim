@@ -92,7 +92,7 @@ inoremap <silent><expr> <C-p> completion#trigger_completion()
 " Apply currently selected hint inside PopUpMenu (Enter)
 " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Open file-explorer
-map <C-e> :Explore<CR>
+map <C-e> :w<CR>:Explore<CR>
 " Tilde (F12)
 imap <F12> ~
 " Shift plus simple arrow motion applies selection
