@@ -85,8 +85,6 @@ nmap <C-s> :w<CR>
 imap <C-s> <ESC><C-s>i
 " Replace all instances under the cursor
 nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
-" Show the nvim documentation of the item under the cursor
-nmap H :execute 'h ' .expand('<cword>')<CR>
 " Manually trigger completion
 inoremap <silent><expr> <C-p> completion#trigger_completion()
 " Close PopUpMenu without going back to Normal mode
