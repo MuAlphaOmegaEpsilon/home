@@ -15,6 +15,10 @@ set noshowmode
 set t_Co=8
 set shell=/bin/bash
 
+" Time in milliseconds to wait for a mapped sequence to complete,
+" see https://goo.gl/vHvyu8 for more info
+set timeoutlen=1000
+
 " Tabulation and indentation config
 set tabstop=4		" Length of an actual \t character
 set shiftwidth=4	" Length to use when shifting text (eg. <<, >> and == commands)
