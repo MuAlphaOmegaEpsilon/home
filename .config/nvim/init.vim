@@ -86,9 +86,6 @@ imap <C-a> <ESC><C-a>
 " Save
 nmap <C-s> :w<CR>
 imap <C-s> <ESC><C-s>i
-" Find
-nmap <C-f> :noh<CR>:/
-imap <C-f> <ESC><C-f>
 " Replace all instances under the cursor
 nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
 " Show the nvim documentation of the item under the cursor
