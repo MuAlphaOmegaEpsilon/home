@@ -15,6 +15,9 @@ set noshowmode
 set t_Co=8
 set shell=/bin/bash
 
+" Make the tabs bar always visible, even when only one tab is present
+set showtabline=2
+
 " Persistent undo even after you close a file and re-open it
 set undofile
 
