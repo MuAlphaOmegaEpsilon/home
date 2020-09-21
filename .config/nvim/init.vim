@@ -121,6 +121,9 @@ nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 vnoremap <Tab> >
 vnoremap <S-Tab> <
+" Tabs cycling
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabNext<CR>
 " Tab/untab without killing the selection in vmode
 vmap > >gv
 vmap < <gv
