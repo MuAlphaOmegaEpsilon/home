@@ -49,9 +49,6 @@ set nowrap
 " Don't redraw during macros and stuff
 set lazyredraw
 
-" Highlight current cursor line
-" set cursorline
-
 " Improve searching
 set ignorecase smartcase
 
