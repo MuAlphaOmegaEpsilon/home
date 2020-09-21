@@ -114,8 +114,8 @@ imap <S-Del> <ESC>ddi
 vmap <Tab> >
 vmap <S-Tab> <
 " Tab/untab without killing the selection in vmode
-vmap < <gv
 vmap > >gv
+vmap < <gv
 " Insert mode untabbing
 inoremap <S-Tab> <C-d>
 " Remove highlight when esc is pressed
