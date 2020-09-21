@@ -143,9 +143,6 @@ nnoremap <silent> gd    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 
 " Show diagnostic on hover
 autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()
-" Set the default format tools
-autocmd FileType cpp set formatprg=clang-format-10
-autocmd FileType cmake set formatprg=clang-format
 " Enable integrated highlight on yank
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
