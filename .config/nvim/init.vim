@@ -15,6 +15,9 @@ set noshowmode
 set t_Co=8
 set shell=/bin/bash
 
+" Persistent undo even after you close a file and re-open it
+set undofile
+
 " Time in milliseconds to wait for a mapped sequence to complete,
 " see https://goo.gl/vHvyu8 for more info
 set timeoutlen=1000
