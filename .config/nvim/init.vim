@@ -95,6 +95,11 @@ inoremap <silent><expr> <C-p> completion#trigger_completion()
 map <C-e> :w<CR>:Explore<CR>
 " Tilde (F12)
 imap <F12> ~
+" Disable fast scroll using shift and arrows
+nmap <S-Up> <Up>
+vmap <S-Up> <Up>
+nmap <S-Down> <Down>
+vmap <S-Down> <Down>
 " Shift plus simple arrow motion applies selection
 imap <S-Left> <ESC>v<Left>
 imap <S-Right> <ESC>v<Right>
