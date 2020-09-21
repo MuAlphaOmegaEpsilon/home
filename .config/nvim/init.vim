@@ -141,6 +141,9 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gd    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 
+" Alias Vex so that it always open the new pane on the right
+cnoreabbrev Vex Vex!
+
 " Show diagnostic on hover
 autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()
 " Enable integrated highlight on yank
