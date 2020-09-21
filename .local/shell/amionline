@@ -1,8 +1,14 @@
 #!/bin/sh
 set -euf
 
+if nmcli d | grep "disconnected\|unavailable" | colrm 7 | grep wlp3s0 > /dev/null; then
+	echo no
+	exit 1
+fi
+
 if ping 8.8.8.8 -c 1 -W 1 1>/dev/null; then
 	echo yes
 else
 	echo no
+	exit 1
 fi
