@@ -120,6 +120,13 @@ vmap < <gv
 inoremap <S-Tab> <C-d>
 " Remove highlight when esc is pressed
 nmap <silent><ESC> :noh<CR>
+" Move row up and down
+nmap <C-S-Up> :move -2<CR>
+" vmap <C-S-Up> :move -2<CR> >gv
+imap <C-S-Up> <ESC>:move -2<CR>i
+nmap <C-S-Down> :move +1<CR>
+" vmap <C-S-Down> dpV >gv
+imap <C-S-Down> <ESC>:move +1<CR>i
 " Language server protocol mappings
 nnoremap <silent> <C-H> <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-F> <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
