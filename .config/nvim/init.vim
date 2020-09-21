@@ -89,7 +89,7 @@ imap <C-s> <ESC><C-s>i
 " Replace all instances under the cursor
 nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
 " Manually trigger completion
-inoremap <silent><expr> <C-p> completion#trigger_completion()
+inoremap <silent><expr> <C-Space> completion#trigger_completion()
 " Close PopUpMenu without going back to Normal mode
 inoremap <silent><expr> <ESC> pumvisible() ? "\<C-E>" : "\<ESC>"
 " Apply currently selected hint inside PopUpMenu (Enter)
