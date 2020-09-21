@@ -106,7 +106,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <C-h> <C-w>h
-" Cut entire line when in insert mode (Shift+Canc)
+" Cut entire line (Shift+Canc)
+nmap <S-Del> <ESC>dd
 imap <S-Del> <ESC>ddi
 " Normal and Visual mode tabbing/untabbing
 "nnoremap <Tab> >>
