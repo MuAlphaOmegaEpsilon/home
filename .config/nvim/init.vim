@@ -172,6 +172,9 @@ let g:completion_chain_complete_list = {
 \   }
 \}
 
+"--- NERDCommenter
+let g:NERDSpaceDelims = 1
+
 "--- Ultisnips ---
 " let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/ultisnips/']
 
