@@ -116,6 +116,9 @@ map <C-h> <C-w>h
 " Cut entire line (Shift+Canc)
 nmap <S-Del> <ESC>dd
 imap <S-Del> <ESC>ddi
+" Comment line out
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 " Normal and Visual mode tabbing/untabbing
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
