@@ -141,3 +141,7 @@
 [submodule "3rd-party/gmonitor"]
 	path = 3rd-party/gmonitor
 	url = git@github.com:mountassir/gmonitor
+[submodule ".local/share/nvim/site/pack/git-plugins/start/nerdcommenter"]
+	path = .local/share/nvim/site/pack/git-plugins/start/nerdcommenter
+	url = git@github.com:preservim/nerdcommenter
+	branch = master
