@@ -7,6 +7,9 @@ export WINEPREFIX
 CMAKE_LLVM="-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DLLVM_ENABLE_LLD=ON -DLLVM_ENABLE_IDE=ON"
 export CMAKE_LLVM
 
+CMAKE_GENERATOR="Ninja"
+export CMAKE_GENERATOR
+
 CPP_BASE="-O3 -std=c++2a"
 CPP_STRICT_ARGS="-Wall -Warray-bounds=2 -Wdouble-promotion -Weffc++ -Wextra -Wimplicit-fallthrough=5 -Winit-self -Wfloat-equal -Wformat=2 -Wformat-overflow=2 -Wformat-signedness -Wformat-truncation=2 -Wmisleading-indentation -Wmissing-include-dirs -Wnull-dereference -Wparentheses -Wpedantic -Wshadow -Wstrict-aliasing=1 -Wstrict-overflow=5 -Wstringop-overflow=4 -Wtautological-compare -Wuninitialized -Wvector-operation-performance"
 CPP_NO_RTTX="-fno-rtti -fno-exceptions"
