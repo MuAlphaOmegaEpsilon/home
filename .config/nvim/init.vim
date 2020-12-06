@@ -156,7 +156,7 @@ nnoremap <silent> gD    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 cnoreabbrev Vex Vex!
 
 " Show diagnostic on hover
-autocmd CursorHold * lua vim.lsp.util.show_line_diagnostics()
+autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 " Enable integrated highlight on yank
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
