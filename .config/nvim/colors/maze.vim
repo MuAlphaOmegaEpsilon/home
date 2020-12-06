@@ -91,10 +91,18 @@ hi SpellCap		ctermfg=04 ctermbg=05
 hi Todo			ctermfg=03 ctermbg=05
 
 "--- nvim-lsp ---
-hi LspDiagnosticsError		ctermfg=01
-hi LspDiagnosticsWarning	ctermfg=04
-hi LspDiagnosticHint      	ctermfg=03
-hi LspDiagnosticInformation	ctermfg=04
+hi LspDiagnosticsSignError				ctermfg=01
+hi LspDiagnosticsSignWarning			ctermfg=04
+hi LspDiagnosticsSignHint				ctermfg=03
+hi LspDiagnosticsSignInformation		ctermfg=04
+hi LspDiagnosticsFloatingError			ctermfg=01
+hi LspDiagnosticsFloatingWarning		ctermfg=04
+hi LspDiagnosticsFloatingHint			ctermfg=03
+hi LspDiagnosticsFloatingInformation	ctermfg=04
+hi LspDiagnosticsVirtualTextError		ctermfg=01
+hi LspDiagnosticsVirtualTextWarning		ctermfg=04
+hi LspDiagnosticsVirtualTextHint    	ctermfg=03
+hi LspDiagnosticsVirtualTextInformation	ctermfg=04
 hi LspReferenceText			ctermbg=03
 hi LspReferenceRead			ctermbg=03
 hi LspReferenceWrite		ctermbg=03
