@@ -50,15 +50,13 @@ hi Debug		ctermfg=15	"	debugging statements
 
 hi Underlined	ctermfg=15 ctermbg=05	"	text that stands out, HTML links
 
-hi SignColumn	ctermbg=05
+hi SignColumn	ctermbg=07
 
 hi LineNr		ctermfg=00 ctermbg=07
 hi CursorLine	cterm=none ctermbg=05
-" hi StatusLine		ctermfg=
-" hi StatusLineNC	ctermfg=
 
 hi DiffAdd		ctermfg=02 ctermbg=05
-hi DiffChange	ctermfg=07 ctermbg=05
+hi DiffChange	ctermfg=04 ctermbg=05
 hi DiffDelete	ctermfg=01 ctermbg=05
 
 hi MatchParen	ctermfg=15 ctermbg=00	"	Highlight to apply to matching parenthesis
@@ -91,10 +89,10 @@ hi SpellCap		ctermfg=04 ctermbg=05
 hi Todo			ctermfg=03 ctermbg=05
 
 "--- nvim-lsp ---
-hi LspDiagnosticsSignError				ctermfg=01
-hi LspDiagnosticsSignWarning			ctermfg=04
-hi LspDiagnosticsSignHint				ctermfg=03
-hi LspDiagnosticsSignInformation		ctermfg=04
+hi LspDiagnosticsSignError				ctermfg=00 ctermbg=01
+hi LspDiagnosticsSignWarning			ctermfg=00 ctermbg=04
+hi LspDiagnosticsSignHint				ctermfg=00 ctermbg=03
+hi LspDiagnosticsSignInformation		ctermfg=00 ctermbg=04
 hi LspDiagnosticsFloatingError			ctermfg=01
 hi LspDiagnosticsFloatingWarning		ctermfg=04
 hi LspDiagnosticsFloatingHint			ctermfg=03
