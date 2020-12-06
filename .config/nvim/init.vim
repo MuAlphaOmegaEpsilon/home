@@ -33,6 +33,9 @@ set autoindent		" Reproduce the previous line indentation
 set smartindent		" Automatically increase/decrease indentation relative to { } blocks
 set cindent			" A stricter smartindent which works better for the C language
 set shiftround		" Round tabs to a multiple of shiftwidth
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType svg setlocal shiftwidth=2 tabstop=2
 
 " Better autocompletion
 set wildmenu
