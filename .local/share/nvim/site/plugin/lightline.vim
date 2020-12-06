@@ -39,10 +39,10 @@ let g:lightline = {
 	\ 'colorscheme': 'maze_lightline',
 	\ }
 let g:lightline.component = {
-	\ 'errors': '%{luaeval("vim.lsp.util.buf_diagnostics_count(\"Error\")")}',
-	\ 'warnings': '%{luaeval("vim.lsp.util.buf_diagnostics_count(\"Warning\")")}',
-	\ 'infos': '%{luaeval("vim.lsp.util.buf_diagnostics_count(\"Information\")")}',
-	\ 'hints': '%{luaeval("vim.lsp.util.buf_diagnostics_count(\"Hint\")")}',
+	\ 'errors': '%{luaeval("vim.lsp.diagnostic.get_count(\"Error\")")}',
+	\ 'warnings': '%{luaeval("vim.lsp.diagnostic.get_count(\"Warning\")")}',
+	\ 'infos': '%{luaeval("vim.lsp.diagnostic.get_count(\"Information\")")}',
+	\ 'hints': '%{luaeval("vim.lsp.diagnostic.get_count(\"Hint\")")}',
 	\ 'lineinfo': "%{printf('%d/%d:%d', line('.'),  line('$'), col('.'))}",
 	\ }
 let g:lightline.active = {
