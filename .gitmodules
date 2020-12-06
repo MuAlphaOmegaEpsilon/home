@@ -94,9 +94,9 @@
 	path = 3rd-party/isign
 	url = git@github:appknow/isign
 	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/nvim-lsp"]
-	path = .local/share/nvim/site/pack/git-plugins/start/nvim-lsp
-	url = git@github.com:neovim/nvim-lsp
+[submodule ".local/share/nvim/site/pack/git-plugins/start/lspconfig"]
+	path = .local/share/nvim/site/pack/git-plugins/start/lspconfig
+	url = git@github.com:neovim/lspconfig
 	branch = master
 [submodule ".certs"]
 	path = .certs
