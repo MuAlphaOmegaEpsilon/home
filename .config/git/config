@@ -75,3 +75,7 @@
 	theme = flat-dark-grey
 	safemode = true
 	tabwidth = 4
+
+[delta]
+	plus-style = 0 10
+	plus-emph-style = 0 2
