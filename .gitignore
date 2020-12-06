@@ -4,11 +4,13 @@
 .cache
 .clangd
 .cmake
+.config/1Password
 .config/asciinema
 .config/BraveSoftware
 .config/darktable
 .config/digikamrc
 .config/eog
+.config/evince
 .config/FreeCAD
 .config/geeqie
 .config/GIMP
@@ -45,10 +47,12 @@
 .config/unity3d
 .config/vlc
 .config/zoomus.conf
+.cups
 .dboard
 .debug
 .docker
 .FreeCAD
+.gnuplot_history
 .launchpadlib
 .local/bin
 .local/include
@@ -76,6 +80,7 @@
 .local/share/evolution
 .local/share/flatpak
 .local/share/fonts
+.local/share/gedit
 .local/share/gvfs-metadata
 .local/share/hicolor
 .local/share/icc
@@ -94,6 +99,7 @@
 .local/share/Paradox Interactive
 .local/share/pkcs11.txt
 .local/share/Qt
+.local/share/QtIcon.png
 .local/share/recently-used.xbel
 .local/share/rhythmbox
 .local/share/safebrowsing
@@ -121,14 +127,17 @@
 .npm
 .parallel
 .paradoxlauncher
+.pipewire-media-session
 .pki
 .pulse-cookie
 .steam*
 .sudo_as_admin_successful
 .thunderbird
+.viminfo
 .vscode
 .wget-hsts
 .Xauthority
+.xournal
 .zoom
 Desktop
 Downloads
