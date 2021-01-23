@@ -48,6 +48,8 @@
 	ls = ls-files
 	ign = ls-files -o -i --exclude-standard
 
+	path = rev-parse --git-path .
+
 	pl = pull --prune
 
 	ps = push
