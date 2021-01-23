@@ -37,6 +37,7 @@
 .config/Qt*
 .config/RawTherapee
 .config/Rygel
+.config/rygel.conf
 .config/session
 .config/skypeforlinux
 .config/sqlitebrowser
@@ -81,6 +82,7 @@
 .local/share/flatpak
 .local/share/fonts
 .local/share/gedit
+.local/share/grilo-plugins
 .local/share/gvfs-metadata
 .local/share/hicolor
 .local/share/icc
