@@ -3,6 +3,6 @@ set -euf
 
 MAP="${XDG_DATA_HOME}"/kbd/it.map.gz
 
-if [ ! -f "${MAP}" ]; then echo "No it.map.gz found."; exit; fi
+if [ ! -f "${MAP}" ]; then echo "No it.map.gz found at ${MAP}."; exit; fi
 
 sudo ln -s -f "${MAP}" /usr/share/keymaps/i386/qwerty/it.map.gz
