@@ -16,8 +16,10 @@
 .config/GIMP
 .config/git/gitk
 .config/gitui/theme.*
+.config/gmic
 .config/google-chrome*
 .config/gpick
+.config/GREYC
 .config/gtk-2.0
 .config/inkscape
 .config/kcalcrc
@@ -26,6 +28,7 @@
 .config/launcher-main
 .config/libreoffice
 .config/lutris
+.config/Meltytech
 .config/menus
 .config/Microsoft
 .config/mimeapps.list
@@ -89,6 +92,7 @@
 .local/share/icons
 .local/share/keyrings
 .local/share/lutris
+.local/share/Meltytech
 .local/share/mime
 .local/share/minecraft
 .local/share/nano
