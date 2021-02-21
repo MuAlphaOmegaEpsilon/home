@@ -145,3 +145,9 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/nerdcommenter
 	url = git@github.com:preservim/nerdcommenter
 	branch = master
+[submodule "prj/-b"]
+	path = prj/-b
+	url = git@github.com:MuAlphaOmegaEpsilon/quantum
+[submodule "prj/quantum"]
+	path = prj/quantum
+	url = git@github.com:MuAlphaOmegaEpsilon/quantum
