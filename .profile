@@ -24,12 +24,9 @@ if [ -f /etc/profile ]; then . /etc/profile; fi
 
 if [ -n "${BASH_VERSION:-}" ]; then
 	shopt -s autocd								# Automatically cd into a directory
-	shopt -s cdable_vars						# Use vars content as dir names
-	shopt -s cdspell							# Autocorrect typos in path names when using cd
 	shopt -s checkjobs							# Notify about running jobs on exit
 	shopt -s checkwinsize						# Update LINES and COLUMNS after each command
 	shopt -s direxpand							# Complete dir name on word expansion
-	shopt -s dirspell							# Autocorrect directory spelling
 	shopt -s globstar							# Enable the "**" pattern for globbing
 
 	if [ -f /etc/bash.bashrc ]; then . /etc/bash.bashrc; fi
