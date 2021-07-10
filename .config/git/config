@@ -11,6 +11,7 @@
 
 [merge]
 	ff = only
+	tool = delta
 
 [pull]
 	ff = only
@@ -81,3 +82,7 @@
 [delta]
 	plus-style = 0 10
 	plus-emph-style = 0 2
+[gui]
+	editor = nvim
+[diff]
+	tool = delta
