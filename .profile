@@ -46,7 +46,7 @@ if [ -n "${BASH_VERSION:-}" ]; then
 	neofetch
 fi
 
-export EDITOR=nano
+export EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1						# Enable Wayland usage for Mozilla Firefox
 export PATH="${XDG_LOCAL_HOME}/bin:${PATH}"		# Include generic executables files in PATH
 export PATH="${XDG_LOCAL_HOME}/shell:${PATH}"	# Include user shell files in PATH
