@@ -57,9 +57,9 @@ export PATH="${XDG_LOCAL_HOME}/lib/android/cmdline-tools/latest/bin:${PATH}"
 
 __prompt_command() {
 	if [ "$?" -eq 0 ]; then
-		export PS1="\[$(tput bold)\]>\[$(tput sgr0)\] "
+		export PS1="\[$(tput bold)\]>\[$(tput sgr0)\]$(tmux refresh -S) "
 	else
-		export PS1="\[$(tput setaf 1)\]>\[$(tput sgr0)\] "
+		export PS1="\[$(tput setaf 1)\]>\[$(tput sgr0)\]$(tmux refresh -S) "
 	fi
 }
 PROMPT_COMMAND=__prompt_command

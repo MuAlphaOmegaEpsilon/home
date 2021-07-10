@@ -8,8 +8,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias cd="(tmux source-file ~/.config/tmux/tmux.conf &) && cd"
-
 # cmake
 alias cmakej="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja"
 alias cmakebt='ctest --timeout 1 --build-and-test . build --build-generator Ninja --test-command ctest --output-on-failure'
