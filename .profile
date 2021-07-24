@@ -1,8 +1,3 @@
-export XDG_CONFIG_HOME="${HOME}/.config"		# Where user configuration files should be stored
-export XDG_CACHE_HOME="${HOME}/.cache"			# Where user non-essential data files should be stored
-export XDG_LOCAL_HOME="${HOME}/.local"			# Where user main dirs should be stored
-export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be stored
-export XDG_3RD_PARTY="${HOME}/3rd-party"		# Where 3rd party git users directories should be stored
 
 if [ "${TERM}" = "linux" ]; then
 	$(command -v setfont) /usr/share/consolefonts/Lat15-Terminus20x10.psf.gz;
@@ -35,22 +30,11 @@ if [ -n "${BASH_VERSION:-}" ]; then
 
 	[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-	export HISTSIZE=1000						# History live should have this many lines
-	export HISTCONTROL=ignoreboth				# No duplicate and no space-starting lines
-
 	eval "$(dircolors ${XDG_CONFIG_HOME}/dircolors)"	# Set the LS_COLORS env variable
 
 	neofetch
 fi
 
-export EDITOR=nvim
-export MOZ_ENABLE_WAYLAND=1						# Enable Wayland usage for Mozilla Firefox
-export PATH="${XDG_LOCAL_HOME}/bin:${PATH}"		# Include generic executables files in PATH
-export PATH="${XDG_LOCAL_HOME}/shell:${PATH}"	# Include user shell files in PATH
-export PATH="${XDG_LOCAL_HOME}/shell/$(hostname):${PATH}" # Include user machine-specific shell files in PATH
-export PATH="${XDG_3RD_PARTY}/cctools-port/usage_examples/ios_toolchain/target/bin:${PATH}" # Include user machine-specific shell files in PATH
-export PATH="${XDG_LOCAL_HOME}/lib/android/cmdline-tools/latest/bin:${PATH}"
-#export PATH="${XDG_3RD_PARTY}/isign/bin:${PATH}" # Include isign binaries
 
 prompt_command() {
 	if [ "$?" -eq 0 ]; then

@@ -40,3 +40,19 @@ LOCINCLUDE="-fPIC -I${XDG_LOCAL_HOME}/lib/Qt/5.14.1/gcc_64/include -I${XDG_LOCAL
 LOCFILE="${LOCINCLUDE}"
 export LOCINCLUDE
 export LOCFILE
+export CMAKE_GENERATOR="Ninja"
+export DPREFIX="${XDG_DATA_HOME}/darling"
+export EDITOR=nvim
+export HISTCONTROL=ignoreboth				# No duplicate and no space-starting lines
+export HISTSIZE=1000						# History live should have this many lines
+export LESS=-R
+export MOZ_ENABLE_WAYLAND=1						# Enable Wayland usage for Mozilla Firefox
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+export WGET2RC="${XDG_CONFIG_HOME}/wget2/config"
+export WINEPREFIX="${XDG_DATA_HOME}/wine"
+export XDG_3RD_PARTY="${HOME}/3rd-party"		# Where 3rd party git users directories should be stored
+export XDG_CACHE_HOME="${HOME}/.cache"			# Where user non-essential data files should be stored
+export XDG_CONFIG_HOME="${HOME}/.config"		# Where user configuration files should be stored
+export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be stored
+export XDG_LOCAL_HOME="${HOME}/.local"			# Where user main dirs should be stored
+export PATH="${HOME}/.local/bin:${HOME}/.local/shell:${HOME}/.local/shell/$(hostname):${PATH}"
