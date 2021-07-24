@@ -15,7 +15,9 @@ for file in "${XDG_CONFIG_HOME}"/private.d/*; do . "${file}"; done
 for file in "${XDG_CONFIG_HOME}"/profile.d/"$(hostname)"/*; do . "${file}"; done
 
 
+if [ "${TMUX_PANE}" == "%0" ]; then
 	neofetch
+fi
 
 
 tabs 4
