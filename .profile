@@ -8,13 +8,11 @@ if [ -z "${TMUX:-}" ] && [ -n "${PS1:-}" ]; then
 	exec /usr/bin/tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR:-}"
 	exit
 fi
-
-. "${XDG_CONFIG_HOME}"/profile.d/aliases
-. "${XDG_CONFIG_HOME}"/profile.d/env
+if [ -f /etc/profile ]; then . /etc/profile; fi
+. "${HOME}"/.config/profile.d/env
+. "${HOME}"/.config/profile.d/aliases
 for file in "${XDG_CONFIG_HOME}"/private.d/*; do . "${file}"; done
 for file in "${XDG_CONFIG_HOME}"/profile.d/"$(hostname)"/*; do . "${file}"; done
-
-if [ -f /etc/profile ]; then . /etc/profile; fi
 
 if [ -n "${BASH_VERSION:-}" ]; then
 	shopt -s autocd								# Automatically cd into a directory
