@@ -18,7 +18,6 @@ if [ "${TMUX_PANE}" == "%0" ]; then
 	neofetch
 fi
 
-
 tabs 4
 shopt -s autocd			# Automatically cd into a directory
 shopt -s checkjobs		# Notify about running jobs on exit
