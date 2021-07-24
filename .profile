@@ -52,11 +52,17 @@ export PATH="${XDG_3RD_PARTY}/cctools-port/usage_examples/ios_toolchain/target/b
 export PATH="${XDG_LOCAL_HOME}/lib/android/cmdline-tools/latest/bin:${PATH}"
 #export PATH="${XDG_3RD_PARTY}/isign/bin:${PATH}" # Include isign binaries
 
-__prompt_command() {
+prompt_command() {
 	if [ "$?" -eq 0 ]; then
-		export PS1="\[$(tput bold)\]>\[$(tput sgr0)\]$(tmux refresh -S) "
+		export PS1="\[$(tput bold)\]>\[$(tput sgr0)\] "
 	else
-		export PS1="\[$(tput setaf 1)\]>\[$(tput sgr0)\]$(tmux refresh -S) "
+		export PS1="\[$(tput setaf 1)\]>\[$(tput sgr0)\] "
+	fi
+	TMUX_CURRENT_REFRESH=$(date +%s)
+	TMUX_DELTA_REFRESH=$(($TMUX_CURRENT_REFRESH - ${TMUX_LAST_REFRESH:-0}))
+	export TMUX_LAST_REFRESH=${TMUX_CURRENT_REFRESH}
+	if [ "${TMUX_DELTA_REFRESH}" -gt 1 ]; then
+		tmux refresh -S
 	fi
 }
-PROMPT_COMMAND=__prompt_command
+PROMPT_COMMAND=prompt_command
