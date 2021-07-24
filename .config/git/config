@@ -36,7 +36,7 @@
 
 	d = diff --stat
 	dl = diff
-	dnp = !git --no-pager diff --color | bat
+	dnp = !git --no-pager diff --color
 	dc = diff --cached
 	dss = diff --shortstat
 
