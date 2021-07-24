@@ -6,7 +6,6 @@ fi
 
 if [ -z "${TMUX:-}" ] && [ -n "${PS1:-}" ]; then
 	exec /usr/bin/tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR:-}"
-	tabs 4
 	exit
 fi
 
