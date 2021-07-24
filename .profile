@@ -1,19 +1,18 @@
-
 if [ "${TERM}" = "linux" ]; then
 	$(command -v setfont) /usr/share/consolefonts/Lat15-Terminus20x10.psf.gz;
-	$(command -v setvtrgb) "${XDG_CONFIG_HOME}"/vtrgb/maze;
+	$(command -v setvtrgb) "${HOME}"/.config/vtrgb/maze;
 fi
 
 if [ -z "${TMUX:-}" ] && [ -n "${PS1:-}" ]; then
-	exec /usr/bin/tmux -f "${XDG_CONFIG_HOME}/tmux/tmux.conf" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR:-}"
+	exec /usr/bin/tmux -f "${HOME}/.config/tmux/tmux.conf" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR:-}"
 	exit
 fi
+
 if [ -f /etc/profile ]; then . /etc/profile; fi
 . "${HOME}"/.config/profile.d/env
 . "${HOME}"/.config/profile.d/aliases
-for file in "${XDG_CONFIG_HOME}"/private.d/*; do . "${file}"; done
-for file in "${XDG_CONFIG_HOME}"/profile.d/"$(hostname)"/*; do . "${file}"; done
-
+for file in "${HOME}"/.config/private.d/*; do . "${file}"; done
+for file in "${HOME}"/.config/profile.d/"$(hostname)"/*; do . "${file}"; done
 
 if [ "${TMUX_PANE}" == "%0" ]; then
 	neofetch
