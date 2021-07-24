@@ -14,24 +14,24 @@ if [ -f /etc/profile ]; then . /etc/profile; fi
 for file in "${XDG_CONFIG_HOME}"/private.d/*; do . "${file}"; done
 for file in "${XDG_CONFIG_HOME}"/profile.d/"$(hostname)"/*; do . "${file}"; done
 
-if [ -n "${BASH_VERSION:-}" ]; then
-	shopt -s autocd								# Automatically cd into a directory
-	shopt -s checkjobs							# Notify about running jobs on exit
-	shopt -s checkwinsize						# Update LINES and COLUMNS after each command
-	shopt -s direxpand							# Complete dir name on word expansion
-	shopt -s globstar							# Enable the "**" pattern for globbing
-
-	if [ -f /etc/bash.bashrc ]; then . /etc/bash.bashrc; fi
-	if [ -f /usr/share/defaults/etc/bash.bashrc ]; then	. /usr/share/defaults/etc/bash.bashrc; fi
-	for file in "${XDG_CONFIG_HOME}"/profile.d/autocomplete/*; do . "${file}"; done
-
-	[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-	eval "$(dircolors ${XDG_CONFIG_HOME}/dircolors)"	# Set the LS_COLORS env variable
 
 	neofetch
-fi
 
+
+tabs 4
+shopt -s autocd			# Automatically cd into a directory
+shopt -s checkjobs		# Notify about running jobs on exit
+shopt -s checkwinsize	# Update LINES and COLUMNS after each command
+shopt -s direxpand		# Complete dir name on word expansion
+shopt -s globstar		# Enable the "**" pattern for globbing
+
+if [ -f /etc/bash.bashrc ]; then . /etc/bash.bashrc; fi
+if [ -f /usr/share/defaults/etc/bash.bashrc ]; then	. /usr/share/defaults/etc/bash.bashrc; fi
+for file in "${HOME}"/.config/profile.d/autocomplete/*; do . "${file}"; done
+
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+eval "$(dircolors ${HOME}/.config/dircolors)"	# Set the LS_COLORS env variable
 
 prompt_command() {
 	if [ "$?" -eq 0 ]; then
