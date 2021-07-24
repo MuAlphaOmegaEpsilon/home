@@ -21,6 +21,7 @@
 .config/gpick
 .config/GREYC
 .config/gtk-2.0
+.config/guvcview2
 .config/inkscape
 .config/kcalcrc
 .config/KDAB
@@ -45,6 +46,7 @@
 .config/skypeforlinux
 .config/sqlitebrowser
 .config/spotify
+.config/stacer
 .config/teams
 .config/teamviewer
 .config/totem
@@ -56,6 +58,7 @@
 .debug
 .docker
 .FreeCAD
+.gnupg
 .gnuplot_history
 .launchpadlib
 .local/bin
@@ -96,6 +99,7 @@
 .local/share/mime
 .local/share/minecraft
 .local/share/nano
+.local/share/nvim/.netrwhist
 .local/share/nvim/shada
 .local/share/nvim/undo
 .local/share/nvim/*log
