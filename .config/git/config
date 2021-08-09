@@ -29,6 +29,7 @@
 	ba = branch --all
 
 	cm = commit -m
+	ce = commit --allow-empty-message -m ""
 	cf = commit --fixup
 
 	contributions = shortlog --numbered
