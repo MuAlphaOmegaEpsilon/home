@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+if ! command -v align_image_stack > /dev/null; then
+	echo Command align_image_stack not found, install hugin-tools
+	exit 1
+fi
+if ! command -v enfuse > /dev/null; then
+	echo Command enfuse not found
+	exit 1
+fi
+
+align_image_stack -a aligned_ -v -m -c 16 -g 10 ${@}
+enfuse -o result.tiff --exposure-weight=0 --saturation-weight=0 --contrast-weight=1 --hard-mask aligned_*
+rm aligned_*
