@@ -146,3 +146,9 @@
 [submodule "prj/minimalib"]
 	path = prj/minimalib
 	url = git@github.com:MuAlphaOmegaEpsilon/minimalib
+[submodule "prj/collatz"]
+	path = prj/collatz
+	url = git@gist.github.com:d916d5fe603d07ff695ccad67eb98f64
+[submodule "prj/books"]
+	path = prj/books
+	url = git@github.com:MuAlphaOmegaEpsilon/books
