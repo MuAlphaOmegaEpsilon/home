@@ -73,7 +73,7 @@
 
 [cola]
 	spellcheck = false
-	fontdiff = Monospace,12,-1,5,50,0,0,0,0,0
+	fontdiff = Monospace,8,-1,5,50,0,0,0,0,0
 	hidpi = 1.5
 	theme = flat-dark-grey
 	safemode = true
