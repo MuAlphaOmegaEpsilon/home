@@ -33,21 +33,21 @@ extractValue()
 
 ahead()
 {
-	git rev-list --left-right --count HEAD...@{upstream} | cut -f 1
+	git --no-optional-locks rev-list --left-right --count HEAD...@{upstream} | cut -f 1
 }
 
 behind()
 {
-	git rev-list --left-right --count HEAD...@{upstream} | cut -f 2
+	git --no-optional-locks rev-list --left-right --count HEAD...@{upstream} | cut -f 2
 }
 
 branch()
 {
-	git branch | grep "*" | colrm 1 2
+	git --no-optional-locks branch | grep "*" | colrm 1 2
 }
 repopath()
 {
-	git worktree list --porcelain 2> /dev/null | grep worktree | cut --delimiter=" " --fields 2
+	git --no-optional-locks worktree list --porcelain 2> /dev/null | grep worktree | cut --delimiter=" " --fields 2
 }
 repo()
 {
@@ -55,23 +55,23 @@ repo()
 }
 edited()
 {
-	git status --porcelain 2> /dev/null | colrm 3 | colrm 1 1 | grep -v " \|?" | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 3 | colrm 1 1 | grep -v " \|?" | wc -l
 }
 staged()
 {
-	git status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?" | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?" | wc -l
 }
 stagedin()
 {
-	git status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|D" | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|D" | wc -l
 }
 stagedout()
 {
-	git status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|m\|M\|A" | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|m\|M\|A" | wc -l
 }
 untracked()
 {
-	git status --porcelain 2> /dev/null | colrm 2 | grep ? | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep ? | wc -l
 }
 
 for arg in "${@:---help}"; do
