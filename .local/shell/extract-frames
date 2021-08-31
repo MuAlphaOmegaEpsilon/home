@@ -1,0 +1,38 @@
+#!/bin/sh
+set -euf
+
+if [ $# -ne 1 ]; then
+	echo "Filename is required"
+	exit 1
+fi
+
+FORMAT=$(echo ${1} | cut -d . -f 2)
+
+case "${FORMAT}" in
+	avi) ;;
+	AVI) ;;
+	mov) ;;
+	MOV) ;;
+	mp4) ;;
+	MP4) ;;
+	*) echo "Unsupported format ${FORMAT}"; exit 1;;
+esac
+
+if [ ! -f ${1} ]; then
+	echo "${1} was not found"
+	exit 1
+fi
+
+NAME=$(echo ${1} | cut -d . -f 1)
+FRAMES=$(ffprobe \
+			-i ${1} \
+			-select_streams v:0 \
+			-show_entries stream=nb_frames \
+			-of csv=p=0 \
+			2> /dev/null | grep nb_frames | colrm 1 10)
+
+rm -rf $NAME
+mkdir -p $NAME
+
+DIGITS=$(expr $(echo $FRAMES | wc -c) - 1)
+ffmpeg -r 1 -i ${1} -r 1 "${NAME}"/%0"${DIGITS}"d.bmp
