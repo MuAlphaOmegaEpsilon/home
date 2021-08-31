@@ -1,15 +1,3 @@
-output eDP-1 {
-	scale 2
-	subpixel rgb
-	background $HOME/images/background.jpg fill	
-}
-
-input "1118:2024:Microsoft_Surface_Type_Cover_Touchpad" {
-	   tap enabled
-       accel_profile adaptive
-       natural_scroll enabled	
-}
-
 input * xkb_layout "it"
 
 bar swaybar0 {
@@ -20,7 +8,6 @@ bar swaybar0 {
 	pango_markup enabled
 
 	status_padding 0
-	status_command $XDG_CONFIG_HOME/sway/statusbar.sh
 
 	bindsym button1 exec "swaynag -t warning -m 'Do you really wanna quit?' -b 'Yes, quit!' 'swaymsg exit'"
 
