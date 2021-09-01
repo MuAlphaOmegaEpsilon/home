@@ -117,37 +117,43 @@
 [submodule "3rd-party/thread"]
 	path = 3rd-party/thread
 	url = git@github.com:boostorg/thread
+	branch = master
 [submodule "3rd-party/cheatsheets"]
 	path = 3rd-party/cheatsheets
 	url = git@github.com:cheat/cheatsheets
+	branch = master
 [submodule "3rd-party/test-tlb"]
 	path = 3rd-party/test-tlb
 	url = git@github.com:torvalds/test-tlb
+	branch = master
 [submodule "prj/fadingshade"]
 	path = prj/fadingshade
 	url = git@github.com:MuAlphaOmegaEpsilon/fadingshade
+	branch = master
 [submodule "3rd-party/gmonitor"]
 	path = 3rd-party/gmonitor
 	url = git@github.com:mountassir/gmonitor
+	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/nerdcommenter"]
 	path = .local/share/nvim/site/pack/git-plugins/start/nerdcommenter
 	url = git@github.com:preservim/nerdcommenter
 	branch = master
-[submodule "prj/-b"]
-	path = prj/-b
-	url = git@github.com:MuAlphaOmegaEpsilon/quantum
 [submodule "prj/quantum"]
 	path = prj/quantum
 	url = git@github.com:MuAlphaOmegaEpsilon/quantum
+	branch = master
 [submodule "prj/minimalib"]
 	path = prj/minimalib
 	url = git@github.com:MuAlphaOmegaEpsilon/minimalib
+	branch = master
 [submodule "prj/collatz"]
 	path = prj/collatz
 	url = git@gist.github.com:d916d5fe603d07ff695ccad67eb98f64
+	branch = master
 [submodule "prj/books"]
 	path = prj/books
 	url = git@github.com:MuAlphaOmegaEpsilon/books
+	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/nvim-lspconfig"]
 	path = .local/share/nvim/site/pack/git-plugins/start/nvim-lspconfig
 	url = git@github.com:neovim/nvim-lspconfig
