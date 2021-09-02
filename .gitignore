@@ -8,6 +8,7 @@
 .cmake
 .config/1Password
 .config/akregatorrc
+.config/arkrc
 .config/asciinema
 .config/baloofileinformationrc
 .config/bluedevilglobalrc
@@ -57,12 +58,14 @@
 .config/kinfocenterrc
 .config/kio_httprc
 .config/kiorc
+.config/klaunchrc
 .config/kmenueditrc
 .config/kmixrc
 .config/konsolerc
 .config/korgacrc
 .config/krunnerrc
 .config/kscreenlockerrc
+.config/kservicemenurc
 .config/ksmserverrc
 .config/ksysguardrc
 .config/ktimezonedrc
@@ -135,6 +138,7 @@
 .launchpadlib
 .lesshst
 .nvidia-settings-rc
+.xsession-errors
 .local/bin
 .local/include
 .local/lib
@@ -150,6 +154,7 @@
 .local/share/*.xbel*
 .local/share/app-info
 .local/share/applications
+.local/share/ark
 .local/share/Aspyr
 .local/share/Baldur's Gate - Enhanced Edition
 .local/share/barrier
@@ -183,6 +188,7 @@
 .local/share/kscreen
 .local/share/ksysguard
 .local/share/kwalletd
+.local/share/kxmlgui5
 .local/share/lutris
 .local/share/Meltytech
 .local/share/mime
@@ -193,6 +199,7 @@
 .local/share/nvim/undo
 .local/share/nvim/*log
 .local/share/.org.chromium*
+.local/share/okular
 .local/share/org.kde.syntax-highlighting
 .local/share/OfflineCache
 .local/share/Paradox Interactive
@@ -219,6 +226,7 @@
 .local/share/vortex-mod-manager
 .local/share/vsliveshare
 .local/share/vulkan
+.local/share/wallpapers
 .local/share/webkitgtk
 .local/share/wine
 .local/share/xorg
