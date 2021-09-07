@@ -1,0 +1,4 @@
+#!/bin/sh
+set -euf
+
+pmset -g batt | grep -Eo "\d+%"
