@@ -28,7 +28,7 @@ DEPENDENCIES="
 
 extractValue()
 {
-	echo "$1" | cut --delimiter = --field 2
+	echo "$1" | cut -d "=" -f 2
 }
 
 ahead()
@@ -47,7 +47,7 @@ branch()
 }
 repopath()
 {
-	git --no-optional-locks worktree list --porcelain 2> /dev/null | grep worktree | cut --delimiter=" " --fields 2
+	git --no-optional-locks worktree list --porcelain 2> /dev/null | grep worktree | cut -d " " -f 2
 }
 repo()
 {
