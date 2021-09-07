@@ -55,7 +55,7 @@ repo()
 }
 edited()
 {
-	git --no-optional-locks status --porcelain 2> /dev/null | colrm 3 | colrm 1 1 | grep -v " \|?" | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 3 | colrm 1 1 | grep -v " \|?" | wc -l | tr -d ' '
 }
 staged()
 {
@@ -63,15 +63,15 @@ staged()
 }
 stagedin()
 {
-	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|D" | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|D" | wc -l | tr -d ' '
 }
 stagedout()
 {
-	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|m\|M\|A" | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|m\|M\|A" | wc -l | tr -d ' '
 }
 untracked()
 {
-	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep ? | wc -l
+	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep ? | wc -l | tr -d ' '
 }
 
 for arg in "${@:---help}"; do
