@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # Add color support
-alias ls='ls --color=auto --group-directories-first'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
