@@ -1,7 +1,9 @@
 .android
 .bash_history
+.bash_sessions
 .buildroot*
 .cache
+.CFUserTextEncoding
 .clangd
 .cmake
 .config/1Password
@@ -113,6 +115,7 @@
 .debug
 .directory
 .docker
+.DS_Store
 .face
 .face.icon
 .FreeCAD
@@ -228,11 +231,16 @@
 .Xauthority
 .xournal
 .zoom
+Applications
 Desktop
 Downloads
+Library
+Movies
 Music
 Pictures
+Public
 *gnome*
 snap
 Videos
 Telegram*
+tmux-client-*.log
