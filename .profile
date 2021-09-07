@@ -4,7 +4,7 @@ if [ "${TERM}" = "linux" ]; then
 fi
 
 if [ -z "${TMUX:-}" ] && [ -n "${PS1:-}" ]; then
-	exec /usr/bin/tmux -f "${HOME}/.config/tmux/tmux.conf" new-session -A -s "${XDG_SESSION_TYPE}${XDG_VTNR:-}"
+	exec tmux -f "${HOME}/.config/tmux/tmux.conf" new-session -A -s "${XDG_SESSION_TYPE:-bash}${XDG_VTNR:-}"
 	exit
 fi
 
