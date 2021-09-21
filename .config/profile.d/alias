@@ -32,6 +32,9 @@ alias gdba='gdb --args'
 alias god-gdb='echo -1 | sudo tee /proc/sys/kernel/perf_event_paranoid >/dev/null && echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope >/dev/null && echo 0 | sudo tee /proc/sys/kernel/kptr_restrict >/dev/null'
 
 # ls
+if [ "$(uname)" == "Linux" ]; then
+	alias ls='ls --color=auto --group-directories-first'
+fi
 alias ll='ls -lh'
 alias la='ls -A'
 alias lla='ls -lAh'
