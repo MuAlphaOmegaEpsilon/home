@@ -35,7 +35,7 @@ ahead()
 {
 	NUMBER=$(git --no-optional-locks rev-list --left-right --count HEAD...@{upstream} | cut -f 1)
 	if [ $NUMBER -gt 0 ]; then
-		echo " ▲${NUMBER}"
+		echo "▲${NUMBER} "
 	fi
 }
 
@@ -43,27 +43,38 @@ behind()
 {
 	NUMBER=$(git --no-optional-locks rev-list --left-right --count HEAD...@{upstream} | cut -f 2)
 	if [ $NUMBER -gt 0 ]; then
-		echo " ▼${NUMBER}"
+		echo "▼${NUMBER} "
 	fi
 }
 
 branch()
 {
-	git --no-optional-locks branch | grep "*" | colrm 1 2
+	RESULT=$(git --no-optional-locks branch 2> /dev/null)
+	if [ $? -eq 0 ]; then
+		echo "▸$(echo ${RESULT} | grep "*" | colrm 1 2) "
+	fi
 }
 repopath()
 {
-	git --no-optional-locks worktree list --porcelain 2> /dev/null | grep worktree | cut -d " " -f 2
+	RESULT=$(git --no-optional-locks worktree list --porcelain 2> /dev/null)
+	if [ $? -eq 0 ]; then
+		echo "$(echo ${RESULT} | grep worktree | cut -d " " -f 2)"
+	else
+		false
+	fi
 }
 repo()
 {
-	basename $(repopath) 2> /dev/null
+	RESULT=$(repopath)
+	if [ $? -eq 0 ]; then
+		echo " $(basename ${RESULT} 2> /dev/null)"
+	fi
 }
 edited()
 {
 	NUMBER=$(git --no-optional-locks status --porcelain 2> /dev/null | colrm 3 | colrm 1 1 | grep -v " \|?" | wc -l | tr -d ' ')
 	if [ $NUMBER -gt 0 ]; then
-		echo " ~${NUMBER}"
+		echo "~${NUMBER} "
 	fi
 }
 staged()
@@ -74,21 +85,21 @@ stagedin()
 {
 	NUMBER=$(git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|D" | wc -l | tr -d ' ')
 	if [ $NUMBER -gt 0 ]; then
-		echo " +${NUMBER}"
+		echo "+${NUMBER} "
 	fi
 }
 stagedout()
 {
 	NUMBER=$(git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|m\|M\|A" | wc -l | tr -d ' ')
 	if [ $NUMBER -gt 0 ]; then
-		echo " -${NUMBER}"
+		echo "-${NUMBER} "
 	fi
 }
 untracked()
 {
 	NUMBER=$(git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep ? | wc -l | tr -d ' ')
 	if [ $NUMBER -gt 0 ]; then
-		echo " ${NUMBER}?"
+		echo "${NUMBER}? "
 	fi
 }
 
@@ -99,7 +110,7 @@ for arg in "${@:---help}"; do
 		--behind) behind;;
 		--branch) branch;;
 		--repo) repo;;
-		--repo-branch) echo "$(repo)▸$(branch)";;
+		--repo-branch) echo "$(repo)$(branch)";;
 		--repo-path) repopath;;
 		--edited) edited;;
 		--staged) staged;;
