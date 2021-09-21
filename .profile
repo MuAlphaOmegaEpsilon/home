@@ -10,7 +10,7 @@ fi
 
 if [ -f /etc/profile ]; then . /etc/profile; fi
 . "${HOME}"/.config/profile.d/env
-. "${HOME}"/.config/profile.d/aliases
+. "${HOME}"/.config/profile.d/alias
 for file in "${HOME}"/.config/private.d/*; do . "${file}"; done
 for file in "${HOME}"/.config/profile.d/"$(hostname)"/*; do . "${file}"; done
 
