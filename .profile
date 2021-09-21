@@ -1,5 +1,5 @@
 if [ "${TERM}" = "linux" ]; then
-	$(command -v setfont) /usr/share/consolefonts/Lat15-Terminus20x10.psf.gz;
+	$(command -v setfont) /usr/share/consolefonts/Lat15-Terminus18x10.psf.gz;
 	$(command -v setvtrgb) "${HOME}"/.config/vtrgb/maze;
 fi
 
