@@ -93,6 +93,7 @@
 .config/Rygel
 .config/rygel.conf
 .config/session
+.config/settings
 .config/skypeforlinux
 .config/sqlitebrowser
 .config/spectaclerc
@@ -102,15 +103,17 @@
 .config/systemsettingsrc
 .config/teams
 .config/teamviewer
+.config/tool_state
+.config/totem
 .config/trashrc
 .config/Trolltech.conf
-.config/totem
 .config/unity3d
 .config/vlc
 .config/xdg-desktop-portal-kderc
 .config/xsettingsd
 .config/zoomus.conf
 .cups
+.dart
 .dboard
 .debug
 .directory
@@ -121,11 +124,17 @@
 .FreeCAD
 .gnupg
 .gnuplot_history
+<<<<<<< HEAD
 .gtkrc-2.0
 .icons
 .kde
 .launchpadlib
 .nvidia-settings-rc
+=======
+.flutter
+.launchpadlib
+.lesshst
+>>>>>>> 9a478ed (Update .gitignore)
 .local/bin
 .local/include
 .local/lib
@@ -220,6 +229,7 @@
 .paradoxlauncher
 .pipewire-media-session
 .pki
+.pub-cache
 .pulse-cookie
 .steam*
 .Steam*
