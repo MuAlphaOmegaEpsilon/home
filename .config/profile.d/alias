@@ -24,7 +24,6 @@ alias month='date +%B'
 alias year='date +%Y'
 
 # df
-alias space='df -h | head -n 1 && df -h --total --exclude-type tmpfs| tail -n +2 | sort -hrk 2'
 
 alias gdb='gdb --silent'
 alias gdba='gdb --args'

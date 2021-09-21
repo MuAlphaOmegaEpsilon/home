@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+SPACE=$(df -h -x tmpfs | grep root | tr -s ' ')
+AVAILABLE=$(echo ${SPACE} | cut -d ' ' -f 4)
+TOTAL=$(echo ${SPACE} | cut -d ' ' -f 2)
+echo "$AVAILABLE/$TOTAL"
