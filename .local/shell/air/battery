@@ -1,4 +1,13 @@
 #!/bin/sh
 set -euf
 
-pmset -g batt | grep -Eo "\d+%"
+PERCENTAGE=$(pmset -g batt | grep -Eo "\d+%")
+
+EXTRA_SPACE=""
+case ${1:-} in
+	--spaced)
+		EXTRA_SPACE=" "
+	;;
+esac
+
+echo "$EXTRA_SPACE""$PERCENTAGE""$EXTRA_SPACE"
