@@ -123,8 +123,8 @@ vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 " Normal and Visual mode tabbing/untabbing
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
-vnoremap <Tab> >
-vnoremap <S-Tab> <
+vmap <Tab> >
+vmap <S-Tab> <
 " Tabs cycling
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabNext<CR>
