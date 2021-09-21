@@ -24,6 +24,7 @@ alias month='date +%B'
 alias year='date +%Y'
 
 # df
+alias df='df -h -x tmpfs'
 
 alias gdb='gdb --silent'
 alias gdba='gdb --args'
