@@ -33,12 +33,18 @@ extractValue()
 
 ahead()
 {
-	git --no-optional-locks rev-list --left-right --count HEAD...@{upstream} | cut -f 1
+	NUMBER=$(git --no-optional-locks rev-list --left-right --count HEAD...@{upstream} | cut -f 1)
+	if [ $NUMBER -gt 0 ]; then
+		echo " ▲${NUMBER}"
+	fi
 }
 
 behind()
 {
-	git --no-optional-locks rev-list --left-right --count HEAD...@{upstream} | cut -f 2
+	NUMBER=$(git --no-optional-locks rev-list --left-right --count HEAD...@{upstream} | cut -f 2)
+	if [ $NUMBER -gt 0 ]; then
+		echo " ▼${NUMBER}"
+	fi
 }
 
 branch()
@@ -55,7 +61,10 @@ repo()
 }
 edited()
 {
-	git --no-optional-locks status --porcelain 2> /dev/null | colrm 3 | colrm 1 1 | grep -v " \|?" | wc -l | tr -d ' '
+	NUMBER=$(git --no-optional-locks status --porcelain 2> /dev/null | colrm 3 | colrm 1 1 | grep -v " \|?" | wc -l | tr -d ' ')
+	if [ $NUMBER -gt 0 ]; then
+		echo " ~${NUMBER}"
+	fi
 }
 staged()
 {
@@ -63,15 +72,24 @@ staged()
 }
 stagedin()
 {
-	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|D" | wc -l | tr -d ' '
+	NUMBER=$(git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|D" | wc -l | tr -d ' ')
+	if [ $NUMBER -gt 0 ]; then
+		echo " +${NUMBER}"
+	fi
 }
 stagedout()
 {
-	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|m\|M\|A" | wc -l | tr -d ' '
+	NUMBER=$(git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep -v " \|?\|m\|M\|A" | wc -l | tr -d ' ')
+	if [ $NUMBER -gt 0 ]; then
+		echo " -${NUMBER}"
+	fi
 }
 untracked()
 {
-	git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep ? | wc -l | tr -d ' '
+	NUMBER=$(git --no-optional-locks status --porcelain 2> /dev/null | colrm 2 | grep ? | wc -l | tr -d ' ')
+	if [ $NUMBER -gt 0 ]; then
+		echo " ${NUMBER}?"
+	fi
 }
 
 for arg in "${@:---help}"; do
