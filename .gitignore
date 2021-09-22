@@ -114,6 +114,7 @@
 .config/zoomus.conf
 .cups
 .dart
+.dartServer
 .dboard
 .debug
 .directory
