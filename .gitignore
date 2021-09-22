@@ -121,20 +121,16 @@
 .DS_Store
 .face
 .face.icon
+.flutter
 .FreeCAD
 .gnupg
 .gnuplot_history
-<<<<<<< HEAD
 .gtkrc-2.0
 .icons
 .kde
 .launchpadlib
-.nvidia-settings-rc
-=======
-.flutter
-.launchpadlib
 .lesshst
->>>>>>> 9a478ed (Update .gitignore)
+.nvidia-settings-rc
 .local/bin
 .local/include
 .local/lib
