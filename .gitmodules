@@ -162,3 +162,7 @@
 	path = 3rd-party/flutter
 	url = git@github.com:flutter/flutter
 	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/dart-vim-plugin"]
+	path = .local/share/nvim/site/pack/git-plugins/start/dart-vim-plugin
+	url = git@github.com:dart-lang/dart-vim-plugin
+	branch = master
