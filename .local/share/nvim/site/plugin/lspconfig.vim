@@ -6,3 +6,4 @@ lua require'lspconfig'.cssls.setup{}
 lua require'lspconfig'.html.setup{}
 lua require'lspconfig'.vimls.setup{}
 lua require'lspconfig'.yamlls.setup{}
+lua require'flutter-tools'.setup{}
