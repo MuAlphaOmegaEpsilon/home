@@ -14,6 +14,7 @@
 .config/BraveSoftware
 .config/breezerc
 .config/darktable
+.config/Debauchee
 .config/device_automounter_kcmrc
 .config/digikamrc
 .config/discoverrc
@@ -23,6 +24,7 @@
 .config/evince
 .config/FreeCAD
 .config/fontconfig
+.config/gcolor3
 .config/geeqie
 .config/GIMP
 .config/git/gitk
@@ -123,6 +125,7 @@
 .face
 .face.icon
 .flutter
+.flutter-devtools
 .FreeCAD
 .gnupg
 .gnuplot_history
@@ -149,6 +152,7 @@
 .local/share/applications
 .local/share/Aspyr
 .local/share/Baldur's Gate - Enhanced Edition
+.local/share/barrier
 .local/share/cache2
 .local/share/CMakeTools
 .local/share/Colossal Order
