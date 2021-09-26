@@ -89,6 +89,9 @@ MULTIHARDLINK         00;30;47
 .textile              01;33;40
 
 # Code
+# Dart
+.dart                 00;31;40
+
 # Lisp
 .cl                   00;31;40
 .lisp                 00;31;40
@@ -105,7 +108,9 @@ MULTIHARDLINK         00;30;47
 # C++
 .c++                  00;31;40
 .h++                  00;31;40
+.cpp                  00;31;40
 .hpp                  00;31;40
+.cxx                  00;31;40
 .hxx                  00;31;40
 .ii                   00;31;40
 # Objective-C method file
@@ -115,8 +120,6 @@ MULTIHARDLINK         00;30;47
 .cc                   00;31;40
 .cs                   00;31;40
 .cp                   00;31;40
-.cpp                  00;31;40
-.cxx                  00;31;40
 # Crystal
 .cr                   00;31;40
 # Go
