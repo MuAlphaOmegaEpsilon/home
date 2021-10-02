@@ -78,18 +78,6 @@
 	path = 3rd-party/iOS-Utilities
 	url = git@github.com:matteyeux/iOS-Utilities
 	branch = master
-[submodule "3rd-party/cctools-port"]
-	path = 3rd-party/cctools-port
-	url = git@github.com:tpoechtrager/cctools-port
-	branch = master
-[submodule "3rd-party/apple-libtapi"]
-	path = 3rd-party/apple-libtapi
-	url = git@github.com:tpoechtrager/apple-libtapi.git
-	branch = master
-[submodule "3rd-party/isign"]
-	path = 3rd-party/isign
-	url = git@github:appknow/isign
-	branch = master
 [submodule ".certs"]
 	path = .certs
 	url = git@github.com:MuAlphaOmegaEpsilon/.certs
@@ -110,25 +98,13 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/qt-support.vim
 	url = git@github.com:fedorenchik/qt-support.vim
 	branch = master
-[submodule "3rd-party/thread"]
-	path = 3rd-party/thread
-	url = git@github.com:boostorg/thread
-	branch = master
 [submodule "3rd-party/cheatsheets"]
 	path = 3rd-party/cheatsheets
 	url = git@github.com:cheat/cheatsheets
 	branch = master
-[submodule "3rd-party/test-tlb"]
-	path = 3rd-party/test-tlb
-	url = git@github.com:torvalds/test-tlb
-	branch = master
 [submodule "prj/fadingshade"]
 	path = prj/fadingshade
 	url = git@github.com:MuAlphaOmegaEpsilon/fadingshade
-	branch = master
-[submodule "3rd-party/gmonitor"]
-	path = 3rd-party/gmonitor
-	url = git@github.com:mountassir/gmonitor
 	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/nerdcommenter"]
 	path = .local/share/nvim/site/pack/git-plugins/start/nerdcommenter
