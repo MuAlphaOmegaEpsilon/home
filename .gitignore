@@ -194,6 +194,7 @@
 .local/share/mime
 .local/share/minecraft
 .local/share/nano
+.local/share/nautilus
 .local/share/nvim/.netrwhist
 .local/share/nvim/shada
 .local/share/nvim/undo
