@@ -116,6 +116,7 @@
 .config/vlc
 .config/xdg-desktop-portal-kderc
 .config/xsettingsd
+.config/yelp
 .config/zoomus.conf
 .cups
 .dart
