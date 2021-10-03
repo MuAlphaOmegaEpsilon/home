@@ -14,6 +14,7 @@
 .config/bluedevilglobalrc
 .config/BraveSoftware
 .config/breezerc
+.config/chromium
 .config/darktable
 .config/Debauchee
 .config/device_automounter_kcmrc
@@ -80,6 +81,7 @@
 .config/lutris
 .config/Meltytech
 .config/menus
+.config/microsoft-edge-dev
 .config/Microsoft
 .config/mimeapps.list
 .config/muonrc
@@ -104,6 +106,7 @@
 .config/spectaclerc
 .config/spotify
 .config/stacer
+.config/sublime-merge
 .config/systemmonitorrc
 .config/systemsettingsrc
 .config/teams
@@ -113,6 +116,8 @@
 .config/trashrc
 .config/Trolltech.conf
 .config/unity3d
+.config/vivaldi-snapshot
+.config/vivaldi
 .config/vlc
 .config/xdg-desktop-portal-kderc
 .config/xsettingsd
@@ -167,6 +172,7 @@
 .local/share/darling
 .local/share/data
 .local/share/datareporting
+.local/share/DaVinciResolve
 .local/share/desktop-directories
 .local/share/evolution
 .local/share/flatpak
@@ -178,6 +184,7 @@
 .local/share/hicolor
 .local/share/icc
 .local/share/icons
+.local/share/IsolatedStorage
 .local/share/kactivitymanagerd
 .local/share/kate
 .local/share/kcookiejar
@@ -255,6 +262,7 @@
 .zoom
 Applications
 Desktop
+Documents
 Downloads
 Library
 Movies
