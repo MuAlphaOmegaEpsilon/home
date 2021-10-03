@@ -1,3 +1,4 @@
+export CHROME_EXECUTABLE=/usr/bin/brave-browser-beta
 export CMAKE_GENERATOR="Ninja"
 export DPREFIX="${XDG_DATA_HOME}/darling"
 export EDITOR=nvim
