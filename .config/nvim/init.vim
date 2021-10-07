@@ -90,6 +90,7 @@ imap <C-a> <ESC><C-a>
 nmap <C-s> :w<CR>
 imap <C-s> <ESC><C-s>i
 " Replace all instances under the cursor
+nnoremap s :%s/<C-R>=expand('<cword>')<CR>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
 nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
 " Manually trigger completion
 inoremap <silent><expr> <C-Space> completion#trigger_completion()
