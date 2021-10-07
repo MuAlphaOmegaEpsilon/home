@@ -28,6 +28,7 @@
 	b = branch
 	ba = branch --all
 
+	ca = commit --amend
 	cm = commit -m
 	ce = commit --allow-empty-message -m ""
 	cf = commit --fixup
