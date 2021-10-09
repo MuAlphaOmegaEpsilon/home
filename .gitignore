@@ -210,6 +210,7 @@
 .local/share/nvim/*log
 .local/share/.org.chromium*
 .local/share/okular
+.local/share/olivevideoeditor.org
 .local/share/org.kde.syntax-highlighting
 .local/share/OfflineCache
 .local/share/Paradox Interactive
