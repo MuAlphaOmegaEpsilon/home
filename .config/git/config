@@ -60,6 +60,8 @@
 	psu = push -u origin
 
 	r = rebase
+	ra = rebase --abort
+	rc = rebase --continue
 	ri = rebase -i
 
 	res = reset
