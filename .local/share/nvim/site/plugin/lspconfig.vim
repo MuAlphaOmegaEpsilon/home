@@ -13,6 +13,7 @@ lsp.cmake.setup { config = { filetypes = { "cmake", "CMakeLists.txt" } }}
 lsp.bashls.setup{}
 lsp.diagnosticls.setup { config = { filetypes = { "sh", "bash" }}}
 lsp.cssls.setup{}
+lsp.dartls.setup{}
 lsp.html.setup{}
 lsp.vimls.setup{}
 lsp.yamlls.setup{}
