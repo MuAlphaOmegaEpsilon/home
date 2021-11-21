@@ -181,6 +181,17 @@ let g:NERDSpaceDelims = 1
 "--- Ultisnips ---
 " let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/ultisnips/']
 
+"--- vim-markdown ---
+let g:vim_markdown_folding_disabled = 1 " disable folding
+let g:vim_markdown_conceal = 0 " do not use conceal feature, the implementation is not so good
+" disable math tex conceal feature
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+" support front matter of various format
+let g:vim_markdown_frontmatter = 1  " for YAML format
+let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+let g:vim_markdown_json_frontmatter = 1  " for JSON format
+
 "--- C++ enhanced syntax highlighting ---
 let g:cpp_class_decl_highlight = 1
 let g:cpp_class_scope_highlight = 1
