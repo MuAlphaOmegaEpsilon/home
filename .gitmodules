@@ -158,3 +158,15 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/UltiSnips
 	url = git@github.com:sirver/UltiSnips
 	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/tabular"]
+	path = .local/share/nvim/site/pack/git-plugins/start/tabular
+	url = git@github.com:godlygeek/tabular
+	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-json"]
+	path = .local/share/nvim/site/pack/git-plugins/start/vim-json
+	url = git@github.com:elzr/vim-json
+	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-markdown"]
+	path = .local/share/nvim/site/pack/git-plugins/start/vim-markdown
+	url = git@github.com:plasticboy/vim-markdown
+	branch = master
