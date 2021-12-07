@@ -15,6 +15,7 @@ lsp.diagnosticls.setup { config = { filetypes = { "sh", "bash" }}}
 lsp.cssls.setup{}
 lsp.dartls.setup{}
 lsp.html.setup{}
+lsp.jsonls.setup{}
 lsp.vimls.setup{}
 lsp.yamlls.setup{}
 require'flutter-tools'.setup{}
