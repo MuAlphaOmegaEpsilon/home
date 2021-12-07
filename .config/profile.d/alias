@@ -39,6 +39,9 @@ alias ll='ls -lh'
 alias la='ls -A'
 alias lla='ls -lAh'
 
+# lsblk
+alias lsblk='lsblk -e 7'
+
 # neofetch
 alias neofetch='neofetch --ascii ${XDG_CONFIG_HOME}/neofetch/$(hostname)_image'
 
