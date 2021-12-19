@@ -89,6 +89,7 @@
 .config/muonrc
 .config/nautilus
 .config/nvim/.netrwhist
+.config/obsidian
 .config/okularpartrc
 .config/partitionmanagerrc
 .config/plasma*
