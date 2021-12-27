@@ -170,3 +170,7 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/vim-markdown
 	url = git@github.com:plasticboy/vim-markdown
 	branch = master
+[submodule "prj/c-starlang"]
+	path = prj/c-starlang
+	url = git@github.com:MuAlphaOmegaEpsilon/c-starlang
+	branch = master
