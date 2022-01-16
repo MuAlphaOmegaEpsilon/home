@@ -26,6 +26,8 @@ alias year='date +%Y'
 # df
 alias df='df -h -x tmpfs'
 
+alias finished='if [ $? == 0 ]; then FINISHED_TITLE=Succeeded; FINISHED_ICON="/usr/share/icons/breeze/emblems/8/emblem-success.svg"; (play-success &); else FINISHED_TITLE="Failed"; FINISHED_ICON="/usr/share/icons/Yaru/256x256@2x/status/dialog-error.png"; (play-fail &); fi; notify-send --icon=${FINISHED_ICON} ${FINISHED_TITLE}'
+
 alias gdb='gdb --silent'
 alias gdba='gdb --args'
 

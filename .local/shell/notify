@@ -1,0 +1,5 @@
+#!/bin/sh
+set -euf
+
+notify-send "${@}"
+(play-notification &)
