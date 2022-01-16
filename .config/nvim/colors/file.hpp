@@ -4,17 +4,34 @@
 
 #define PI 3.14f
 
+#if __APPLE__ || __PRETTY_FUNCTION__
+#else
+#endif
+
 class SuperObject
 {
 public:
 	constexpr SuperObject() = default;
 	explicit constexpr SuperObject(int a) = delete;
-    [[nodiscard]] virtual bool OtherMethod() noexcept { return false; }
+    [[nodiscard]] virtual bool OtherMethod() noexcept
+	{
+		auto asd = this;
+		switch(count)
+		{
+		case 0:
+			return new bool();
+		default:
+			return asd;
+			break;
+		}
+	}
 
 	int count = 5;
 	const float special = PI;
-	const char* mystring = "Unbelievable!";
+	const char* mystring = "Unbelievable!\n";
+	static void* ptr; // Nothing special
 };
+void* SuperObject::ptr = static_cast<std::nullptr_t>(nullptr);
 
 namespace Vulkan
 {
@@ -39,32 +56,32 @@ enum CustomEnum : uint_fast64_t
 };
 
 template <typename T>
-T superTempl(int* A)
+T superTempl(int* asd)
 {
 	unlink("randomfile.txt");
- 	A = new int[128];
+ 	asd = new int[128];
 
 	T result = 0;
     for(int i = 0; i < 128; i++)
-	    result += A[i];
+	    result += asd[i];
 
     result += static_cast<int>(CustomEnum::first);
     result += static_cast<int>(CustomEnum::fourth);
-	result -= sizeof(sizeof(A));
+	result -= sizeof(asd);
     typeid(SuperObject).name();
 	std::cout << "PROVA!" << std::endl;
 
 	switch (*new CustomEnum())
 	{
 	case CustomEnum::second:
-			break;
+		break;
     default:
-			result += 5;
+		result += 5;
 	}
 
 	throw("Throwing random things around, 'cause why not!?'");
 
-	delete A;
+	delete asd;
 	return result;
 }
 
