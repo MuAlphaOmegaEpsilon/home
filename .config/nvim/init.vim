@@ -40,7 +40,7 @@ autocmd FileType svg setlocal shiftwidth=2 tabstop=2
 " Better autocompletion
 set wildmenu
 set wildmode=full
-set wildignore=".git/*,.clangd/*,build/*"
+set wildignore=".git/*,.clangd/*,.cache/*,build/*"
 set completeopt=menuone,noinsert,noselect
 
 " Don't show extra message on completion
