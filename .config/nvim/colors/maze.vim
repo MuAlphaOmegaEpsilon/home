@@ -82,29 +82,9 @@ hi link cppType	Type			"	nullptr_t, auto
 hi link cppOperator	Function	"	typeid, and, bitor, xor_eq
 hi link cppCast Function		"	static_cast, const_cast
 
-hi Error		ctermfg=01 ctermbg=05
-hi SpellBad		ctermfg=01 ctermbg=05
-hi Warning		ctermfg=04 ctermbg=05
-hi SpellCap		ctermfg=04 ctermbg=05
-hi Todo			ctermfg=03 ctermbg=05
-
 "--- nvim-lsp ---
-hi LspDiagnosticsSignError				ctermfg=00 ctermbg=01
-hi LspDiagnosticsSignWarning			ctermfg=00 ctermbg=04
-hi LspDiagnosticsSignHint				ctermfg=00 ctermbg=03
-hi LspDiagnosticsSignInformation		ctermfg=00 ctermbg=04
-hi LspDiagnosticsFloatingError			ctermfg=01
-hi LspDiagnosticsFloatingWarning		ctermfg=04
-hi LspDiagnosticsFloatingHint			ctermfg=03
-hi LspDiagnosticsFloatingInformation	ctermfg=04
-hi LspDiagnosticsVirtualTextError		ctermfg=01
-hi LspDiagnosticsVirtualTextWarning		ctermfg=04
-hi LspDiagnosticsVirtualTextHint    	ctermfg=03
-hi LspDiagnosticsVirtualTextInformation	ctermfg=04
-hi LspReferenceText			ctermbg=03
-hi LspReferenceRead			ctermbg=03
-hi LspReferenceWrite		ctermbg=03
-
+hi DiagnosticVirtualTextError			ctermfg=01
+hi DiagnosticVirtualTextWarn			ctermfg=04
 
 "--- treesitter ---
 hi def RED ctermfg=01
@@ -126,5 +106,5 @@ hi link TSType Type
 hi link TSNamespace Type
 " hi link TSVariable Normal
 hi link TSAttribute Label
-" hi link TSError Error
 hi TSVariableBuiltin ctermfg=04 cterm=none
+

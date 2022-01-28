@@ -52,6 +52,9 @@ set autowrite
 " Don't wrap line
 set nowrap
 
+" Disable left bar containing LSP messages
+set signcolumn=no
+
 " Don't redraw during macros and stuff
 set lazyredraw
 
@@ -62,7 +65,7 @@ set ignorecase smartcase
 set splitright splitbelow
 
 " Enable display of relative line numbering on the left column
-set number relativenumber
+" set number relativenumber
 
 " Improve scrolling
 set scrolloff=10	" Show N more rows when scrolling up/down
@@ -156,8 +159,8 @@ nnoremap <silent> gD    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 " Alias Vex so that it always open the new pane on the right
 cnoreabbrev Vex Vex!
 
-" Show diagnostic on hover
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable = false })
+" Show diagnostic on hover is disabled since there is lsp_lines.nvim plugin
+" autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable = false })
 " Enable integrated highlight on yank
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
@@ -192,3 +195,5 @@ let g:vim_markdown_frontmatter = 1  " for YAML format
 let g:vim_markdown_toml_frontmatter = 1  " for TOML format
 let g:vim_markdown_json_frontmatter = 1  " for JSON format
 
+"--- lsp_lines.nvim ---
+lua vim.diagnostic.config({virtual_text = false})
