@@ -178,3 +178,7 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/playground
 	url = git@github.com:nvim-treesitter/playground
 	branch = master
+[submodule ".local/share/nvim/site/pack/git-plugins/start/lsp_lines.nvim"]
+	path = .local/share/nvim/site/pack/git-plugins/start/lsp_lines.nvim
+	url = https://git.sr.ht/~whynothugo/lsp_lines.nvim
+	branch = main
