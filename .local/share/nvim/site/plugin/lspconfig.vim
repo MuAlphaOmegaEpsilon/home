@@ -18,5 +18,6 @@ lsp.html.setup{}
 lsp.jsonls.setup{}
 lsp.vimls.setup{}
 lsp.yamlls.setup{}
+require("lsp_lines").register_lsp_virtual_lines()
 require'flutter-tools'.setup{}
 EOF
