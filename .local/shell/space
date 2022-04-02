@@ -2,6 +2,4 @@
 set -eu
 
 SPACE=$(df -h -x tmpfs --total | tail -n 1 | tr -s ' ')
-AVAILABLE=$(echo ${SPACE} | cut -d ' ' -f 4)
-TOTAL=$(echo ${SPACE} | cut -d ' ' -f 2)
-echo "$AVAILABLE/$TOTAL"
+echo ${SPACE} | cut -d ' ' -f 4
