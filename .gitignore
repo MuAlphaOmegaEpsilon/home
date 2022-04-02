@@ -17,6 +17,7 @@
 .config/BraveSoftware
 .config/breezerc
 .config/calibre
+.config/cef_user_data
 .config/chromium
 .config/darktable
 .config/Debauchee
@@ -25,6 +26,7 @@
 .config/discoverrc
 .config/dolphinrc
 .config/drkonqirc
+.config/Epic
 .config/eog
 .config/evince
 .config/FreeCAD
@@ -55,6 +57,7 @@
 .config/KDE
 .config/kde*
 .config/kdialogrc
+.config/Keeper\ Password\ Manager
 .config/kfontinstuirc
 .config/kgammarc
 .config/kglobalshortcutsrc
