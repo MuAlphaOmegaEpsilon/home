@@ -1,5 +1,4 @@
 #!/bin/sh
 set -eu
 
-SPACE=$(df -h -x tmpfs --total | tail -n 1 | tr -s ' ')
-echo ${SPACE} | cut -d ' ' -f 4
+/usr/bin/df -h -x tmpfs --total | /usr/bin/tail -n 1 | /usr/bin/tr -s ' ' | /usr/bin/cut -d ' ' -f 4

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+HEX_VALUES="0 1 2 3 4 5 6 7 8 9 a b c d e f"
+
+for HEX_1 in ${HEX_VALUES}; do
+	for HEX_0 in ${HEX_VALUES}; do
+		echo -ne "\\x${HEX_1}${HEX_0} "
+	done
+done
+echo

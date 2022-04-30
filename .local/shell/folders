@@ -1,0 +1,4 @@
+#!/bin/sh
+set -euf
+
+find -maxdepth 1 -type "d" -not -name "." | colrm 1 2
