@@ -5,9 +5,11 @@ colorscheme maze
 " Highlight matches when searching
 set hlsearch
 
+set fileformat=unix
 " Prevent neovim from polluting the filesystem with unwanted extra files
 set nobackup nowritebackup noswapfile
 
+set packpath=~/.local/share/nvim/site
 " Since lightline is in use, there's no need to show the mode twice
 set noshowmode
 
@@ -95,10 +97,6 @@ imap <C-s> <ESC><C-s>i
 " Replace all instances under the cursor
 nnoremap s :%s/<C-R>=expand('<cword>')<CR>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
 nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
-" Manually trigger completion
-inoremap <silent><expr> <C-Space> completion#trigger_completion()
-" Apply currently selected hint inside PopUpMenu (Enter)
-" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Open file-explorer
 map <C-e> :w<CR>:Explore<CR>
 " Tilde (F12)
@@ -147,8 +145,9 @@ nmap <C-S-Down> :move +1<CR>
 " vmap <C-S-Down> dpV >gv
 imap <C-S-Down> <ESC>:move +1<CR>i
 " Language server protocol mappings
-nnoremap <silent> H 	<cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-F> <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> h 	<cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-h>	<cmd>lua vim.diagnostic.open_float()<CR>
+nnoremap <silent> <C-S-f> <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gq    <cmd>lua vim.lsp.buf.formatting()<CR>
 vnoremap <silent> gq    <cmd>lua vim.lsp.buf.formatting()<CR><ESC>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
@@ -191,9 +190,133 @@ let g:vim_markdown_conceal = 0 " do not use conceal feature, the implementation 
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 " support front matter of various format
-let g:vim_markdown_frontmatter = 1  " for YAML format
-let g:vim_markdown_toml_frontmatter = 1  " for TOML format
-let g:vim_markdown_json_frontmatter = 1  " for JSON format
+let g:vim_markdown_frontmatter		= 1	" for YAML format
+let g:vim_markdown_toml_frontmatter = 1	" for TOML format
+let g:vim_markdown_json_frontmatter = 1	" for JSON format
 
 "--- lsp_lines.nvim ---
-lua vim.diagnostic.config({virtual_text = false})
+" lua vim.diagnostic.config({virtual_text = false})
+
+"--- Lightline ---
+" Colors						  FOREGROUND BACKGROUND
+let s:black_on_red				= [['', 00], ['', 01]] " Black on red
+let s:black_on_orange			= [['', 00], ['', 04]] " Black on orange
+let s:black_on_yellow			= [['', 00], ['', 03]] " Black on yellow
+let s:black_on_green			= [['', 00], ['', 02]] " Black on green
+let s:black_on_lightgrey		= [['', 00], ['', 07]] " Black on light grey
+let s:black_on_lightblue		= [['', 00], ['', 06]] " Black on light blue
+let s:white_on_darkgrey			= [['', 15], ['', 05]] " White on dark grey
+let s:lightgrey_on_lightgrey	= [['', 07], ['', 07]] " Light grey on dark grey
+let s:lightgrey_on_darkgrey		= [['', 07], ['', 05]] " Light grey on dark grey
+let s:blue_on_darkgrey			= [['', 06], ['', 05]] " Blue on dark grey
+let s:pink_on_darkgrey			= [['', 09], ['', 05]] " Pink on dark grey
+let s:red_on_darkgrey			= [['', 01], ['', 05]] " Red on dark grey
+let s:orange_on_darkgrey		= [['', 04], ['', 05]] " Orange on dark grey
+let s:green_on_darkgrey			= [['', 02], ['', 05]] " Green on dark grey
+let s:yellow_on_black			= [['', 03], ['', 00]] " Green on dark grey
+
+let s:p = {'normal': {}, 'command': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
+let s:p.normal.left     = [ s:black_on_orange, s:red_on_darkgrey, s:orange_on_darkgrey, s:green_on_darkgrey, s:lightgrey_on_darkgrey ]
+let s:p.insert.left     = [ s:black_on_green, s:red_on_darkgrey, s:orange_on_darkgrey, s:green_on_darkgrey, s:lightgrey_on_darkgrey ]
+let s:p.command.left    = [ s:black_on_yellow, s:lightgrey_on_darkgrey ]
+let s:p.replace.left    = [ s:black_on_red, s:lightgrey_on_darkgrey ]
+let s:p.visual.left     = [ s:black_on_lightgrey, s:lightgrey_on_darkgrey ]
+let s:p.inactive.left   = [ s:white_on_darkgrey, s:lightgrey_on_darkgrey ]
+let s:p.normal.middle   = [ s:lightgrey_on_darkgrey ]
+let s:p.inactive.middle = [ s:white_on_darkgrey ]
+let s:p.normal.right    = [ s:pink_on_darkgrey, s:blue_on_darkgrey ]
+let s:p.inactive.right  = [ s:white_on_darkgrey, s:white_on_darkgrey ]
+let s:p.normal.error    = [ s:red_on_darkgrey ]
+let s:p.normal.warning  = [ s:orange_on_darkgrey ]
+let s:p.tabline.left    = [ s:black_on_lightgrey ]
+let s:p.tabline.middle  = [ s:black_on_lightgrey ]
+let s:p.tabline.right   = [ s:lightgrey_on_lightgrey ]
+let s:p.tabline.tabsel  = [ s:yellow_on_black ]
+
+let g:lightline#colorscheme#maze_lightline#palette = lightline#colorscheme#flatten(s:p)
+
+" Set color to the components:
+let g:lightline = {
+	\ 'colorscheme': 'maze_lightline',
+	\ }
+let g:lightline.component = {
+			\ 'errors': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Error\")")}',
+			\ 'warnings': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Warning\")")}',
+			\ 'infos': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Information\")")}',
+			\ 'hints': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Hint\")")}',
+			\ 'lineinfo': "%{printf('%d/%d:%d', line('.'),  line('$'), col('.'))}",
+	\ }
+let g:lightline.active = {
+	\ 'left': [ [ 'mode', 'paste' ],
+	\			[ 'errors' ],
+	\			[ 'warnings' ],
+	\			[ 'infos' ],
+	\			[ 'hints' ],
+	\           [ 'readonly', 'filename', 'modified' ]],
+	\ 'right': [ [ 'lineinfo' ],
+	\            [ 'blue_on_darkgrey' ],
+	\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+	\ }
+let g:lightline.inactive = {
+	\ 'left': [ [ 'filename' ] ],
+	\ 'right': [ [ 'lineinfo' ],
+	\            [ 'blue_on_darkgrey' ] ]
+	\ }
+let g:lightline.tabline = {
+	\ 'left': [ [ 'tabs' ] ],
+	\ 'right': [ [ 'close' ] ]
+	\ }
+
+"--- LUA SETUP ---
+lua <<EOF
+local lsp = require'lspconfig'
+local caps = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local servers = { 'cmake', 'bashls', 'cssls', 'dartls', 'html', 'jsonls', 'vimls', 'yamlls', 'diagnosticls' }
+--local attach_handler = function(client, bufnr)
+-- end
+-- for _, server in pairs(servers) do
+	-- lsp[server].setup { on_attach = attach_handler, capabilities = caps }
+-- end
+lsp.clangd.setup { default_config = { cmd = { 'clangd', '--background-index' } , capabilities = caps }}
+
+require("lsp_lines").register_lsp_virtual_lines()
+
+require'flutter-tools'.setup{}
+
+-- require'nvim-treesitter.configs'.setup {
+	-- ensure_installed = "",
+	-- sync_install = false,
+	-- highlight = {
+		-- enable = true,
+		-- additional_vim_regex_highlighting = false,
+	-- },
+-- }
+
+local cmp = require'cmp'
+cmp.setup({
+	-- snippet = {
+		-- expand = function(args)
+		-- For `ultisnips` user.
+		-- vim.fn["UltiSnips#Anon"](args.body)
+		-- end,
+	-- },
+	mapping = {
+		['<ESC>'] = cmp.mapping.abort(),
+		['<S+CR>'] = cmp.mapping.close(),
+		['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = false }),
+		['<C-x><C-o>'] = cmp.mapping.complete(),
+		['<C-space> '] = cmp.mapping.complete(),
+	},
+	experimental = {
+		ghost_text = true
+	},
+	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'buffer' },
+		{ name = 'ultisnips' },
+	}
+})
+
+EOF
+
+
