@@ -3,6 +3,7 @@
 	email = tommasobonvicini@gmail.com
 
 [core]
+	autocrlf = false
 	editor = nvim
 	pager = delta --side-by-side
 
@@ -33,6 +34,7 @@
 	ce = commit --allow-empty-message -m ""
 	cf = commit --fixup
 
+	ck = checkout
 	contributions = shortlog --numbered
 	contributors = shortlog --summary --numbered
 
@@ -43,8 +45,8 @@
 	dss = diff --shortstat
 
 	l = log --oneline
-	lc = log --oneline master..
 	ll = log
+	lm = log --oneline master..
 	lp = log -p
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
 
@@ -70,7 +72,6 @@
 	s = status -s
 	sl = status
 
-	odoo = "!f() { for repo in $(locate -b \"\\.git\" 2> /dev/null); do cd \"$(dirname ${repo})\"; DATES=$(git log --all --no-merges --since 'last month' --author \"$(git config user.name)\" --pretty=format:'%cd' --date=short | uniq); if [ -n \"${DATES}\" ]; then tput rev; pwd; tput sgr0; for date in ${DATES}; do tput setaf 1; echo \"${date}\"; tput sgr0; git log --all --no-merges --since 'last month' --author \"$(git config user.name)\" --pretty=format:'%cd%s' --date=short | grep \"${date}\" | colrm 1 10; done; echo; fi; done; }; f;"
 
 [color]
 	ui = true
@@ -88,5 +89,7 @@
 	plus-emph-style = 0 2
 [gui]
 	editor = nvim
+	tabsize = 4
+	warndetachedcommit = true
 [diff]
 	tool = delta
