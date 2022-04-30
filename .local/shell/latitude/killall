@@ -1,0 +1,6 @@
+#!/bin/sh
+set -euf
+
+for PID in $(pidof $@); do
+	/usr/bin/kill $PID --force
+done

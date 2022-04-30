@@ -1,0 +1,4 @@
+#!/bin/sh
+set -euf
+
+/usr/bin/clear -x

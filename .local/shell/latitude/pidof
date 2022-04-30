@@ -1,0 +1,6 @@
+#!/bin/sh
+set -euf
+
+ps -W | grep $1 | colrm 10 | colrm 1 4 | tr '\n' ' '
+echo
+

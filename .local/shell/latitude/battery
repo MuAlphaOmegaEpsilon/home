@@ -1,0 +1,2 @@
+#!/bin/sh
+printf "%s%%\n" $(WMIC PATH Win32_Battery Get EstimatedChargeRemaining | /usr/bin/sed "2q;d")
