@@ -1,0 +1,110 @@
+#!/bin/sh
+set -euf
+
+# Constants for --help
+VERSION="locfile 0.3"
+DESCRIPTION="
+A tool to measure the actual lines of code of the given C++ file.
+The tool is best suited to be run from the project root folder, since it automatically adds the include/ directory to look for header files.
+Lines counting takes place after the preprocessor stage where macros are expanded and source code is included-in and cut-out by ifdefs: this is basically what the compiler frontend is going to be fed with.
+The lines of code that goes into the compiler frontend can be considered a proxy for compile-times, where the bigger the amount of LOC the greater the time needed to compile."
+USAGE="
+  locfile --help
+  locfile [GCC OPTIONS] [LOCFILE OPTIONS]"
+OPTIONS="
+  --help:           Print this help and exit
+  --verbose-cmd:    Show the compiler command
+  --verbose-lines:  Show \"Lines Of Code\" acronym
+  --compiler=bin:   The binary to run as a compiler, defaults to gcc
+  --libc++:         Use libc++ instead of libstdc++ (implies --compiler=clang)
+  --include=path:   Add the specified path to include paths,
+                    include/ folder is automatically added by default
+  --watch:          Use watchexec as a filesystem watcher to automatically
+                    update output on changes
+                    Works only when working on a single source file.
+  --watch-no-clear: Like --watch, but without clearing the screen before each run
+  --normalize:      Pass through clang-format before counting lines,
+                    useful for comparing different files without cheating on
+                    code formatting differences
+  --keep-comments:  Prevent the preprocessor from stripping away comments
+  --keep-markers:   Prevent the preprocessor from stripping away linemarkers
+                    preprocessing tokens
+  --output=file:    Output to a file the preprocessed and eventually formatted code
+  \${LOCFILE}:       Environment variable used to override locinclude's default arguments"
+EXAMPLES="
+  locfile src/
+  locfile src/main.cpp src/static_inits.cpp
+  locfile src/main.cpp --include=commonlib/include --watch
+  locfile src/main.cpp -fno-rtti -fno-exceptions -Ofast -std=c++2a
+  locfile test/dataclient_constructor.cpp --libc++
+  locfile include/ui/windowing_system.cpp --keep-comments --compiler=clang"
+DEPENDENCIES="
+  wc:               Hard requirement for counting lines of code
+  gcc:              Required as a default compiler
+  clang:            Required for --compiler=clang or --libc++ flag
+  clang-format:     Required for --normalize
+  libc++:           Required for --libc++ flag
+  watchexec:        Required for --watch or --watch-no-clear flags"
+
+extractValue()
+{
+	echo "$1" | cut --delimiter = --field 2
+}
+
+# Input parsing
+INCLUDE_PATHS="-I./include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/windows/VS140/VC/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/windows/VS140SDK/Kits/10/Include/10.0.10240.0/shared"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/windows/VS140SDK/Kits/10/Include/10.0.10240.0/ucrt"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/windows/VS140SDK/Kits/10/Include/10.0.10240.0/um"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/vendor/boost_vault/enum_4_6"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/vendor/boost_1_73_0/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/out/autoquote/vc140_amd64_release/Products/TOC3/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/out/autoquote/vc140_amd64_release/Products/TOC4/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/out/autoquote/vc140_amd64_release/_build/Private/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/out/autoquote/vc140_amd64_release/_build/Tests/TOC4/include"
+
+QUIET_CMD=true
+for arg in "${LOCFILE:---std=c++11}" "${@:---help}"; do
+	case "${arg}" in
+	--help) printf "%s%s\n\nUSAGE:%s\n\nOPTIONS:%s\n\nEXAMPLES:%s\n\nDEPENDENCIES:%s\n" "${VERSION}" "${DESCRIPTION}" "${USAGE}" "${OPTIONS}" "${EXAMPLES}" "${DEPENDENCIES}"; exit;;
+	--verbose-cmd) unset QUIET_CMD;;
+	--verbose-lines) COUNTING_VERBOSITY="printf \"LOC: \"";;
+	--compiler=*) COMPILER="$(extractValue "${arg}")";;
+	--libc++) COMPILER="clang++"; COMPILER_ARGS="${COMPILER_ARGS:-} -stdlib=libc++";;
+	--include=*) INCLUDE_PATHS="${INCLUDE_PATHS} -I $(extractValue "${arg}")";;
+	--watch) FILEWATCHER_PASS="watchexec --clear --exts h,c,hh,cc,hpp,cpp,hxx,cxx --ignore build";;
+	--watch-no-clear) FILEWATCHER_PASS="watchexec --exts h,c,hh,cc,hpp,cpp,hxx,cxx --ignore build";;
+	--normalize) NORMALIZE_PASS="clang-format";;
+	--keep-comments) KEEP_COMMENTS="-C";;
+	--keep-linemarkers) KEEP_LINEMARKERS=" ";; # By default linemarkers are kept, -P flag removes them
+	--output=*) OUTPUT_FILE=$(extractValue "${arg}");;
+	-*) COMPILER_ARGS="${COMPILER_ARGS:-} ${arg}";;
+	"") ;;
+	*) if [ -d ${arg} ]; then SOURCE_FILES="${SOURCE_FILES:-} $(find -P ${arg} -type f -iname *.[hc]) $(find -P ${arg} -type f -iname *.[hc]pp)"; else SOURCE_FILES="${SOURCE_FILES:-} ${arg}"; fi;;
+	esac
+done
+
+argsCount()
+{
+	echo $#
+}
+elaborateFile()
+{
+	if [ ${ARGS_COUNT} -ne 1 ]; then PRINT_NAME="${1}"; FILEWATCHER_PASS=""; fi
+
+	# Prepare to output
+	COMPILATION_PASS="${COMPILER:-g++} -E ${1} -D_M_X64 ${KEEP_LINEMARKERS:--P} ${KEEP_COMMENTS:-} ${COMPILER_ARGS:-} ${INCLUDE_PATHS} 2> /dev/null"
+	VERBOSITY_PASS="${QUIET_CMD:-"echo ${COMPILATION_PASS}"} && ${COUNTING_VERBOSITY:-true}"
+
+	# Core
+	LINE_COUNT=$(eval "${COMPILATION_PASS} | ${NORMALIZE_PASS:-tee} | tee ${OUTPUT_FILE:-} | wc -l")
+
+	# Output
+	${FILEWATCHER_PASS:-eval} "${VERBOSITY_PASS} && printf \"%-9d %s\n\" ${LINE_COUNT} ${PRINT_NAME:-\"\"}"
+}
+ARGS_COUNT=$(argsCount ${SOURCE_FILES})
+for file in ${SOURCE_FILES:-}; do
+	elaborateFile $file &
+done
+wait

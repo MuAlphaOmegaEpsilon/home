@@ -1,0 +1,78 @@
+#!/bin/sh
+set -euf
+
+# Constants for --help
+VERSION="assembly 0.1"
+DESCRIPTION="
+A tool to produce assembly code of the given C++ file.
+The tool is best suited to be run from the project root folder, since it automatically adds the include/ directory to look for header files."
+USAGE="
+  assembly --help
+  assembly [GCC OPTIONS] [ASSEMBLY OPTIONS]"
+OPTIONS="
+  --help:            Print this help and exit
+  --verbose-cmd:     Show the compiler command
+  --verbose-lines:   Show \"Lines Of Assembly\" acronym (implies --count)
+  --compiler=bin:    The binary to run as a compiler, defaults to gcc
+  --libc++:          Use libc++ instead of libstdc++ (implies --compiler=clang)
+  --include=path:    Add the specified path to include paths,
+                     include/ folder is automatically added by default
+  --watch:           Use watchexec as a filesystem watcher to automatically
+                     update output on changes
+  --watch-no-clear:  Like --watch, but without clearing the screen before each run
+  --keep-directives: Do not execute the removal of less important directives
+  --no-demangling:   Do not apply name demangling on assembly
+  --highlight:       Apply source code highlight
+  --output=file:     Output to a file the preprocessed and eventually formatted code
+  \${ASSEMBLY}:       Environment variable used to override locinclude's default arguments"
+EXAMPLES="
+  assembly src/main.cpp
+  assembly src/main.cpp --include=commonlib/include --watch
+  assembly src/main.cpp -fno-rtti -fno-exceptions -Ofast -std=c++2a
+  assembly test/dataclient_constructor.cpp --libc++
+  assembly include/ui/windowing_system.cpp --keep-directives --compiler=clang"
+DEPENDENCIES="
+  wc:                Hard requirement for counting lines of code
+  gcc:               Required as a default compiler
+  clang:             Required for --compiler=clang or --libc++ flag
+  clang-format:      Required for --normalize
+  libc++:            Required for --libc++ flag
+  watchexec:         Required for --watch or --watch-no-clear flags
+  source-highlight:  Required for --highlight flag"
+
+extractValue()
+{
+	echo "$1" | cut --delimiter = --field 2
+}
+
+# Input parsing
+INCLUDE_PATHS="-I include"
+QUIET_CMD=true
+for arg in "${ASSEMBLY:--O3 --std=c++2a -fno-rtti -fno-exceptions}" "${@:---help}"; do
+	case "${arg}" in
+	--help) printf "%s%s\n\nUSAGE:%s\n\nOPTIONS:%s\n\nEXAMPLES:%s\n\nDEPENDENCIES:%s\n" "${VERSION}" "${DESCRIPTION}" "${USAGE}" "${OPTIONS}" "${EXAMPLES}" "${DEPENDENCIES}"; exit;;
+	--verbose-cmd) unset QUIET_CMD;;
+	--verbose-lines) COUNTING_PASS="wc -l"; COUNTING_VERBOSITY="printf \"LOA: \"";;
+	--compiler=*) COMPILER="$(extractValue "${arg}")";;
+	--libc++) COMPILER="clang"; COMPILER_ARGS="${COMPILER_ARGS:-} -stdlib=libc++";;
+	--include=*) INCLUDE_PATHS="${INCLUDE_PATHS} -I $(extractValue "${arg}")";;
+	--count) COUNTING_PASS="wc -l";;
+	--watch) FILEWATCHER_PASS="watchexec --clear --exts h,c,hh,cc,hpp,cpp,hxx,cxx --ignore build";;
+	--watch-no-clear) FILEWATCHER_PASS="watchexec --exts h,c,hh,cc,hpp,cpp,hxx,cxx --ignore build";;
+	--keep-directives) KEEP_DIRECTIVES="tee";;
+	--no-demangling) NO_DEMANGLING="tee";;
+	--highlight) HIGHLIGHT_PASS="source-highlight --src-lang asm --out-format esc";;
+	--output=*) OUTPUT_FILE=$(extractValue "${arg}");;
+	-*) COMPILER_ARGS="${COMPILER_ARGS:-} ${arg}";;
+	"") ;;
+	*) SOURCE_FILE="${arg}";;
+	esac
+done
+
+COMPILATION_PASS="${COMPILER:-gcc} -x c++ ${SOURCE_FILE:-} -S ${COMPILER_ARGS:-} -fno-ident -fomit-frame-pointer -fno-asynchronous-unwind-tables -fno-dwarf2-cfi-asm -fcf-protection=none -fno-stack-protector ${INCLUDE_PATHS} -o-"
+VERBOSITY_PASS="${QUIET_CMD:-"echo ${COMPILATION_PASS}"} && ${COUNTING_VERBOSITY:-true}"
+DEMANGLING_PASS=${NO_DEMANGLING:-"c++filt --types"}
+TRIMMING_PASS=${KEEP_DIRECTIVES:-"grep -v \".section\|.text\|.globl\|.type\|.file\|.weak\|.size\|.align\|.addrsig\|.Lfunc_end\|%bb\|.p2align\""}
+
+# Output
+${FILEWATCHER_PASS:-eval} "${VERBOSITY_PASS} && ${COMPILATION_PASS} | ${TRIMMING_PASS} | ${DEMANGLING_PASS} | tee ${OUTPUT_FILE:-} | ${HIGHLIGHT_PASS:-tee} | ${COUNTING_PASS:-tee}"

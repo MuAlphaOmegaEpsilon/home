@@ -1,0 +1,131 @@
+#!/bin/sh
+set -euf
+
+# Constants for --help
+VERSION="locinclude 0.3"
+DESCRIPTION="
+A tool to measure the lines of code introduced by including one or more C++ system headers.
+Lines counting takes place after the preprocessor stage where macros are expanded and source code is included-in and cut-out by ifdefs: this is basically what the compiler frontend is going to be fed with.
+The lines of code that goes into the compiler frontend can be considered a proxy for compile-times, where the bigger the amount of LOC the greater the time needed to compile."
+USAGE="
+  locinclude --help
+  locinclude --tabular [GCC OPTIONS] [LOCINCLUDE OPTIONS]
+  locinclude [SYSTEM HEADERS] [GCC OPTIONS] [LOCINCLUDE OPTIONS]"
+OPTIONS="
+  --help:           Print this help and exit
+  --tabular:        Print a table with common system headers, separated by category
+  --verbose-cmd:    Show the compiler command
+  --verbose-lines:  Show \"Lines Of Code\" acronym
+  --compiler=bin:   The binary to run as a compiler, defaults to gcc
+  --libc++:         Use libc++ instead of libstdc++ (implies --compiler=clang)
+  --include=path:   Add the specified path to include paths
+  --normalize:      Pass through clang-format before counting lines,
+                    useful for comparing different files without cheating on
+                    code formatting differences
+  --output=file:    Output to a file the preprocessed and eventually formatted code
+  --keep-comments:  Prevent the preprocessor from stripping away comments
+  --keep-markers:   Prevent the preprocessor from stripping away linemarkers
+                    preprocessing tokens
+  \${LOCINCLUDE}:    Environment variable used to override locinclude's default arguments"
+EXAMPLES="
+  locinclude --tabular
+  locinclude stddef.h
+  locinclude cstdlib -std=c++2a
+  locinclude stdlib.h --libc++
+  locinclude memory utility --keep-comments --compiler=clang
+  locinclude array vector utility -O3 -std=c++17"
+DEPENDENCIES="
+  wc:               Hard requirement for counting lines of code
+  gcc:              Required as a default compiler
+  clang:            Required for --compiler=clang or --libc++ flag
+  clang-format:     Required for --normalize
+  libc++:           Required for --libc++ flag"
+
+# Input parsing
+extractValue()
+{
+	echo "$1" | cut --delimiter = --field 2
+}
+INCLUDE_PATHS="-I include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/windows/VS140/VC/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/windows/VS140SDK/Kits/10/Include/10.0.10240.0/shared"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/windows/VS140SDK/Kits/10/Include/10.0.10240.0/ucrt"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/windows/VS140SDK/Kits/10/Include/10.0.10240.0/um"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/vendor/boost_vault/enum_4_6"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/vendor/boost_1_73_0/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/out/autoquote/vc140_amd64_release/Products/TOC3/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/out/autoquote/vc140_amd64_release/Products/TOC4/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/out/autoquote/vc140_amd64_release/_build/Private/include"
+INCLUDE_PATHS="${INCLUDE_PATHS} -I/c/dev/out/autoquote/vc140_amd64_release/_build/Tests/TOC4/include"
+
+QUIET_CMD=true
+for arg in "${LOCINCLUDE:---std=c++11}" "${@:---help}"; do
+	case "${arg}" in
+	--help) printf "%s%s\n\nUSAGE:%s\n\nOPTIONS:%s\n\nEXAMPLES:%s\n\nDEPENDENCIES:%s\n" "${VERSION}" "${DESCRIPTION}" "${USAGE}" "${OPTIONS}" "${EXAMPLES}" "${DEPENDENCIES}"; exit;;
+	--tabular) TABULAR=true;;
+	--verbose-cmd) unset QUIET_CMD;;
+	--verbose-lines) COUNTING_VERBOSITY="printf \"LOC: \"";;
+	--compiler=*) COMPILER="$(extractValue "${arg}")";;
+	--libc++) COMPILER="clang++"; COMPILER_ARGS="${COMPILER_ARGS:-} -stdlib=libc++";;
+	--include=*) INCLUDE_PATHS="${INCLUDE_PATHS} -I $(extractValue "${arg}")";;
+	--normalize) NORMALIZE_FLAG="--normalize"; NORMALIZE_PASS="clang-format";;
+	--keep-comments) KEEP_COMMENTS="-C";;
+	--keep-linemarkers) KEEP_LINEMARKERS=" ";; # By default linemarkers are kept, -P flag removes them
+	--output=*) OUTPUT_FILE=$(extractValue "${arg}");;
+	-*) COMPILER_ARGS="${COMPILER_ARGS:-} ${arg}";;
+    "") ;;
+	 *) SOURCE="${SOURCE:-}#include <${arg}>\n";;
+	esac
+done
+
+# Prepare to output
+COMPILATION_PASS="${COMPILER:-g++} -E -D_M_X64 ${KEEP_LINEMARKERS:--P} ${KEEP_COMMENTS:-} ${COMPILER_ARGS:-} ${INCLUDE_PATHS} 2> /dev/null -"
+VERBOSITY_PASS="${QUIET_CMD:-"echo \"${SOURCE:-}\" && echo ${COMPILATION_PASS}"} && ${COUNTING_VERBOSITY:-true}"
+
+# Core non-tabular
+if [ -z ${TABULAR:-} ]; then
+	eval "${VERBOSITY_PASS} && echo \"${SOURCE:-}\" | ${COMPILATION_PASS} | ${NORMALIZE_PASS:-tee} | tee ${OUTPUT_FILE:-} | wc -l"
+	exit
+fi
+
+# Core tabular
+_locinclude()
+{	# Runs asynchronously
+	eval "${0} ${COMPILER_ARGS} --compiler=${COMPILER:-gcc} ${NORMALIZE_FLAG:-} ${*}" &
+}
+printline()
+{
+		CPP_11=$(_locinclude "${1}" --std=c++11)
+		CPP_14=$(_locinclude "${1}" --std=c++14)
+		CPP_17=$(_locinclude "${1}" --std=c++17)
+		CPP_2a=$(_locinclude "${1}" --std=c++2a)
+		wait
+		printf "%-18s %6d %6d %6d %6d\n" "${1}" "${CPP_11}" "${CPP_14}" "${CPP_17}" "${CPP_2a}"
+}
+printtable()
+{
+	printf "%36s\n" "$1"
+	printf "%-18s %6s %6s %6s %6s\n" "HEADER" "C++11" "C++14" "C++17" "C++2a"
+	for h in $2; do
+		printline "${h}" 2> /dev/null
+	done
+	echo
+}
+printtable "---       Concepts      ---" "concepts"
+printtable "---      Coroutines     ---" "coroutine"
+printtable "---      Utilities      ---" "cstdlib csignal csetjmp cstdarg typeinfo typeindex type_traits bitset functional utility ctime chrono cstddef initializer_list tuple any optional variant compare version source_location"
+printtable "---    Dynamic memory   ---" "new memory scoped_allocator memory_resource"
+printtable "---    Numeric limits   ---" "climits cfloat cstdint cinttypes limits"
+printtable "---    Error handling   ---" "exception stdexcept cassert system_error cerrno"
+printtable "---       Strings       ---" "cctype cwctype cstring cwchar cuchar string string_view charconv format"
+printtable "---      Containers     ---" "array vector deque list forward_list set map unordered_set unordered_map stack queue span"
+printtable "---      Iterators      ---" "iterator"
+printtable "---        Ranges       ---" "ranges"
+printtable "---      Algorithms     ---" "algorithm execution"
+printtable "---       Numerics      ---" "cmath complex valarray random numeric ratio cfenv bit numbers"
+printtable "---     Input/Output    ---" "iosfwd ios istream ostream iostream fstream sstream syncstream iomanip streambuf cstdio"
+printtable "---     Localization    ---" "locale clocale codecvt"
+printtable "--- Regular expressions ---" "regex"
+printtable "---  Atomic operations  ---" "atomic"
+printtable "---    Thread support   ---" "thread stop_token mutex shared_mutex future condition_variable semaphore latch barrier"
+printtable "---   C compatibility   ---" "assert.h cassert ctype.h cctype errno.h cerrno fenv.h cfenv float.h cfloat inttypes.h cinttypes limits.h climits locale.h clocale math.h cmath setjmp.h csetjmp signal.h csignal stdarg.h cstdarg stddef.h cstddef stdint.h cstdint stdio.h cstdio stdlib.h cstdlib string.h cstring time.h ctime uchar.h cuchar wchar.h cwchar wctype.h cwctype"
