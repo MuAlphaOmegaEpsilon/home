@@ -279,7 +279,7 @@ local caps = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_c
 -- end
 lsp.clangd.setup { default_config = { cmd = { 'clangd', '--background-index' } , capabilities = caps }}
 
-require("lsp_lines").register_lsp_virtual_lines()
+-- require("lsp_lines").register_lsp_virtual_lines()
 
 require'flutter-tools'.setup{}
 
