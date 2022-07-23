@@ -158,8 +158,6 @@ nnoremap <silent> gD    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 " Alias Vex so that it always open the new pane on the right
 cnoreabbrev Vex Vex!
 
-" Show diagnostic on hover is disabled since there is lsp_lines.nvim plugin
-" autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable = false })
 " Enable integrated highlight on yank
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
@@ -193,9 +191,6 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter		= 1	" for YAML format
 let g:vim_markdown_toml_frontmatter = 1	" for TOML format
 let g:vim_markdown_json_frontmatter = 1	" for JSON format
-
-"--- lsp_lines.nvim ---
-" lua vim.diagnostic.config({virtual_text = false})
 
 "--- Lightline ---
 " Colors						  FOREGROUND BACKGROUND
@@ -269,7 +264,34 @@ let g:lightline.tabline = {
 
 "--- LUA SETUP ---
 lua <<EOF
-local lsp = require'lspconfig'
+local lsp = require('lspconfig')
+local cmp = require'cmp'
+cmp.setup({
+	snippet = {
+		expand = function(args)
+        vim.fn["UltiSnips#Anon"](args.body)
+		end,
+	},
+	window = {
+      -- completion = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(),
+    },
+	mapping = cmp.mapping.preset.insert({
+		['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    	['<C-f>'] = cmp.mapping.scroll_docs(4),
+    	['<C-Space>'] = cmp.mapping.complete(),
+    	['<C-e>'] = cmp.mapping.abort(),
+    	['<CR>'] = cmp.mapping.confirm({ select = true }),
+	}),
+	experimental = {
+		ghost_text = true
+	},
+	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'buffer' },
+		-- { name = 'ultisnips' },
+	}
+})
 local caps = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- local servers = { 'cmake', 'bashls', 'cssls', 'dartls', 'html', 'jsonls', 'vimls', 'yamlls', 'diagnosticls' }
 --local attach_handler = function(client, bufnr)
@@ -278,8 +300,6 @@ local caps = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_c
 	-- lsp[server].setup { on_attach = attach_handler, capabilities = caps }
 -- end
 lsp.clangd.setup { default_config = { cmd = { 'clangd', '--background-index' } , capabilities = caps }}
-
--- require("lsp_lines").register_lsp_virtual_lines()
 
 require'flutter-tools'.setup{}
 
@@ -292,30 +312,6 @@ require'flutter-tools'.setup{}
 	-- },
 -- }
 
-local cmp = require'cmp'
-cmp.setup({
-	-- snippet = {
-		-- expand = function(args)
-		-- For `ultisnips` user.
-		-- vim.fn["UltiSnips#Anon"](args.body)
-		-- end,
-	-- },
-	mapping = {
-		['<ESC>'] = cmp.mapping.abort(),
-		['<S+CR>'] = cmp.mapping.close(),
-		['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = false }),
-		['<C-x><C-o>'] = cmp.mapping.complete(),
-		['<C-space> '] = cmp.mapping.complete(),
-	},
-	experimental = {
-		ghost_text = true
-	},
-	sources = {
-		{ name = 'nvim_lsp' },
-		{ name = 'buffer' },
-		{ name = 'ultisnips' },
-	}
-})
 
 EOF
 
