@@ -31,6 +31,7 @@
 .config/evince
 .config/FreeCAD
 .config/fontconfig
+.config/.gsd-keyboard.settings-ported
 .config/gcolor3
 .config/geeqie
 .config/GIMP
@@ -93,6 +94,7 @@
 .config/muonrc
 .config/nautilus
 .config/nvim/.netrwhist
+.config/OpenSCAD
 .config/obsidian
 .config/okularpartrc
 .config/partitionmanagerrc
@@ -114,6 +116,7 @@
 .config/spotify
 .config/stacer
 .config/sublime-merge
+.config/sublime-text
 .config/systemmonitorrc
 .config/systemsettingsrc
 .config/teams
@@ -127,6 +130,7 @@
 .config/vivaldi
 .config/vlc
 .config/xdg-desktop-portal-kderc
+.config/xournalpp
 .config/xsettingsd
 .config/yelp
 .config/zoomus.conf
@@ -237,6 +241,7 @@
 .local/share/startupCache
 .local/share/steam
 .local/share/Steam
+.local/share/SVP4
 .local/share/storage
 .local/share/teamviewer*
 .local/share/tracker
@@ -253,6 +258,7 @@
 .mplayer
 .mozilla
 .npm
+.nv
 .parallel
 .paradoxlauncher
 .pipewire-media-session
