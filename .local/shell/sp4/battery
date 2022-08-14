@@ -5,4 +5,11 @@ MAX_VALUE=$(cat /sys/class/power_supply/BAT1/energy_full)
 CURRENT_VALUE=$(cat /sys/class/power_supply/BAT1/energy_now)
 PERCENTAGE=$((  CURRENT_VALUE * 100 / MAX_VALUE ))
 
-echo " ${PERCENTAGE}% "
+EXTRA_SPACE=""
+case ${1:-} in
+	--spaced)
+		EXTRA_SPACE=" "
+	;;
+esac
+
+echo "$EXTRA_SPACE""$PERCENTAGE"%"$EXTRA_SPACE"
