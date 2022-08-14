@@ -174,3 +174,7 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/playground
 	url = git@github.com:nvim-treesitter/playground
 	branch = master
+[submodule "prj/3d-models"]
+	path = prj/3d-models
+	url = git@github.com:MuAlphaOmegaEpsilon/3d-models.git
+	branch = master
