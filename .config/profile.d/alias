@@ -54,7 +54,7 @@ alias neofetch='neofetch --ascii ${XDG_CONFIG_HOME}/neofetch/$(hostname)_image'
 # xdg-open
 if [ "$(uname -o)" == "Msys" ]; then
 	alias open='start'
-else
+elif [ "$(uname)" == "Linux" ]; then
 	alias open='xdg-open'
 fi
 
