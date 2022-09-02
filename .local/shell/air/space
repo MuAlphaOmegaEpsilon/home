@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+SPACE=$(df -H | head -n 2 | tail -n 1 | tr -s ' ')
+AVAILABLE=$(echo ${SPACE} | cut -d ' ' -f 4)
+echo "$AVAILABLE"
