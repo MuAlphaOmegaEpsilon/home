@@ -29,6 +29,7 @@
 .config/Epic
 .config/eog
 .config/evince
+.config/flutter
 .config/FreeCAD
 .config/fontconfig
 .config/.gsd-keyboard.settings-ported
@@ -49,6 +50,7 @@
 .config/guvcview2
 .config/gwenviewrc
 .config/inkscape
+.config/iterm2
 .config/kactivitymanagerd*
 .config/kate*
 .config/kcalcrc
@@ -268,6 +270,7 @@
 .steam*
 .Steam*
 .sudo_as_admin_successful
+.swiftpm
 .thunderbird
 .viminfo
 .vscode
@@ -291,3 +294,4 @@ Scaricati
 Videos
 Telegram*
 tmux-client-*.log
+*.tmp
