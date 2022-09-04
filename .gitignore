@@ -4,6 +4,7 @@
 .bash_sessions
 .buildroot*
 .cache
+.cargo
 .CFUserTextEncoding
 .clangd
 .cmake
@@ -93,6 +94,7 @@
 .config/microsoft-edge-dev
 .config/Microsoft
 .config/mimeapps.list
+.config/mozc
 .config/muonrc
 .config/nautilus
 .config/nvim/.netrwhist
@@ -197,6 +199,7 @@
 .local/share/hicolor
 .local/share/icc
 .local/share/icons
+.local/share/lesshst
 .local/share/IsolatedStorage
 .local/share/kactivitymanagerd
 .local/share/kate
@@ -229,6 +232,7 @@
 .local/share/OfflineCache
 .local/share/Paradox Interactive
 .local/share/pkcs11.txt
+.local/share/qBittorrent
 .local/share/Qt
 .local/share/QtIcon.png
 .local/share/RecentDocuments
@@ -256,6 +260,7 @@
 .local/share/webkitgtk
 .local/share/wine
 .local/share/xorg
+.local/state
 .minecraft
 .mplayer
 .mozilla
