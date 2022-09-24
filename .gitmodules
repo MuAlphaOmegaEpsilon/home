@@ -178,3 +178,7 @@
 	path = prj/3d-models
 	url = git@github.com:MuAlphaOmegaEpsilon/3d-models.git
 	branch = master
+[submodule "prj/OliveExploration"]
+	path = prj/OliveExploration
+	url = git@github.com:morrolinux/OliveExploration
+	branch = main
