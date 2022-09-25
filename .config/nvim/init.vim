@@ -147,8 +147,8 @@ nmap <C-S-Down> :move +1<CR>
 " vmap <C-S-Down> dpV >gv
 imap <C-S-Down> <ESC>:move +1<CR>i
 " Language server protocol mappings
-nnoremap <silent> h 	<cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-h>	<cmd>lua vim.diagnostic.open_float()<CR>
+nnoremap <silent> <C-h> <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-d>	<cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap <silent> <C-S-f> <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gq    <cmd>lua vim.lsp.buf.format{async=true}<CR>
 vnoremap <silent> gq    <cmd>lua vim.lsp.buf.format{async=true}<CR><ESC>
