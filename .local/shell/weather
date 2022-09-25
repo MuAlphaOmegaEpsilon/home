@@ -1,0 +1,14 @@
+#!/bin/sh
+set -euf
+
+for arg in "${@:---simple}"; do
+	case "${arg}" in
+	# --help) printf "%s%s\n\nUSAGE:%s\n\nOPTIONS:%s\n\nEXAMPLES:%s\n\nDEPENDENCIES:%s\n" "${VERSION}" "${DESCRIPTION}" "${USAGE}" "${OPTIONS}" "${EXAMPLES}" "${DEPENDENCIES}"; exit;;
+	--simple) PARAMETERS="${PARAMETERS:-}0";;
+	--detailed) PARAMETERS="${PARAMETERS:-}1";;
+	--full) PARAMETERS="${PARAMETERS:-}2";;
+	*) LOCATION="${arg}";;
+	esac
+done
+
+curl wttr.in/"${LOCATION:-}"?qF"${PARAMETERS:-}"
