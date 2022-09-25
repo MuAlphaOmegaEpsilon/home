@@ -54,6 +54,7 @@
 .config/iterm2
 .config/kactivitymanagerd*
 .config/kate*
+.config/kcachegrindrc
 .config/kcalcrc
 .config/kcminputrc
 .config/kconf_updaterc
@@ -100,7 +101,7 @@
 .config/nvim/.netrwhist
 .config/OpenSCAD
 .config/obsidian
-.config/okularpartrc
+.config/okular*
 .config/partitionmanagerrc
 .config/plasma*
 .config/Postman
@@ -272,6 +273,7 @@
 .pki
 .pub-cache
 .pulse-cookie
+.slocdata
 .steam*
 .Steam*
 .sudo_as_admin_successful
@@ -293,10 +295,11 @@ Music
 Pictures
 Public
 README.md
-*gnome*
+Qt
 snap
 Scaricati
 Videos
 Telegram*
 tmux-client-*.log
+*gnome*
 *.tmp
