@@ -182,3 +182,7 @@
 	path = prj/OliveExploration
 	url = git@github.com:morrolinux/OliveExploration
 	branch = main
+[submodule "prj/dove"]
+	path = prj/dove
+	url = git@github.com:MuAlphaOmegaEpsilon/dove.git
+	branch = master
