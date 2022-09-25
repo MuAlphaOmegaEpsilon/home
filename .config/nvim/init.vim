@@ -284,14 +284,14 @@ cmp.setup({
 		-- { name = 'ultisnips' },
 	}
 })
-local caps = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- local servers = { 'cmake', 'bashls', 'cssls', 'dartls', 'html', 'jsonls', 'vimls', 'yamlls', 'diagnosticls' }
 --local attach_handler = function(client, bufnr)
 -- end
 -- for _, server in pairs(servers) do
 	-- lsp[server].setup { on_attach = attach_handler, capabilities = caps }
 -- end
-lsp.clangd.setup { default_config = { cmd = { 'clangd', '--background-index' } , capabilities = caps }}
+lsp.clangd.setup { cmd = { 'clangd', '--background-index', '--function-arg-placeholders', '--header-insertion=never', '--clang-tidy' } }
+lsp.cmake.setup {}
 
 require'flutter-tools'.setup{}
 
