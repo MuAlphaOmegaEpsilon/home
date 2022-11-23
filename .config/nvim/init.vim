@@ -6,18 +6,29 @@ colorscheme maze
 set hlsearch
 
 set fileformat=unix
+
 " Prevent neovim from polluting the filesystem with unwanted extra files
 set nobackup nowritebackup noswapfile
 
 " Never allow folding, it sucks
 set nofoldenable
 set packpath=~/.local/share/nvim/site
+
 " Since lightline is in use, there's no need to show the mode twice
 set noshowmode
 
+" Show whitespace characters
+set list
+
 " 8 colors terminal, bash based
 set t_Co=8
-set shell=/bin/bash
+
+if has("win64")
+	set shell=C:/msys64/usr/bin/bash
+	set shellcmdflag='-c'
+	set shellquote=\"
+	set shellslash
+endif
 
 " Make the tabs bar always visible, even when only one tab is present
 set showtabline=2
@@ -163,9 +174,6 @@ cnoreabbrev Vex Vex!
 " Enable integrated highlight on yank
 autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
-"--- Netrw ---
-let g:netrw_banner=0
-
 "--- Completion neovim ---
 " let g:completion_enable_support = 'UltiSnips'
 let g:completion_chain_complete_list = {
@@ -284,12 +292,6 @@ cmp.setup({
 		-- { name = 'ultisnips' },
 	}
 })
--- local servers = { 'cmake', 'bashls', 'cssls', 'dartls', 'html', 'jsonls', 'vimls', 'yamlls', 'diagnosticls' }
---local attach_handler = function(client, bufnr)
--- end
--- for _, server in pairs(servers) do
-	-- lsp[server].setup { on_attach = attach_handler, capabilities = caps }
--- end
 lsp.clangd.setup { cmd = { 'clangd', '--background-index', '--function-arg-placeholders', '--header-insertion=never', '--clang-tidy' } }
 lsp.cmake.setup {}
 
@@ -303,6 +305,5 @@ require'flutter-tools'.setup{}
 		-- additional_vim_regex_highlighting = false,
 	-- },
 -- }
-
 
 EOF
