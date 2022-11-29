@@ -24,6 +24,8 @@
 	autosquash = true
 
 [alias]
+	activity-31 = "!{ BASEDIR=$PWD; for GITDIR in $(find -maxdepth 2 -type d -name .git); do DIRNAME=$(dirname $GITDIR); cd $DIRNAME; printf \"%d\t%s\n\" $(git log --oneline --since=\"last month\" | wc -l) $DIRNAME ; cd $BASEDIR; done; };"
+	activity-365 = "!{ BASEDIR=$PWD; for GITDIR in $(find -maxdepth 2 -type d -name .git); do DIRNAME=$(dirname $GITDIR); cd $DIRNAME; printf \"%d\t%s\n\" $(git log --oneline --since=\"last year\" | wc -l) $DIRNAME ; cd $BASEDIR; done; };"
 	alias = config --get-regexp alias
 
 	b = branch
@@ -56,6 +58,7 @@
 	path = rev-parse --git-path .
 
 	pl = pull --prune
+	pull-all = "!{ BASEDIR=$PWD; for GITDIR in $(find -maxdepth 2 -type d -name .git); do cd $(dirname $GITDIR); git pull --prune; cd $BASEDIR; done; };"
 
 	ps = push
 	psf = push --force-with-lease
