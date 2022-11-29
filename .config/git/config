@@ -93,3 +93,5 @@
 	warndetachedcommit = true
 [diff]
 	tool = delta
+[log]
+	date = local
