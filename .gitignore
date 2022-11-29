@@ -179,6 +179,7 @@
 .local/share/ark
 .local/share/Aspyr
 .local/share/backgrounds
+.local/share/bash-completion/completions
 .local/share/Baldur's Gate - Enhanced Edition
 .local/share/barrier
 .local/share/cache2
