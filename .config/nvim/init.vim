@@ -234,13 +234,14 @@ let g:lightline#colorscheme#maze_lightline#palette = lightline#colorscheme#flatt
 let g:lightline = {
 	\ 'colorscheme': 'maze_lightline',
 	\ }
-let g:lightline.component = {
-			\ 'errors': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Error\")")}',
-			\ 'warnings': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Warning\")")}',
-			\ 'infos': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Information\")")}',
-			\ 'hints': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Hint\")")}',
-			\ 'lineinfo': "%{printf('%d/%d:%d', line('.'),  line('$'), col('.'))}",
-	\ }
+
+" let g:lightline.component = {
+"			\ 'errors': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Error\")")}',
+"			\ 'warnings': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Warning\")")}',
+"			\ 'infos': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Information\")")}',
+"			\ 'hints': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Hint\")")}',
+"			\ 'lineinfo': "%{printf('%d/%d:%d', line('.'),  line('$'), col('.'))}",
+"	\ }
 let g:lightline.active = {
 	\ 'left': [ [ 'mode', 'paste' ],
 	\			[ 'errors' ],
