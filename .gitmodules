@@ -174,10 +174,6 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/playground
 	url = git@github.com:nvim-treesitter/playground
 	branch = master
-[submodule "prj/3d-models"]
-	path = prj/3d-models
-	url = git@github.com:MuAlphaOmegaEpsilon/3d-models.git
-	branch = master
 [submodule "prj/OliveExploration"]
 	path = prj/OliveExploration
 	url = git@github.com:morrolinux/OliveExploration
@@ -185,4 +181,12 @@
 [submodule "prj/dove"]
 	path = prj/dove
 	url = git@github.com:MuAlphaOmegaEpsilon/dove.git
+	branch = master
+[submodule "prj/3d-models"]
+	path = prj/3d-models
+	url = git@github.com:MuAlphaOmegaEpsilon/3d-models
+	branch = master
+[submodule "prj/us"]
+	path = prj/us
+	url = git@github.com:MuAlphaOmegaEpsilon/us
 	branch = master
