@@ -1,5 +1,6 @@
 .android
 .arcrc
+.aws
 .bash_history
 .bash_sessions
 .buildroot*
@@ -267,10 +268,12 @@
 .mplayer
 .mozilla
 .npm
+.npmrc
 .nv
 .parallel
 .paradoxlauncher
 .pipewire-media-session
+.python_history
 .pki
 .pub-cache
 .pulse-cookie
@@ -280,6 +283,7 @@
 .sudo_as_admin_successful
 .swiftpm
 .thunderbird
+.vim
 .viminfo
 .vscode
 .wget-hsts
