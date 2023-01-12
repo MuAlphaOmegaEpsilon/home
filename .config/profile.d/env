@@ -1,5 +1,9 @@
 export CHROME_EXECUTABLE=/usr/bin/brave-browser-beta
-export CMAKE_GENERATOR="Ninja"
+if [ "$(uname -o)" == "Msys" ]; then
+	export CMAKE_GENERATOR="MSYS Makefiles"
+else
+	export CMAKE_GENERATOR="Ninja"
+fi;
 export DPREFIX="${XDG_DATA_HOME}/darling"
 export EDITOR=nvim
 export FREESTANDING="-fdata-sections -ffreestanding -ffunction-sections -fno-asynchronous-unwind-tables -fno-exceptions -fno-rtti -fno-stack-check -fno-stack-protector -mno-stack-arg-probe -fno-unwind-tables -nostdlib -nostdinc -fno-stack-clash-protection -Wl,-n,--build-id=none,-gc-sections -static"
