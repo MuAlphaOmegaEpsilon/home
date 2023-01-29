@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo This needs to be completed yet. Please open the file at ~/.local/shell/recover to finalize the script.
+exit
+# https://superuser.com/questions/150027/how-to-recover-a-removed-file-under-linux
+grep -a -B[size before] -A[size after] 'text' /dev/[your_partition] > file.txt
