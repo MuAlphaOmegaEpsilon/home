@@ -8,9 +8,9 @@ Having my home folder on GitHub allows me to setup a new machine faster and to b
 ## Projects
 Inside the [prj](prj) folder you will find all the submodules related to past projects, ongoing ones and various experiments and attempts.<br/>
 My latest WIP projects and experiments are the following:
- - **[us](prj/us/):** a Qt6 based cross-platform app (Linux, Windows, macOS, iOS and Android) to track personal finances and investments
- - **[dove](prj/dove):** a data oriented video editor, aimed at blazingly fast performance and written in Qt6 mainly for desktop: will be publicly released at a later stage
- - **[minimalib](prj/minimalib/):** a library comprised of a small set of functions and helpers to allow a C++ program to be written without linking to a libc implementation, calling kernel syscalls straight from user code. This gives the programmer a bigger control (and responsibility) because there is no more a middle-layer between user-land and kernel-land. The resulting binaries are also much smaller, and a performance gain is to be expected (on my Ubuntu machine I am recording a 3x improvement in process boot up time).
+ - **[us](https://github.com/MuAlphaOmegaEpsilon/us):** a Qt6 based cross-platform app (Linux, Windows, macOS, iOS and Android) to track personal finances and investments
+ - **[dove](https://github.com/MuAlphaOmegaEpsilon/dove):** a data oriented video editor, aimed at blazingly fast performance and written in Qt6 mainly for desktop: will be publicly released at a later stage
+ - **[minimalib](https://github.com/MuAlphaOmegaEpsilon/minimalib/):** a library comprised of a small set of functions and helpers to allow a C++ program to be written without linking to a libc implementation, calling kernel syscalls straight from user code. This gives the programmer a bigger control (and responsibility) because there is no more a middle-layer between user-land and kernel-land. The resulting binaries are also much smaller, and a performance gain is to be expected (on my Ubuntu machine I am recording a 3x improvement in process boot up time).
 
 ## Configurations
 Most configurations file can be found under the [.config](.config) folder, as usual.<br/>
