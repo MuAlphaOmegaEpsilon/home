@@ -50,7 +50,7 @@
 	ll = log
 	lm = log --oneline master..
 	lp = log -p
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --graph --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --date=short
 
 	ls = ls-files
 	ign = ls-files -o -i --exclude-standard
