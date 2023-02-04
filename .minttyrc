@@ -1,3 +1,5 @@
+# Configuration for mintty.exe, usually run on Windows as part of MSYS2
+
 CursorType=block
 Font=Terminus (TTF) for Windows
 FontHeight=12
