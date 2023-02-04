@@ -1,1 +1,3 @@
+# This is to use in combination with https://darlinghq.org/
+
 PATH="${PATH}:/Applications/CMake.app/Contents/bin"
