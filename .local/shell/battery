@@ -1,2 +1,7 @@
 #!/bin/sh
+
+# Nothing to do here, this is the default script that assumes that the machine
+# has no battery. The actual scripts that fetch the battery percentage are
+# machine-specific, and can therefore be found inside the corresponding folder.
+
 exit 0
