@@ -1,6 +1,6 @@
 # home
 Welcome to my personal home folder!<br/>
-Whether I am running a UNIX based OS or a Windows machine using MSYS2, this is the first repository that I am cloning on a new machine.<br/>
+Whether I am running Linux, or MacOS using [brew](https://brew.sh/) or Windows using [MSYS2](https://www.msys2.org/), this is the first repository that I am cloning on a new machine.<br/>
 Everything is stored here: my utilities scripts, my command line development environment, references to my projects, aliases and defaults.<br/>
 You probably won't be able to access my private repositories, but even those are referenced inside here as submodules.<br/>
 Having my home folder on GitHub allows me to setup a new machine faster and to be more robust in case I lose one of the existing machines, and having it public also allows me and anybody else to access it for inspiration, help, or whatever.
