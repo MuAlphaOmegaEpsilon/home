@@ -73,6 +73,8 @@ alias qjoypad='qjoypad --notray'
 # rm
 alias rm='rm --preserve-root'
 
+alias shred='shred -u'
+
 alias syscalls-list='ls /usr/share/man/man2 | sed -e s/.2.gz//g | xargs man -s 2 -k  | sort | grep -v "unimplemented system calls"'
 
 # tmux
