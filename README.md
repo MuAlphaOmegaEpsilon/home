@@ -26,6 +26,10 @@ These colors are applied in different ways depending on the terminal interface I
  - **TTY:** colors are applied using the [setvtrgb](https://www.man7.org/linux/man-pages/man8/setvtrgb.8.html) command when the [.profile](.profile) is read at session opening
  - **Terminal emulator:** I manually add the colors in the terminal profile by hand, converting them to hexadecimal when needed, this is tedious but allows me to have a uniform look
 
+### Git
+I have my own set of git aliases, defaults and git clients' settings in [.config/git/config](.config/git/config). As you may already have understood git is my daily driver for version control.<br/>
+The aliases are quite useful to reduce the typing of commonly used git commands, as well as to automate more complex use cases. The `git alias` command (which is an alias itself) prints the list of available aliases, and this is something that even I use quite often to remember how to spell certain commands or even to check what aliases I have in place.
+
 ### TMUX
 I started using [tmux](https://github.com/tmux/tmux) a while back and it changed the way I use the terminal. My tmux configuration can be found in the [.config/tmux/tmux.conf](.config/tmux/tmux.conf) file.
 
