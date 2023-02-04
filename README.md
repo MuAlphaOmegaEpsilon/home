@@ -1,12 +1,12 @@
 # home
 Welcome to my personal home folder!<br/>
-Whether I am running a UNIX based OS, whether I am running on Windows using MSYS2, this is the first repository that I am cloning on a new machine.<br/>
+Whether I am running a UNIX based OS or a Windows machine using MSYS2, this is the first repository that I am cloning on a new machine.<br/>
 Everything is stored here: my utilities scripts, my command line development environment, references to my projects, aliases and defaults.<br/>
 You probably won't be able to access my private repositories, but even those are referenced inside here as submodules.<br/>
 Having my home folder on GitHub allows me to setup a new machine faster and to be more robust in case I lose one of the existing machines, and having it public also allows me and anybody else to access it for inspiration, help, or whatever.
 
 ## Projects
-Inside the [prj](prj) folder you will find all the submodules related to past projects, ongoing project, and various experiments and attempts.<br/>
+Inside the [prj](prj) folder you will find all the submodules related to past projects, ongoing ones and various experiments and attempts.<br/>
 My latest WIP projects and experiments are the following:
  - **[us](prj/us/):** a Qt6 based cross-platform app (Linux, Windows, macOS, iOS and Android) to track personal finances and investments
  - **[dove](prj/dove):** a data oriented video editor, aimed at blazingly fast performance and written in Qt6 mainly for desktop: will be publicly released at a later stage
