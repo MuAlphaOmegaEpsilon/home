@@ -19,4 +19,4 @@ export XDG_CACHE_HOME="${HOME}/.cache"			# Where user non-essential data files s
 export XDG_CONFIG_HOME="${HOME}/.config"		# Where user configuration files should be stored
 export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be stored
 export XDG_LOCAL_HOME="${HOME}/.local"			# Where user main dirs should be stored
-export PATH="${HOME}/3rd-party/flutter/bin:${HOME}/.local/bin:${HOME}/.local/shell/$(hostname):${HOME}/.local/shell:${PATH}"
+export PATH="${HOME}/.local/bin:${HOME}/.local/shell/$(hostname):${HOME}/.local/shell:${PATH}"
