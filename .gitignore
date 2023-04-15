@@ -9,11 +9,15 @@
 .CFUserTextEncoding
 .clangd
 .cmake
+FiraxisLive
+.config/*-terminals.list
+.config/0ad
 .config/1Password
 .config/akregatorrc
 .config/arkrc
 .config/asciinema
 .config/baloofileinformationrc
+.config/Beyond-All-Reason
 .config/blender
 .config/bluedevilglobalrc
 .config/BraveSoftware
@@ -37,6 +41,7 @@
 .config/FreeCAD
 .config/fontconfig
 .config/.gsd-keyboard.settings-ported
+.config/Gaijin
 .config/gcolor3
 .config/geeqie
 .config/GIMP
@@ -139,6 +144,7 @@
 .config/vivaldi-snapshot
 .config/vivaldi
 .config/vlc
+.config/WarThunder
 .config/xdg-desktop-portal-kderc
 .config/xournalpp
 .config/xsettingsd
@@ -179,10 +185,13 @@
 .local/share/*.sqlite
 .local/share/*.txt
 .local/share/*.xbel*
+.local/share/0ad
 .local/share/app-info
 .local/share/applications
 .local/share/ark
 .local/share/Aspyr
+.local/share/Aspyr Media
+.local/share/aspyr-media
 .local/share/backgrounds
 .local/share/bash-completion/completions
 .local/share/Baldur's Gate - Enhanced Edition
@@ -201,6 +210,7 @@
 .local/share/evolution
 .local/share/flatpak
 .local/share/fonts
+.local/share/FreeCAD
 .local/share/gedit
 .local/share/grilo-plugins
 .local/share/gvfs-metadata
