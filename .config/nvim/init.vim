@@ -17,11 +17,17 @@ set packpath=~/.local/share/nvim/site
 " Since lightline is in use, there's no need to show the mode twice
 set noshowmode
 
+" Disable mouse usage
+set mouse=
+
 " Show whitespace characters
 set list
 
 " 8 colors terminal, bash based
 set t_Co=8
+
+let g:netrw_sort_by="name"
+let g:netrw_sort_sequence="[\\/]$"
 
 if has("win64")
 	set shell=C:/msys64/usr/bin/bash
@@ -265,7 +271,7 @@ let g:lightline.tabline = {
 
 "--- LUA SETUP ---
 lua <<EOF
-local lsp = require('lspconfig')
+local lsp = require'lspconfig'
 local cmp = require'cmp'
 cmp.setup({
 	snippet = {
@@ -295,8 +301,6 @@ cmp.setup({
 })
 lsp.clangd.setup { cmd = { 'clangd', '--background-index', '--function-arg-placeholders', '--header-insertion=never', '--clang-tidy' } }
 lsp.cmake.setup {}
-
-require'flutter-tools'.setup{}
 
 -- require'nvim-treesitter.configs'.setup {
 	-- ensure_installed = "",
