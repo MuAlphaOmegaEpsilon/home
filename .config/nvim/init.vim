@@ -57,6 +57,9 @@ set shiftround		" Round tabs to a multiple of shiftwidth
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType svg setlocal shiftwidth=2 tabstop=2
+autocmd FileType,BufNewFile,BufRead openscad setlocal formatprg=clang-format
+autocmd FileType,BufNewFile,BufRead openscad :call system('openscad ' . expand('%:p') . ' &')
+autocmd BufWinLeave openscad :call system('killall openscad')
 
 " Better autocompletion
 set wildmenu
