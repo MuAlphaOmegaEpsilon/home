@@ -13,6 +13,7 @@
 [merge]
 	ff = only
 	tool = delta
+	summary = true
 
 [pull]
 	ff = only
