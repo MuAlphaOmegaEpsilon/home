@@ -80,12 +80,13 @@
 	ui = true
 
 [cola]
-	spellcheck = false
-	fontdiff = Monospace,8,-1,5,50,0,0,0,0,0
-	hidpi = 1.5
+	spellcheck = true
+	fontdiff = Terminus (TTF),8,-1,5,50,0,0,0,0,0
+	hidpi = 2
 	theme = flat-dark-grey
 	safemode = true
 	tabwidth = 4
+	statusshowtotals = true
 
 [delta]
 	plus-style = 0 10
