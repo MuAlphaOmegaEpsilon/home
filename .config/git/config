@@ -33,6 +33,7 @@
 	ba = branch --all
 
 	ca = commit --amend
+	cane = commit --amend --no-edit
 	cm = commit -m
 	ce = commit --allow-empty-message -m ""
 	cf = commit --fixup
