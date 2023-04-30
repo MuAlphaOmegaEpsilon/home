@@ -1,0 +1,8 @@
+#!/bin/sh
+set -euf
+
+# https://www.ffmpeg.org/ffmpeg-filters.html#vidstabdetect
+ffmpeg -v quiet -stats -i "${1}" -vf vidstabdetect -f null -
+ffmpeg -v quiet -stats -i "${1}" -vf vidstabtransform=smoothing=15,unsharp -crf 15 "$(echo ${1} | cut -d . -f 1)-stable.$(echo ${1} | cut -d . -f 2)"
+rm transforms.trf
+
