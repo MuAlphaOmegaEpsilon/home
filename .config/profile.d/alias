@@ -31,6 +31,10 @@ if [ "$(uname -o)" == "Msys" ]; then
 	alias rg='rg --path-separator //'
 fi
 
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffplay='ffplay -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
+
 if [ "$(uname -o)" == "Msys" ]; then
 	alias finished='if [ $? == 0 ]; then FINISHED_TITLE=Succeeded; FINISHED_ICON="info"; (play-success &); else FINISHED_TITLE="Failed"; FINISHED_ICON="error"; (play-fail &); fi; (notify-send -i ${FINISHED_ICON} "${FINISHED_TITLE}" " " &)'
 else
