@@ -190,3 +190,6 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/vim-qml
 	url = git@github.com:peterhoeg/vim-qml
 	branch = master
+[submodule "prj/board"]
+	path = prj/board
+	url = git@github.com:MuAlphaOmegaEpsilon/board
