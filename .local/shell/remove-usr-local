@@ -1,0 +1,27 @@
+#!/bin/sh
+set -eu
+
+# Use this script to remove a pre-existing installation performed manually under /usr/local.
+# Pass the usr/ folder containing the names of the files to remove, and those names will
+# be removed under /usr/local/.
+#
+help()
+{
+	echo "USAGE: remove-usr-local $HOME/Downloads/app/usr"
+}
+
+case "${1:-}" in
+	usr) ;;
+	usr/) ;;
+	*/usr) ;;
+	*/usr/) ;;
+	-h) help; exit;;
+	--help) help; exit;;
+	"") help; exit;;
+	 *) help; exit;;
+esac
+
+set +e
+for FILE in $(find "${1}" -type f); do
+	sudo rm --verbose --preserve-root "/usr/local/$(echo ${FILE} | colrm 1 4)"
+done

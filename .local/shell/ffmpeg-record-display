@@ -1,0 +1,1 @@
+ffmpeg -f x11grab -framerate 60 -draw_mouse 0 -video_size 3840x2160 -i :1 %04d.png

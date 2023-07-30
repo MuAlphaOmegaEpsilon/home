@@ -1,0 +1,16 @@
+#!/bin/sh
+set -euf
+
+HELP="Calculate the specular value of a material starting from the IOR value.\nUsage: ior-to-specular [-h | --help] <IOR>"
+
+if [ "$#" -ne 1 ]; then
+  echo "${HELP}" >&2
+  exit 1
+fi
+
+if [ "$1" = "--help" ] | [ "$1" = "-h" ]; then
+  echo "${HELP}"
+  exit 0
+fi
+
+printf "%0.3f\n" $(echo "12.5 * (($1 - 1) / ($1 + 1))^2" | bc --mathlib )

@@ -1,0 +1,1 @@
+ffmpeg -framerate 60 -start_number 213 -i %04d.png -pix_fmt yuv444p -crf 12 output.mp4

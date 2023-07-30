@@ -1,0 +1,12 @@
+#!/bin/sh
+set -euf
+
+openssl pkcs7 -inform DER -in "$1" -print_certs -out "$1.pem"
+echo "\033[33;1mAUTHOR:\033[0m"
+head --lines 2 "$1.pem"
+echo "\033[33;1mCA SIGNATURE MATCH:\033[0m"
+openssl smime -verify -in "$1" -inform der -signer "$1.pem"
+openssl smime -in "$1" -inform der -noverify -signer "$1.pem" -out "$1.pdf" 2>/dev/null
+rm "$1.pem"
+evince "$1.pdf" 1>/dev/null 2>&1
+rm "$1.pdf"

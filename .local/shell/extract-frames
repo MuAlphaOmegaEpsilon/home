@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euf
+set -uf
 
 if [ $# -ne 1 ]; then
 	echo "Filename is required"

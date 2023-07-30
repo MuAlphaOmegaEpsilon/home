@@ -2,7 +2,9 @@
 set -euf
 
 # https://www.ffmpeg.org/ffmpeg-filters.html#vidstabdetect
+echo "\033[0;33m1st pass: analysis\033[0m"
 ffmpeg -v quiet -stats -i "${1}" -vf vidstabdetect -f null -
+echo "\033[0;33m2nd pass: transformation\033[0m"
 ffmpeg -v quiet -stats -i "${1}" -vf vidstabtransform=smoothing=15,unsharp -crf 15 "$(echo ${1} | cut -d . -f 1)-stable.$(echo ${1} | cut -d . -f 2)"
 rm transforms.trf
 
