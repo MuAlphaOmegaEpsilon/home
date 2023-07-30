@@ -305,6 +305,7 @@ cmp.setup({
 })
 lsp.clangd.setup { cmd = { 'clangd', '--background-index', '--function-arg-placeholders', '--header-insertion=never', '--clang-tidy' } }
 lsp.cmake.setup {}
+lsp.openscad_ls.setup {}
 
 -- require'nvim-treesitter.configs'.setup {
 	-- ensure_installed = "",
