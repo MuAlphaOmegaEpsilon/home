@@ -62,10 +62,6 @@
 	path = .config/private.d
 	url = git@github.com:MuAlphaOmegaEpsilon/private.d
 	branch = master
-[submodule ".local/share/nvim/site/plugin/lightline"]
-	path = .local/share/nvim/site/pack/git-plugins/start/lightline
-	url = git@github.com:itchyny/lightline.vim
-	branch = master
 [submodule "3rd-party/GammaRay"]
 	path = 3rd-party/GammaRay
 	url = git@github.com:KDAB/GammaRay
@@ -122,18 +118,10 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/nvim-lspconfig
 	url = git@github.com:neovim/nvim-lspconfig
 	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/dart-vim-plugin"]
-	path = .local/share/nvim/site/pack/git-plugins/start/dart-vim-plugin
-	url = git@github.com:dart-lang/dart-vim-plugin
-	branch = master
 [submodule ".local/share/nvim/site/pack/git-plugins/start/plenary.nvim"]
 	path = .local/share/nvim/site/pack/git-plugins/start/plenary.nvim
 	url = git@github.com:nvim-lua/plenary.nvim
 	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/flutter-tools.nvim"]
-	path = .local/share/nvim/site/pack/git-plugins/start/flutter-tools.nvim
-	url = git@github.com:akinsho/flutter-tools.nvim
-	branch = main
 [submodule "prj/me"]
 	path = prj/me
 	url = git@github.com:MuAlphaOmegaEpsilon/me
