@@ -118,6 +118,8 @@ set autoindent		" Reproduce the previous line indentation
 set smartindent		" Automatically increase/decrease indentation relative to { } blocks
 set cindent			" A stricter smartindent which works better for the C language
 set shiftround		" Round tabs to a multiple of shiftwidth
+autocmd FileType txt setlocal wrap
+autocmd FileType markdown setlocal wrap
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType svg setlocal shiftwidth=2 tabstop=2
@@ -137,7 +139,7 @@ set completeopt=menuone,noinsert,noselect
 " Automatically write file on buffer closing
 set autowrite
 
-" Don't wrap line
+" Don't wrap lines automatically
 set nowrap
 
 " Disable left bar containing LSP messages
