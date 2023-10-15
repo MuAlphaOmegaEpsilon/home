@@ -7,6 +7,9 @@ set hlsearch
 
 set fileformat=unix
 
+" Enable system clipboard interoperability
+set clipboard=unnamedplus
+
 " Prevent neovim from polluting the filesystem with unwanted extra files
 set nobackup nowritebackup noswapfile
 
@@ -14,8 +17,8 @@ set nobackup nowritebackup noswapfile
 set nofoldenable
 set packpath=~/.local/share/nvim/site
 
-" Since lightline is in use, there's no need to show the mode twice
-set noshowmode
+" Automatically change current working dir on new file opening
+set autochdir
 
 " Disable mouse usage
 set mouse=
@@ -45,6 +48,67 @@ set undofile
 " Time in milliseconds to wait for a mapped sequence to complete,
 " see https://goo.gl/vHvyu8 for more info
 set timeoutlen=1000
+
+set statusline=%f%m\ %{&fenc}\ %{&ff}\ %Y%=\ Ln\ %l/%L\(%p%%)\ Col\ %v\ 
+" set tabline=%!MyTabLine()  " custom tab pages line
+function! MyTabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    let s .= (i + 1 == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    if i + 1 == tabpagenr()
+      let s .= '%#TabLineSel#' " WildMenu
+    else
+      let s .= '%#Title#'
+    endif
+    " set the tab page number (for mouse clicks)
+    let s .= '%' . (i + 1) . 'T '
+    " set page number string
+    let s .= i + 1 . ''
+    " get buffer names and statuses
+    let n = ''  " temp str for buf names
+    let m = 0   " &modified counter
+    let buflist = tabpagebuflist(i + 1)
+    " loop through each buffer in a tab
+    for b in buflist
+      if getbufvar(b, "&buftype") == 'help'
+        " let n .= '[H]' . fnamemodify(bufname(b), ':t:s/.txt$//')
+      elseif getbufvar(b, "&buftype") == 'quickfix'
+        " let n .= '[Q]'
+      elseif getbufvar(b, "&modifiable")
+        let n .= fnamemodify(bufname(b), ':t') . ', ' " pathshorten(bufname(b))
+      endif
+      if getbufvar(b, "&modified")
+        let m += 1
+      endif
+    endfor
+    " let n .= fnamemodify(bufname(buflist[tabpagewinnr(i + 1) - 1]), ':t')
+    let n = substitute(n, ', $', '', '')
+    " add modified label
+    if m > 0
+      let s .= '+'
+      " let s .= '[' . m . '+]'
+    endif
+    if i + 1 == tabpagenr()
+      let s .= ' %#TabLineSel#'
+    else
+      let s .= ' %#TabLine#'
+    endif
+    " add buffer names
+    if n == ''
+      let s.= '[New]'
+    else
+      let s .= n
+    endif
+    " switch to no underlining and add final space
+    let s .= ' '
+  endfor
+  let s .= '%#TabLineFill#%T'
+  " right-aligned close button
+  " if tabpagenr('$') > 1
+  "   let s .= '%=%#TabLineFill#%999Xclose'
+  " endif
+  return s
+endfunction
 
 " Tabulation and indentation config
 set tabstop=4		" Length of an actual \t character
@@ -120,7 +184,7 @@ imap <C-s> <ESC><C-s>i
 nnoremap s :%s/<C-R>=expand('<cword>')<CR>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
 nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Left><Left>
 " Open file-explorer
-map <C-e> :w<CR>:Explore<CR>
+map <C-e> :tabnew<CR>:Explore<CR>
 " Tilde (F12)
 imap <F12> ~
 " Disable fast scroll using shift and arrows
@@ -167,8 +231,8 @@ nmap <C-S-Down> :move +1<CR>
 " vmap <C-S-Down> dpV >gv
 imap <C-S-Down> <ESC>:move +1<CR>i
 " Language server protocol mappings
-nnoremap <silent> <C-h> <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-d>	<cmd>lua vim.diagnostic.open_float()<CR>
+nnoremap <silent> <C-h>   <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <C-d>   <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap <silent> <C-S-f> <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gq    gggqG
 " nnoremap <silent> gq    <cmd>lua vim.lsp.buf.format{async=true}<CR>
@@ -200,78 +264,6 @@ let g:NERDSpaceDelims = 1
 
 "--- Ultisnips ---
 " let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/ultisnips/']
-
-
-"--- Lightline ---
-" Colors						  FOREGROUND BACKGROUND
-let s:black_on_red				= [['', 00], ['', 01]] " Black on red
-let s:black_on_orange			= [['', 00], ['', 04]] " Black on orange
-let s:black_on_yellow			= [['', 00], ['', 03]] " Black on yellow
-let s:black_on_green			= [['', 00], ['', 02]] " Black on green
-let s:black_on_lightgrey		= [['', 00], ['', 07]] " Black on light grey
-let s:black_on_lightblue		= [['', 00], ['', 06]] " Black on light blue
-let s:white_on_darkgrey			= [['', 15], ['', 05]] " White on dark grey
-let s:lightgrey_on_lightgrey	= [['', 07], ['', 07]] " Light grey on dark grey
-let s:lightgrey_on_darkgrey		= [['', 07], ['', 05]] " Light grey on dark grey
-let s:blue_on_darkgrey			= [['', 06], ['', 05]] " Blue on dark grey
-let s:pink_on_darkgrey			= [['', 09], ['', 05]] " Pink on dark grey
-let s:red_on_darkgrey			= [['', 01], ['', 05]] " Red on dark grey
-let s:orange_on_darkgrey		= [['', 04], ['', 05]] " Orange on dark grey
-let s:green_on_darkgrey			= [['', 02], ['', 05]] " Green on dark grey
-let s:yellow_on_black			= [['', 03], ['', 00]] " Green on dark grey
-
-let s:p = {'normal': {}, 'command': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-let s:p.normal.left     = [ s:black_on_orange, s:red_on_darkgrey, s:orange_on_darkgrey, s:green_on_darkgrey, s:lightgrey_on_darkgrey ]
-let s:p.insert.left     = [ s:black_on_green, s:red_on_darkgrey, s:orange_on_darkgrey, s:green_on_darkgrey, s:lightgrey_on_darkgrey ]
-let s:p.command.left    = [ s:black_on_yellow, s:lightgrey_on_darkgrey ]
-let s:p.replace.left    = [ s:black_on_red, s:lightgrey_on_darkgrey ]
-let s:p.visual.left     = [ s:black_on_lightgrey, s:lightgrey_on_darkgrey ]
-let s:p.inactive.left   = [ s:white_on_darkgrey, s:lightgrey_on_darkgrey ]
-let s:p.normal.middle   = [ s:lightgrey_on_darkgrey ]
-let s:p.inactive.middle = [ s:white_on_darkgrey ]
-let s:p.normal.right    = [ s:pink_on_darkgrey, s:blue_on_darkgrey ]
-let s:p.inactive.right  = [ s:white_on_darkgrey, s:white_on_darkgrey ]
-let s:p.normal.error    = [ s:red_on_darkgrey ]
-let s:p.normal.warning  = [ s:orange_on_darkgrey ]
-let s:p.tabline.left    = [ s:black_on_lightgrey ]
-let s:p.tabline.middle  = [ s:black_on_lightgrey ]
-let s:p.tabline.right   = [ s:lightgrey_on_lightgrey ]
-let s:p.tabline.tabsel  = [ s:yellow_on_black ]
-
-let g:lightline#colorscheme#maze_lightline#palette = lightline#colorscheme#flatten(s:p)
-
-" Set color to the components:
-let g:lightline = {
-	\ 'colorscheme': 'maze_lightline',
-	\ }
-
-" let g:lightline.component = {
-"			\ 'errors': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Error\")")}',
-"			\ 'warnings': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Warning\")")}',
-"			\ 'infos': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Information\")")}',
-"			\ 'hints': '%{luaeval("vim.lsp.diagnostic.get_count(0,\"Hint\")")}',
-"			\ 'lineinfo': "%{printf('%d/%d:%d', line('.'),  line('$'), col('.'))}",
-"	\ }
-let g:lightline.active = {
-	\ 'left': [ [ 'mode', 'paste' ],
-	\			[ 'errors' ],
-	\			[ 'warnings' ],
-	\			[ 'infos' ],
-	\			[ 'hints' ],
-	\           [ 'readonly', 'filename', 'modified' ]],
-	\ 'right': [ [ 'lineinfo' ],
-	\            [ 'blue_on_darkgrey' ],
-	\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
-	\ }
-let g:lightline.inactive = {
-	\ 'left': [ [ 'filename' ] ],
-	\ 'right': [ [ 'lineinfo' ],
-	\            [ 'blue_on_darkgrey' ] ]
-	\ }
-let g:lightline.tabline = {
-	\ 'left': [ [ 'tabs' ] ],
-	\ 'right': [ [ 'close' ] ]
-	\ }
 
 "--- LUA SETUP ---
 lua <<EOF
