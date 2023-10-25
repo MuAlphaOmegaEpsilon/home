@@ -29,8 +29,10 @@ set list
 " 8 colors terminal, bash based
 set t_Co=8
 
+let g:netrw_banner=0 " Pressing I will toggle the banner
 let g:netrw_sort_by="name"
 let g:netrw_sort_sequence="[\\/]$"
+let g:netrw_wiw=1
 
 if has("win64")
 	set shell=C:/msys64/usr/bin/bash
@@ -42,6 +44,11 @@ endif
 " Make the tabs bar always visible, even when only one tab is present
 set showtabline=2
 
+set laststatus=3
+set showcmdloc=statusline
+" set noshowmode
+set cmdheight=0
+
 " Persistent undo even after you close a file and re-open it
 set undofile
 
@@ -49,66 +56,7 @@ set undofile
 " see https://goo.gl/vHvyu8 for more info
 set timeoutlen=1000
 
-set statusline=%f%m\ %{&fenc}\ %{&ff}\ %Y%=\ Ln\ %l/%L\(%p%%)\ Col\ %v\ 
-" set tabline=%!MyTabLine()  " custom tab pages line
-function! MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    let s .= (i + 1 == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSel#' " WildMenu
-    else
-      let s .= '%#Title#'
-    endif
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T '
-    " set page number string
-    let s .= i + 1 . ''
-    " get buffer names and statuses
-    let n = ''  " temp str for buf names
-    let m = 0   " &modified counter
-    let buflist = tabpagebuflist(i + 1)
-    " loop through each buffer in a tab
-    for b in buflist
-      if getbufvar(b, "&buftype") == 'help'
-        " let n .= '[H]' . fnamemodify(bufname(b), ':t:s/.txt$//')
-      elseif getbufvar(b, "&buftype") == 'quickfix'
-        " let n .= '[Q]'
-      elseif getbufvar(b, "&modifiable")
-        let n .= fnamemodify(bufname(b), ':t') . ', ' " pathshorten(bufname(b))
-      endif
-      if getbufvar(b, "&modified")
-        let m += 1
-      endif
-    endfor
-    " let n .= fnamemodify(bufname(buflist[tabpagewinnr(i + 1) - 1]), ':t')
-    let n = substitute(n, ', $', '', '')
-    " add modified label
-    if m > 0
-      let s .= '+'
-      " let s .= '[' . m . '+]'
-    endif
-    if i + 1 == tabpagenr()
-      let s .= ' %#TabLineSel#'
-    else
-      let s .= ' %#TabLine#'
-    endif
-    " add buffer names
-    if n == ''
-      let s.= '[New]'
-    else
-      let s .= n
-    endif
-    " switch to no underlining and add final space
-    let s .= ' '
-  endfor
-  let s .= '%#TabLineFill#%T'
-  " right-aligned close button
-  " if tabpagenr('$') > 1
-  "   let s .= '%=%#TabLineFill#%999Xclose'
-  " endif
-  return s
-endfunction
+set statusline=%f%m\ %{&fenc}\ %{&ff}%=%l/%L\(%p%%)\ %v
 
 " Tabulation and indentation config
 set tabstop=4		" Length of an actual \t character
