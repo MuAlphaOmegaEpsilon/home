@@ -181,3 +181,6 @@
 [submodule "prj/board"]
 	path = prj/board
 	url = git@github.com:MuAlphaOmegaEpsilon/board
+[submodule "prj/business-cards"]
+	path = prj/business-cards
+	url = git@github.com:MuAlphaOmegaEpsilon/business-cards
