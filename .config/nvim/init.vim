@@ -56,7 +56,16 @@ set undofile
 " see https://goo.gl/vHvyu8 for more info
 set timeoutlen=1000
 
-set statusline=%f%m\ %{&fenc}\ %{&ff}%=%l/%L\(%p%%)\ %v
+let g:modemap={
+	\ 'n'      : 'NORMAL',
+	\ 'i'      : 'INSERT',
+	\ 'v'      : 'VISUAL',
+	\ 'V'      : 'VLINE',
+	\ '\<C-V>' : 'VBLOCK',
+	\ 'c'      : 'COMMAND',
+	\ 'R'      : 'REPLACE',
+	\ 'Rv'     : 'VREPLACE'}
+set statusline=\ %{g:modemap[mode()]}\ %f%m\ %{&fenc}\ %{&ff}%=%l/%L\(%p%%)\ %v
 
 " Tabulation and indentation config
 set tabstop=4		" Length of an actual \t character
