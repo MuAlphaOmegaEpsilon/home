@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything and return early (e.g. scp)
+[[ $- == *i* ]] || return
+
 if [ "${TERM}" = "linux" ]; then
 	$(command -v setfont) /usr/share/consolefonts/Lat15-Terminus18x10.psf.gz;
 	$(command -v setvtrgb) "${HOME}"/.config/vtrgb/maze;
@@ -13,10 +16,6 @@ if [ -f /etc/profile ]; then . /etc/profile; fi
 . "${HOME}"/.config/profile.d/alias
 for file in "${HOME}"/.config/private.d/*; do . "${file}"; done
 for file in "${HOME}"/.config/profile.d/"$(hostname)"/*; do . "${file}"; done
-
-if [ "${TMUX_PANE}" == "%0" ]; then
-	neofetch
-fi
 
 if [ -f /etc/bash.bashrc ]; then . /etc/bash.bashrc; fi
 if [ -f /usr/share/defaults/etc/bash.bashrc ]; then	. /usr/share/defaults/etc/bash.bashrc; fi
