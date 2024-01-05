@@ -1,20 +1,36 @@
 #!/bin/sh
 set -euf
 
-if [ "$(uname -o)" = "Msys" ]; then
-	if ping 8.8.8.8 -n 1 -w 2000 1>/dev/null; then
+for arg in "${@:-}"; do
+	case "${arg}" in
+		--help) printf "Check if the machine can ping Google\n  --repeat  Keep trying over and over\n  --notify  Notify the change (TO BE IMPLEMENTED)\n"; exit;;
+	--repeat) REPEAT=true;;
+	--notify) NOTIFY=true;;
+	esac
+done
+
+check()
+{
+	if [ "$(uname -o)" = "Msys" ]; then
+		PING_FLAGS="-n 1 -w 2000"
+	else
+		PING_FLAGS="-c 1 -W 2"
+	fi
+
+	if ping 8.8.8.8 $PING_FLAGS 1>/dev/null; then
 		echo yes
-		exit 0
+		return 0
 	else
 		echo no
-		exit 1
+		return 1
 	fi
+}
+
+if ${REPEAT:-false}; then
+	while :; do
+		check
+		sleep 2
+	done;
 else
-	if ping 8.8.8.8 -c 1 -W 2 1>/dev/null; then
-		echo yes
-		exit 0
-	else
-		echo no
-		exit 1
-	fi
+	check || exit 1
 fi

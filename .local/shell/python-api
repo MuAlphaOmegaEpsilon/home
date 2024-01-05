@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]; then
+	echo "usage: python-api file(s)"
+	exit 1
+fi
+
+for file in "$@"; do
+	echo -e "\033[0;33m${file}\033[0m"
+	grep "class \|def " "${file}" | tr --delete ":"
+done
+
