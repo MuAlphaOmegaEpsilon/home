@@ -82,6 +82,8 @@ autocmd FileType svg setlocal shiftwidth=2 tabstop=2
 autocmd FileType,BufNewFile,BufRead openscad setlocal formatprg=clang-format
 autocmd FileType,BufNewFile,BufRead openscad :call system('openscad ' . expand('%:p') . ' &')
 autocmd BufWinLeave openscad :call system('killall openscad')
+" Fix issue with statusline disappearing on certain mode changes
+autocmd ModeChanged * lua vim.schedule(function() vim.cmd('redraw') end)
 
 " Better autocompletion
 set wildmenu
