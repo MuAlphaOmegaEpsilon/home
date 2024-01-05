@@ -6,6 +6,12 @@ endif
 
 let colors_name = "maze"
 
+hi Moden		ctermfg=00 ctermbg=04
+hi Modei		ctermfg=00 ctermbg=03
+hi Modev		ctermfg=00 ctermbg=02
+hi Modes		ctermfg=00 ctermbg=05
+hi Moder		ctermfg=00 ctermbg=06
+
 hi Normal		ctermfg=07	cterm=none
 hi TrailingWhitespace		ctermbg=04
 hi Cursor					cterm=reverse
