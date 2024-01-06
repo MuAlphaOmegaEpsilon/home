@@ -19,7 +19,6 @@ for file in "${HOME}"/.config/profile.d/"$(hostname)"/*; do . "${file}"; done
 
 if [ -f /etc/bash.bashrc ]; then . /etc/bash.bashrc; fi
 if [ -f /usr/share/defaults/etc/bash.bashrc ]; then	. /usr/share/defaults/etc/bash.bashrc; fi
-for file in "${HOME}"/.config/profile.d/autocomplete/*; do . "${file}"; done
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
