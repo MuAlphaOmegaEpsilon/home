@@ -1,4 +1,9 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 export CLICOLOR=1
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/Library/Developer/CommandLineTools/usr/bin:${PATH}
+export PATH=/Library/Developer/CommandLineTools/usr/bin:${PATH}
+# LLVM
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+

@@ -54,9 +54,7 @@ if [ "$(uname -o)" == "Msys" ]; then
 fi
 
 # ls
-if [ "$(uname)" != "Darwin" ]; then
-	alias ls='ls --color=auto --group-directories-first'
-fi
+alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lh'
 alias la='ls -A'
 alias lla='ls -lAh'

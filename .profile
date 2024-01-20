@@ -1,3 +1,5 @@
+if [ "$(uname)" == "Darwin" ] && [ "${BASH_VERSINFO}" != "5" ]; then exec /usr/local/bin/bash; fi
+
 # If not running interactively, don't do anything and return early (e.g. scp)
 [[ $- == *i* ]] || return
 
