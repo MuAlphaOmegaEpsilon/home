@@ -9,7 +9,6 @@
 .CFUserTextEncoding
 .clangd
 .cmake
-FiraxisLive
 .config/*-terminals.list
 .config/0ad
 .config/1Password
@@ -51,6 +50,7 @@ FiraxisLive
 .config/google-chrome*
 .config/gpick
 .config/GREYC
+.config/gsconnect
 .config/gtkrc
 .config/gtkrc-2.0
 .config/gtk-2.0
@@ -141,6 +141,7 @@ FiraxisLive
 .config/Trolltech.conf
 .config/Ultimaker B.V.
 .config/unity3d
+.config/VCG
 .config/vivaldi-snapshot
 .config/vivaldi
 .config/vlc
@@ -167,11 +168,11 @@ FiraxisLive
 .gnuplot_history
 .gtkrc-2.0
 .icons
+.java
 .kde
 .launchpadlib
 .lesshst
 .nvidia-settings-rc
-.xsession-errors
 .local/bin
 .local/include
 .local/lib
@@ -206,6 +207,7 @@ FiraxisLive
 .local/share/data
 .local/share/datareporting
 .local/share/DaVinciResolve
+.local/share/dbus-1
 .local/share/desktop-directories
 .local/share/evolution
 .local/share/flatpak
@@ -219,6 +221,7 @@ FiraxisLive
 .local/share/icc
 .local/share/icons
 .local/share/lesshst
+.local/share/localsend_app
 .local/share/IsolatedStorage
 .local/share/kactivitymanagerd
 .local/share/kate
@@ -287,6 +290,7 @@ FiraxisLive
 .npm
 .npmrc
 .nv
+.opendrop
 .parallel
 .paradoxlauncher
 .pipewire-media-session
@@ -307,11 +311,13 @@ FiraxisLive
 .wget-hsts
 .Xauthority
 .xournal
+.xsession-errors
 .zoom
 Applications
 Desktop
 Documents
 Downloads
+FiraxisLive
 go
 Library
 Movies
