@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euf
+
+TMP_FILE="${1}.pragma-fixed"
+
+echo "#pragma once" | cat "${1}" > "${TMP_FILE}"
+mv "${TMP_FILE}" "${1}"

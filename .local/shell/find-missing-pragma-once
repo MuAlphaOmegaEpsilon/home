@@ -1,0 +1,6 @@
+#!/bin/sh
+set -uf
+
+for FILE in $(find -maxdepth 1 -type f -iname "*.h"); do
+	(echo "${FILE}: $(head -n 1 ${FILE})" | grep -v "#pragma once") &
+done
