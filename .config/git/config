@@ -5,7 +5,7 @@
 [core]
 	autocrlf = false
 	editor = nvim
-	pager = delta --side-by-side
+	pager = delta
 
 [fetch]
 	prune = true
@@ -53,6 +53,10 @@
 	lm = log --oneline master..
 	lp = log -p
 	lg = log --graph --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --date=short
+	lls = log --stat
+	lns = log --numstat
+	lss = log --shortstat
+	lsso = log --shortstat --oneline
 
 	ls = ls-files
 	ign = ls-files -o -i --exclude-standard
@@ -70,6 +74,7 @@
 	ra = rebase --abort
 	rc = rebase --continue
 	ri = rebase -i
+	rir = rebase -i --root
 
 	res = reset
 	resh = reset --hard
