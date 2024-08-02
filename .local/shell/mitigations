@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euf
+
+cd /sys/devices/system/cpu/vulnerabilities/
+for FILE in $(ls); do
+	echo "${FILE} \e[1;33m$(cat ${FILE})\e[0m"
+done
