@@ -187,3 +187,9 @@
 [submodule "prj/minecraft"]
 	path = prj/minecraft
 	url = git@github.com:MuAlphaOmegaEpsilon/minecraft.git
+[submodule "prj/tvsca-villa"]
+	path = prj/tvsca-villa
+	url = git@github.com:MuAlphaOmegaEpsilon/tvsca-villa.git
+[submodule "prj/elections"]
+	path = prj/elections
+	url = git@github.com:MuAlphaOmegaEpsilon/elections
