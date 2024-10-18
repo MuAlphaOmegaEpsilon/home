@@ -193,3 +193,6 @@
 [submodule "prj/elections"]
 	path = prj/elections
 	url = git@github.com:MuAlphaOmegaEpsilon/elections
+[submodule "prj/just-save"]
+	path = prj/just-save
+	url = git@github.com:MuAlphaOmegaEpsilon/just-save
