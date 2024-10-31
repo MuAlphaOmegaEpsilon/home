@@ -196,3 +196,6 @@
 [submodule "prj/just-save"]
 	path = prj/just-save
 	url = git@github.com:MuAlphaOmegaEpsilon/just-save
+[submodule "prj/qml-common"]
+	path = prj/qml-common
+	url = git@github.com:MuAlphaOmegaEpsilon/qml-common.git
