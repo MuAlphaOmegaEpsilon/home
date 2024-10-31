@@ -1,27 +1,27 @@
-000,255,095,255,255,050,100,170,128,255,060,255,070,175,040,255
-000,030,255,255,155,050,235,170,128,090,190,225,070,105,150,255
-000,030,130,000,050,050,255,170,128,168,080,130,255,225,200,255
+000,255,050,255,000,140,040,160,064,255,100,255,070,198,100,255
+000,030,190,155,000,032,150,160,064,090,255,235,070,119,235,255
+000,030,070,050,225,130,200,160,064,168,135,110,255,255,255,255
  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
  |   |   |  BG SECTION   |   |   |   |   |  FG SECTION   |   |
- |   |   |	 |   |   |   |   |   |   |   |   |   |	 |	 |	 |
- |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   White
- |   |   |   |   |   |   |   |   |   |   |   |   |   |   PrussianBlue
- |   |   |   |   |   |   |   |   |   |   |   |   |   Purple
- |   |   |   |   |   |   |   |   |   |   |   |   Blue
- |   |   |   |   |   |   |   |   |   |   |   PastelYellow
- |   |   |   |   |   |   |   |   |   |   DarkGreen
- |   |   |   |   |   |   |   |   |   Pink
- |   |   |   |   |   |   |   |   Grey
+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Bright White
+ |   |   |   |   |   |   |   |   |   |   |   |   |   |   Bright Cyan
+ |   |   |   |   |   |   |   |   |   |   |   |   |   Bright Magenta
+ |   |   |   |   |   |   |   |   |   |   |   |   Bright Blue
+ |   |   |   |   |   |   |   |   |   |   |   Bright Yellow
+ |   |   |   |   |   |   |   |   |   |   Bright Green
+ |   |   |   |   |   |   |   |   |   Bright Red (Pink)
+ |   |   |   |   |   |   |   |   Bright Black (Grey)
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
- |   |   |   |   |   |   |   LightGrey
- |   |   |   |   |   |   LightBlue
- |   |   |   |   |   DarkGreyLight
- |   |   |   |   Orange
- |   |   |   Yellow
- |   |   LightGreen
+ |   |   |   |   |   |   |   White
+ |   |   |   |   |   |   Cyan (Prussian Blue)
+ |   |   |   |   |   Magenta
+ |   |   |   |   Blue
+ |   |   |   Yellow (Orange)
+ |   |   Green
  |   Red
  Black
 
@@ -35,3 +35,22 @@ time to test these colors:
 			   the background filling the
 			   screen with each one for
 			   1 second
+
+To setup the terminal colors apply the following:
+#000000 00 - Black
+#FF1E1E 01 - Red
+#5FFF82 02 - Green
+#FF9B32 03 - Yellow
+#------ 04 - Blue
+#------ 05 - Magenta
+#64EBFF 06 - Cyan
+#A0A0A0 07 - White
+
+#404040 08 - Bright Black
+#FF5AA8 09 - Bright Red
+#3CBE50 10 - Bright Green
+#FFE182 11 - Bright Yellow
+#4646FF 12 - Bright Blue
+#AF69E1 13 - Bright Magent
+#2896C8 14 - Bright Cyan
+#FFFFFF 15 - Bright White
