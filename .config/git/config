@@ -5,14 +5,12 @@
 [core]
 	autocrlf = false
 	editor = nvim
-	pager = delta
 
 [fetch]
 	prune = true
 
 [merge]
 	ff = only
-	tool = delta
 	summary = true
 
 [pull]
@@ -95,14 +93,10 @@
 	tabwidth = 4
 	statusshowtotals = true
 
-[delta]
-	plus-style = 0 10
-	plus-emph-style = 0 2
 [gui]
 	editor = nvim
 	tabsize = 4
 	warndetachedcommit = true
-[diff]
-	tool = delta
+
 [log]
 	date = local
