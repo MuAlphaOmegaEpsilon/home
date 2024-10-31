@@ -59,12 +59,12 @@ set timeoutlen=1000
 set statusline=%#Moden#%{mode()=='n'?'\ \ NORMAL\ ':''}
 set statusline+=%#Modei#%{mode()=='i'?'\ \ INSERT\ ':''}
 set statusline+=%#Modev#%{mode()=='v'?'\ \ VISUAL\ ':''}
-set statusline+=%{mode()=='\<C-V>'?'\ \ VBLOCK\ ':''}
+set statusline+=%#Modev#%{mode()=='\<C-V>'?'\ \ VBLOCK\ ':''}
 set statusline+=%#Modes#%{mode()=='s'?'\ \ S-CHAR\ ':''}
-set statusline+=%{mode()=='S'?'\ \ S-LINE\ ':''}
+set statusline+=%#Modes#%{mode()=='S'?'\ \ S-LINE\ ':''}
 set statusline+=%#ModeR#%{mode()=='R'?'\ \ REPLACE\ ':''}
 set statusline+=%{mode()=='Rv'?'\ \ VREPLACE\ ':''}
-set statusline+=%#Normal#\ %f%m\ %{&fenc}\ %{&ff}%=%l/%L\(%p%%)\ %v
+set statusline+=%#Normal#\ %f%m\ %{&filetype}\ %{&fenc}\ %{&ff}%=%l/%L\(%p%%)\ %v
 
 " Tabulation and indentation config
 set tabstop=4		" Length of an actual \t character
@@ -74,7 +74,14 @@ set autoindent		" Reproduce the previous line indentation
 set smartindent		" Automatically increase/decrease indentation relative to { } blocks
 set cindent			" A stricter smartindent which works better for the C language
 set shiftround		" Round tabs to a multiple of shiftwidth
-autocmd FileType txt setlocal wrap
+
+" Enable filetype related features
+filetype on
+filetype plugin on
+filetype indent on
+
+" Filetype based configuration
+autocmd FileType text setlocal wrap
 autocmd FileType markdown setlocal wrap
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
@@ -124,11 +131,6 @@ set updatetime=300
 
 " Highlight trailing whitespace
 match TrailingWhitespace /\s\+$/
-
-" Enable filetype related features
-filetype on
-filetype plugin on
-filetype indent on
 
 " Map common commands to shortcuts
 " Quit
