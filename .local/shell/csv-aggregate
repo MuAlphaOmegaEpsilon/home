@@ -1,0 +1,12 @@
+#!/bin/sh
+set -euf
+
+rm -f aggregated.csv
+
+CSV_FILES=$(ls | grep .csv)
+
+head -n 1 $(echo ${CSV_FILES} | cut -f 1 -d ' ') > aggregated.csv
+for CSV in $CSV_FILES; do
+	echo "$CSV"
+	tail -n +2 $CSV >> aggregated.csv
+done

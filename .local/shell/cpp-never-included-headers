@@ -1,0 +1,5 @@
+#!/bin/sh
+for HEADER in $(find -type f -name "*.h"); do
+	grep -r "$(basename ${HEADER})\"" --include \*.h --include \*.cpp --include \*.cc ${1:-.} > /dev/null || echo "${HEADER}"
+done
+

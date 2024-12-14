@@ -1,0 +1,9 @@
+#!/bin/sh
+rg --no-filename "#include" | grep -v "//#include\|// #include" | tr -d '\"<>' | colrm 1 9 | sort | uniq --count | sort
+exit
+'''
+for COUNTED_HEADER in $(rg --no-filename "#include" | grep -v "//#include\|// #include" | tr -d '\"<>' | colrm 1 9 | sort | uniq --count | sort); do
+	HEADER=$(echo ${COUNTED_HEADER} | cut -d ' ' -f 2)
+	printf "%s %s lines\n" ${COUNTED_HEADER} $(locfile ${HEADER})
+done
+'''
