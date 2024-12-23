@@ -199,3 +199,9 @@
 [submodule "prj/qml-common"]
 	path = prj/qml-common
 	url = git@github.com:MuAlphaOmegaEpsilon/qml-common.git
+[submodule "prj/nos"]
+	path = prj/nos
+	url = git@github.com:MuAlphaOmegaEpsilon/nos.git
+[submodule "prj/pass"]
+	path = prj/pass
+	url = git@github.com:MuAlphaOmegaEpsilon/pass
