@@ -1,0 +1,5 @@
+#!/bin/sh
+set -euf
+
+grep --text --exclude-dir=build -R SPDX-License-Identifier ${1:-} | cut -d : -f 2 --complement | column --separator : --table
+
