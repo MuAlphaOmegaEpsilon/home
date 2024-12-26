@@ -19,4 +19,5 @@ export XDG_CACHE_HOME="${HOME}/.cache"			# Where user non-essential data files s
 export XDG_CONFIG_HOME="${HOME}/.config"		# Where user configuration files should be stored
 export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be stored
 export XDG_LOCAL_HOME="${HOME}/.local"			# Where user main dirs should be stored
+export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export PATH="${HOME}/.local/bin:${HOME}/.local/shell/$(hostname):${HOME}/.local/shell:${PATH}"
