@@ -20,11 +20,11 @@ for file in "${HOME}"/.config/private.d/*; do . "${file}"; done
 for file in "${HOME}"/.config/profile.d/"$(hostname)"/*; do . "${file}"; done
 
 if [ -f /etc/bash.bashrc ]; then . /etc/bash.bashrc; fi
-if [ -f /usr/share/defaults/etc/bash.bashrc ]; then	. /usr/share/defaults/etc/bash.bashrc; fi
+if [ -f /usr/share/defaults/etc/bash.bashrc ]; then . /usr/share/defaults/etc/bash.bashrc; fi
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-eval "$(dircolors ${HOME}/.config/dircolors)"	# Set the LS_COLORS env variable
+eval "$(dircolors ${HOME}/.config/dircolors)" # Set the LS_COLORS env variable
 shopt -s autocd checkjobs checkwinsize direxpand globstar
 tabs 4
 
