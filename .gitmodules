@@ -205,3 +205,6 @@
 [submodule "prj/pass"]
 	path = prj/pass
 	url = git@github.com:MuAlphaOmegaEpsilon/pass
+[submodule ".gnupg"]
+	path = .gnupg
+	url = git@github.com:MuAlphaOmegaEpsilon/.gnupg
