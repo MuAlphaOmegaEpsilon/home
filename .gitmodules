@@ -202,9 +202,9 @@
 [submodule "prj/nos"]
 	path = prj/nos
 	url = git@github.com:MuAlphaOmegaEpsilon/nos.git
-[submodule "prj/pass"]
-	path = prj/pass
-	url = git@github.com:MuAlphaOmegaEpsilon/pass
 [submodule ".gnupg"]
 	path = .gnupg
 	url = git@github.com:MuAlphaOmegaEpsilon/.gnupg
+[submodule ".password-store"]
+	path = .password-store
+	url = git@github.com:MuAlphaOmegaEpsilon/.password-store
