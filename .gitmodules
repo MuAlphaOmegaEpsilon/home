@@ -82,10 +82,6 @@
 	path = prj/logos
 	url = git@github.com:MuAlphaOmegaEpsilon/logos
 	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/qt-support.vim"]
-	path = .local/share/nvim/site/pack/git-plugins/start/qt-support.vim
-	url = git@github.com:fedorenchik/qt-support.vim
-	branch = master
 [submodule "3rd-party/cheatsheets"]
 	path = 3rd-party/cheatsheets
 	url = git@github.com:cheat/cheatsheets
@@ -142,10 +138,6 @@
 	path = .local/share/nvim/site/pack/git-plugins/start/tabular
 	url = git@github.com:godlygeek/tabular
 	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-json"]
-	path = .local/share/nvim/site/pack/git-plugins/start/vim-json
-	url = git@github.com:elzr/vim-json
-	branch = master
 [submodule "prj/c-starlang"]
 	path = prj/c-starlang
 	url = git@github.com:MuAlphaOmegaEpsilon/c-starlang
@@ -173,10 +165,6 @@
 [submodule "prj/us"]
 	path = prj/us
 	url = git@github.com:MuAlphaOmegaEpsilon/us
-	branch = master
-[submodule ".local/share/nvim/site/pack/git-plugins/start/vim-qml"]
-	path = .local/share/nvim/site/pack/git-plugins/start/vim-qml
-	url = git@github.com:peterhoeg/vim-qml
 	branch = master
 [submodule "prj/board"]
 	path = prj/board
