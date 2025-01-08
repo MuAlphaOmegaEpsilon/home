@@ -164,7 +164,6 @@
 .flutter
 .flutter-devtools
 .FreeCAD
-.gnupg
 .gnuplot_history
 .gtkrc-2.0
 .icons
@@ -284,6 +283,7 @@
 .local/share/wine
 .local/share/xorg
 .local/state
+.m2
 .minecraft
 .mplayer
 .mozilla
