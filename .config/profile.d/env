@@ -1,4 +1,3 @@
-export CHROME_EXECUTABLE=/usr/bin/brave-browser-beta
 if [ "$(uname -o)" == "Msys" ]; then
 	export CMAKE_GENERATOR="MSYS Makefiles"
 else
