@@ -1,3 +1,6 @@
+" Disable TrueColor support, since the colorscheme is meant for 16 colors only
+set notermguicolors
+
 " Highlight related settings
 syntax on
 colorscheme maze
@@ -46,6 +49,7 @@ set showtabline=2
 
 set laststatus=3
 set showcmdloc=statusline
+
 " set noshowmode
 set cmdheight=0
 
