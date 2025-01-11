@@ -134,8 +134,8 @@ match TrailingWhitespace /\s\+$/
 
 " Map common commands to shortcuts
 " Quit
-nmap <C-q> :q<CR>
-imap <C-q> <ESC><C-q>
+nmap <C-c> :q<CR>
+imap <C-c> <ESC><C-c>
 " Select all
 nmap <C-a> gg V G
 imap <C-a> <ESC><C-a>
