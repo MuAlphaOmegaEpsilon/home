@@ -4,7 +4,6 @@ if [ "$(uname)" == "Darwin" ] && [ "${BASH_VERSINFO}" != "5" ]; then exec /usr/l
 [[ $- == *i* ]] || return
 
 if [ "${TERM}" = "linux" ]; then
-	$(command -v setfont) /usr/share/consolefonts/Lat15-Terminus18x10.psf.gz;
 	$(command -v setvtrgb) "${HOME}"/.config/vtrgb/maze;
 fi
 
