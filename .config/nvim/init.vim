@@ -56,6 +56,12 @@ set cmdheight=0
 " Persistent undo even after you close a file and re-open it
 set undofile
 
+" Quality of life when navigating using arrows and deleting with backspace:
+" this allows neovim to go to the previous/next line when going beyond line
+" boundaries
+set whichwrap+=<,>,[,]
+set backspace=indent,eol,start
+
 " Time in milliseconds to wait for a mapped sequence to complete,
 " see https://goo.gl/vHvyu8 for more info
 set timeoutlen=1000
