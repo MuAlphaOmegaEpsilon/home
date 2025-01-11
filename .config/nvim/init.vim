@@ -68,7 +68,7 @@ set statusline+=%#Modes#%{mode()=='s'?'\ \ S-CHAR\ ':''}
 set statusline+=%#Modes#%{mode()=='S'?'\ \ S-LINE\ ':''}
 set statusline+=%#ModeR#%{mode()=='R'?'\ \ REPLACE\ ':''}
 set statusline+=%{mode()=='Rv'?'\ \ VREPLACE\ ':''}
-set statusline+=%#Normal#\ %f%m\ %{&filetype}\ %{&fenc}\ %{&ff}%=%l/%L\(%p%%)\ %v
+set statusline+=%#Normal#\ %f%m\ %{&filetype}\ %{&fenc}\ %{&ff}%=Ln\ %l/%L\(%p%%)\ Col\ %v
 
 " Tabulation and indentation config
 set tabstop=4		" Length of an actual \t character
