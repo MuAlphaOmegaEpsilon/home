@@ -17,6 +17,7 @@ export HISTCONTROL=ignoreboth				# No duplicate and no space-starting lines
 export HISTSIZE=1000						# History live should have this many lines
 export LESS=-R
 export MOZ_ENABLE_WAYLAND=1						# Enable Wayland usage for Mozilla Firefox
+export PASSWORD_STORE_GENERATED_LENGTH=12
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 export WGET2RC="${XDG_CONFIG_HOME}/wget2/config"
 export WINEPREFIX="${XDG_DATA_HOME}/wine"
