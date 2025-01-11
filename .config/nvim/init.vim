@@ -77,13 +77,13 @@ set statusline+=%{mode()=='Rv'?'\ \ VREPLACE\ ':''}
 set statusline+=%#Normal#\ %f%m\ %{&filetype}\ %{&fenc}\ %{&ff}%=Ln\ %l/%L\(%p%%)\ Col\ %v
 
 " Tabulation and indentation config
-set tabstop=4		" Length of an actual \t character
-set shiftwidth=4	" Length to use when shifting text (eg. <<, >> and == commands)
-set softtabstop=0	" Length to use in insert mode (0 -> tabstop, -1 -> shiftwidth)
-set autoindent		" Reproduce the previous line indentation
-set smartindent		" Automatically increase/decrease indentation relative to { } blocks
-set cindent			" A stricter smartindent which works better for the C language
-set shiftround		" Round tabs to a multiple of shiftwidth
+set tabstop=4     " Length of an actual \t character
+set shiftwidth=4  " Length to use when shifting text (eg. <<, >> and == commands)
+set softtabstop=0 " Length to use in insert mode (0 -> tabstop, -1 -> shiftwidth)
+set autoindent    " Reproduce the previous line indentation
+set smartindent   " Automatically increase/decrease indentation relative to { } blocks
+set cindent       " A stricter smartindent which works better for the C language
+set shiftround    " Round tabs to a multiple of shiftwidth
 
 " Enable filetype related features
 filetype on
@@ -133,8 +133,8 @@ set splitright splitbelow
 " set number relativenumber
 
 " Improve scrolling
-set scrolloff=10	" Show N more rows when scrolling up/down
-set sidescrolloff=5	" Show N more columns when scrolling left/right
+set scrolloff=10    " Show N more rows when scrolling up/down
+set sidescrolloff=5 " Show N more columns when scrolling left/right
 
 " Improve CursorHold responsiveness
 set updatetime=300
