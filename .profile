@@ -30,9 +30,9 @@ tabs 4
 
 prompt_command_tmux() {
 	if [ "$?" -eq 0 ]; then
-		export PS1="\[$(tput bold)\]>\[$(tput sgr0)\] "
+		export PS1="\[$(tput bold)\]${VIRTUAL_ENV_PROMPT}>\[$(tput sgr0)\] "
 	else
-		export PS1="\[$(tput setaf 1)\]>\[$(tput sgr0)\] "
+		export PS1="\[$(tput setaf 1)\]${VIRTUAL_ENV_PROMPT}>\[$(tput sgr0)\] "
 	fi
 	TMUX_CURRENT_REFRESH=$(date +%s)
 	TMUX_DELTA_REFRESH=$(($TMUX_CURRENT_REFRESH - ${TMUX_LAST_REFRESH:-0}))
