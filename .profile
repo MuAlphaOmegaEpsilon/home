@@ -4,7 +4,7 @@ if [ "$(uname)" == "Darwin" ] && [ "${BASH_VERSINFO}" != "5" ]; then exec /usr/l
 [[ $- == *i* ]] || return
 
 if [ "${TERM}" = "linux" ]; then
-	$(command -v setvtrgb) "${HOME}"/.config/vtrgb/maze;
+	setvtrgb "${HOME}"/.config/vtrgb/maze;
 fi
 
 if [ -z "${TMUX:-}" ] && [ -n "${PS1:-}" ]; then
