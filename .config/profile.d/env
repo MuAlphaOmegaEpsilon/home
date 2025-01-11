@@ -4,6 +4,12 @@ if [ "$(uname -o)" == "Msys" ]; then
 else
 	export CMAKE_GENERATOR="Ninja"
 fi;
+export XDG_3RD_PARTY="${HOME}/3rd-party"		# Where 3rd party git users directories should be stored
+export XDG_CACHE_HOME="${HOME}/.cache"			# Where user non-essential data files should be stored
+export XDG_CONFIG_HOME="${HOME}/.config"		# Where user configuration files should be stored
+export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be stored
+export XDG_LOCAL_HOME="${HOME}/.local"			# Where user main dirs should be stored
+
 export DPREFIX="${XDG_DATA_HOME}/darling"
 export EDITOR=nvim
 export FREESTANDING="-fdata-sections -ffreestanding -ffunction-sections -fno-asynchronous-unwind-tables -fno-exceptions -fno-rtti -fno-stack-check -fno-stack-protector -mno-stack-arg-probe -fno-unwind-tables -nostdlib -nostdinc -fno-stack-clash-protection -Wl,-n,--build-id=none,-gc-sections -static"
@@ -14,10 +20,5 @@ export MOZ_ENABLE_WAYLAND=1						# Enable Wayland usage for Mozilla Firefox
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 export WGET2RC="${XDG_CONFIG_HOME}/wget2/config"
 export WINEPREFIX="${XDG_DATA_HOME}/wine"
-export XDG_3RD_PARTY="${HOME}/3rd-party"		# Where 3rd party git users directories should be stored
-export XDG_CACHE_HOME="${HOME}/.cache"			# Where user non-essential data files should be stored
-export XDG_CONFIG_HOME="${HOME}/.config"		# Where user configuration files should be stored
-export XDG_DATA_HOME="${HOME}/.local/share"		# Where user data files should be stored
-export XDG_LOCAL_HOME="${HOME}/.local"			# Where user main dirs should be stored
 export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 export PATH="/usr/sbin:${HOME}/.local/bin:${HOME}/.local/shell/$(hostname):${HOME}/.local/shell:${PATH}"
