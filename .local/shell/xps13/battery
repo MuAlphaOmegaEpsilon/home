@@ -1,8 +1,0 @@
-#!/bin/sh
-set -euf
-
-MAX_VALUE=$(cat /sys/class/power_supply/BAT0/charge_full)
-CURRENT_VALUE=$(cat /sys/class/power_supply/BAT0/charge_now)
-PERCENTAGE=$(( CURRENT_VALUE * 100 / MAX_VALUE ))
-
-echo "$PERCENTAGE"%
