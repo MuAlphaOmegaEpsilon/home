@@ -60,6 +60,8 @@
 .config/gwenviewrc
 .config/inkscape
 .config/iterm2
+.config/JetBrains
+.config/JumpCloud Password Manager
 .config/kactivitymanagerd*
 .config/kate*
 .config/kcachegrindrc
@@ -129,6 +131,7 @@
 .config/spectaclerc
 .config/spotify
 .config/stacer
+.config/steamtinkerlaunch
 .config/sublime-merge
 .config/sublime-text
 .config/systemmonitorrc
@@ -145,6 +148,7 @@
 .config/vivaldi-snapshot
 .config/vivaldi
 .config/vlc
+.config/VSCodium
 .config/WarThunder
 .config/xdg-desktop-portal-kderc
 .config/xournalpp
@@ -172,6 +176,7 @@
 .launchpadlib
 .lesshst
 .nvidia-settings-rc
+.local/.*
 .local/bin
 .local/include
 .local/lib
@@ -201,6 +206,7 @@
 .local/share/CMakeTools
 .local/share/Colossal Order
 .local/share/compatibility.ini
+.local/share/containers
 .local/share/cura
 .local/share/darling
 .local/share/data
@@ -222,6 +228,8 @@
 .local/share/lesshst
 .local/share/localsend_app
 .local/share/IsolatedStorage
+.local/share/JetBrains
+.local/share/julia
 .local/share/kactivitymanagerd
 .local/share/kate
 .local/share/kcookiejar
