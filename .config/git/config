@@ -87,7 +87,7 @@
 [cola]
 	spellcheck = true
 	fontdiff = Terminus (TTF),8,-1,5,50,0,0,0,0,0
-	hidpi = 2
+	hidpi = auto
 	theme = flat-dark-grey
 	safemode = true
 	tabwidth = 4
