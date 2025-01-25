@@ -129,9 +129,6 @@ set ignorecase smartcase
 " Improve pane splitting rules
 set splitright splitbelow
 
-" Enable display of relative line numbering on the left column
-" set number relativenumber
-
 " Improve scrolling
 set scrolloff=10    " Show N more rows when scrolling up/down
 set sidescrolloff=5 " Show N more columns when scrolling left/right
