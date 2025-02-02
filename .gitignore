@@ -252,6 +252,7 @@
 .local/share/nvim-data
 .local/share/nvim/.netrwhist
 .local/share/nvim/shada
+.local/share/nvim/tree-sitter*
 .local/share/nvim/undo
 .local/share/nvim/*log
 .local/share/.org.chromium*
@@ -316,10 +317,12 @@
 .vim
 .viminfo
 .vscode
+.vscode-oss
 .wget-hsts
 .Xauthority
 .xournal
 .xsession-errors
+.zen
 .zoom
 Applications
 Desktop
