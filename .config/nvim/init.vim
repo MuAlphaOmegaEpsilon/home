@@ -56,6 +56,9 @@ set cmdheight=0
 " Persistent undo even after you close a file and re-open it
 set undofile
 
+" Wrap at word boundaries when wrapmode is enabled
+set linebreak
+
 " Quality of life when navigating using arrows and deleting with backspace:
 " this allows neovim to go to the previous/next line when going beyond line
 " boundaries
@@ -91,16 +94,16 @@ filetype plugin on
 filetype indent on
 
 " Filetype based configuration
-autocmd FileType text setlocal wrap
-autocmd FileType markdown setlocal wrap
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
-autocmd FileType svg setlocal shiftwidth=2 tabstop=2
-autocmd FileType,BufNewFile,BufRead openscad setlocal formatprg=clang-format
-autocmd FileType,BufNewFile,BufRead openscad :call system('openscad ' . expand('%:p') . ' &')
-autocmd BufWinLeave openscad :call system('killall openscad')
+ autocmd FileType text setlocal wrap
+ autocmd FileType markdown setlocal wrap
+ autocmd FileType html setlocal shiftwidth=2 tabstop=2
+ autocmd FileType css setlocal shiftwidth=2 tabstop=2
+ autocmd FileType svg setlocal shiftwidth=2 tabstop=2
+ autocmd FileType,BufNewFile,BufRead openscad setlocal formatprg=clang-format
+ autocmd FileType,BufNewFile,BufRead openscad :call system('openscad ' . expand('%:p') . ' &')
+ autocmd BufWinLeave openscad :call system('killall openscad')
 " Fix issue with statusline disappearing on certain mode changes
-autocmd ModeChanged * lua vim.schedule(function() vim.cmd('redraw') end)
+ autocmd ModeChanged * lua vim.schedule(function() vim.cmd('redraw') end)
 
 " Better autocompletion
 set wildmenu
@@ -134,7 +137,7 @@ set scrolloff=10    " Show N more rows when scrolling up/down
 set sidescrolloff=5 " Show N more columns when scrolling left/right
 
 " Improve CursorHold responsiveness
-set updatetime=300
+ set updatetime=300
 
 " Highlight trailing whitespace
 match TrailingWhitespace /\s\+$/
@@ -156,6 +159,12 @@ nnoremap S :%s/\<<C-R>=expand('<cword>')<CR>\>/<C-R>=expand('<cword>')<CR>/g<Lef
 map <C-e> :tabnew<CR>:Explore<CR>
 " Tilde (F12)
 imap <F12> ~
+" Move up and down visual (soft) lines instead of hard lines
+" This is especially useful when wrapmode is enabled
+noremap <silent> <Up> gk
+inoremap <silent> <Up> <C-o>gk
+noremap <silent> <Down> gj
+inoremap <silent> <Down> <C-o>gj
 " Disable fast scroll using shift and arrows
 nmap <S-Up> <Up>
 vmap <S-Up> <Up>
@@ -208,6 +217,7 @@ nnoremap <silent> gq    gggqG
 " vnoremap <silent> gq    <cmd>lua vim.lsp.buf.format{async=true}<CR><ESC>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
+nmap <silent> <C-LeftMouse> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 
