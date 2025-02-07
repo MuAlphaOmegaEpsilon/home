@@ -77,6 +77,8 @@
 	res = reset
 	resh = reset --hard
 
+	root = rev-parse --show-toplevel
+
 	s = status -s
 	sl = status
 
