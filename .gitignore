@@ -138,6 +138,7 @@
 .config/systemsettingsrc
 .config/teams
 .config/teamviewer
+.config/tiling-assistant
 .config/tool_state
 .config/totem
 .config/trashrc
@@ -172,10 +173,11 @@
 .gtkrc-2.0
 .icons
 .java
+.julia
 .kde
 .launchpadlib
+.lemminx
 .lesshst
-.nvidia-settings-rc
 .local/.*
 .local/bin
 .local/include
@@ -219,6 +221,7 @@
 .local/share/fonts
 .local/share/FreeCAD
 .local/share/gedit
+.local/share/gpaste
 .local/share/grilo-plugins
 .local/share/gvfs-metadata
 .local/share/gwenview
@@ -299,6 +302,8 @@
 .npm
 .npmrc
 .nv
+.nvidia-settings-rc
+.ollama
 .opendrop
 .parallel
 .paradoxlauncher
@@ -307,9 +312,11 @@
 .pki
 .pub-cache
 .pulse-cookie
+.pwm
 .slocdata
 .steam*
 .Steam*
+.sts4
 .sudo_as_admin_successful
 .swiftpm
 .tig_history
