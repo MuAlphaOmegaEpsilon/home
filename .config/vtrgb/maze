@@ -3,24 +3,21 @@
 000,030,070,050,225,130,200,160,064,168,135,110,255,255,255,255
  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
  |   |   |  BG SECTION   |   |   |   |   |  FG SECTION   |   |
- |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Bright White
  |   |   |   |   |   |   |   |   |   |   |   |   |   |   Bright Cyan
  |   |   |   |   |   |   |   |   |   |   |   |   |   Bright Magenta
  |   |   |   |   |   |   |   |   |   |   |   |   Bright Blue
  |   |   |   |   |   |   |   |   |   |   |   Bright Yellow
  |   |   |   |   |   |   |   |   |   |   Bright Green
- |   |   |   |   |   |   |   |   |   Bright Red (Pink)
- |   |   |   |   |   |   |   |   Bright Black (Grey)
- |   |   |   |   |   |   |   |
- |   |   |   |   |   |   |   |
+ |   |   |   |   |   |   |   |   |   Bright Red
+ |   |   |   |   |   |   |   |   Bright Black
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   |
  |   |   |   |   |   |   |   White
- |   |   |   |   |   |   Cyan (Prussian Blue)
+ |   |   |   |   |   |   Cyan
  |   |   |   |   |   Magenta
  |   |   |   |   Blue
- |   |   |   Yellow (Orange)
+ |   |   |   Yellow
  |   |   Green
  |   Red
  Black
@@ -39,18 +36,18 @@ time to test these colors:
 To setup the terminal colors apply the following:
 #000000 00 - Black
 #FF1E1E 01 - Red
-#5FFF82 02 - Green
+#32BE46 02 - Green
 #FF9B32 03 - Yellow
-#------ 04 - Blue
-#------ 05 - Magenta
-#64EBFF 06 - Cyan
+#0000E1 04 - Blue
+#8C2082 05 - Magenta
+#2896C8 06 - Cyan
 #A0A0A0 07 - White
 
 #404040 08 - Bright Black
 #FF5AA8 09 - Bright Red
-#3CBE50 10 - Bright Green
-#FFE182 11 - Bright Yellow
+#64FF87 10 - Bright Green
+#FFEB6E 11 - Bright Yellow
 #4646FF 12 - Bright Blue
-#AF69E1 13 - Bright Magent
-#2896C8 14 - Bright Cyan
+#C677FF 13 - Bright Magenta
+#64EBFF 14 - Bright Cyan
 #FFFFFF 15 - Bright White
