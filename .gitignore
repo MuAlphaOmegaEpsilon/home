@@ -218,6 +218,7 @@
 .local/share/desktop-directories
 .local/share/evolution
 .local/share/flatpak
+.local/share/folks
 .local/share/fonts
 .local/share/FreeCAD
 .local/share/gedit
@@ -259,6 +260,7 @@
 .local/share/nvim/undo
 .local/share/nvim/*log
 .local/share/.org.chromium*
+.local/share/org.localsend.localsend_app
 .local/share/OfflineCache
 .local/share/okular
 .local/share/olivevideoeditor.org
@@ -299,6 +301,7 @@
 .minecraft
 .mplayer
 .mozilla
+.mycli*
 .npm
 .npmrc
 .nv
