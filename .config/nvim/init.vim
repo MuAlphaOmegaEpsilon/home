@@ -93,6 +93,12 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Resume last cursor position on file opening
+autocmd BufReadPost * silent! normal! g`"zv
+" Enable integrated highlight on yank
+autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({ timeout = 300 })
+" Fix issue with statusline disappearing on certain mode changes
+autocmd ModeChanged * lua vim.schedule(function() vim.cmd('redraw') end)
 " Filetype based configuration
  autocmd FileType text setlocal wrap
  autocmd FileType markdown setlocal wrap
@@ -102,8 +108,6 @@ filetype indent on
  autocmd FileType,BufNewFile,BufRead openscad setlocal formatprg=clang-format
  autocmd FileType,BufNewFile,BufRead openscad :call system('openscad ' . expand('%:p') . ' &')
  autocmd BufWinLeave openscad :call system('killall openscad')
-" Fix issue with statusline disappearing on certain mode changes
- autocmd ModeChanged * lua vim.schedule(function() vim.cmd('redraw') end)
 
 " Better autocompletion
 set wildmenu
@@ -223,9 +227,6 @@ nnoremap <silent> gD    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 
 " Alias Vex so that it always open the new pane on the right
 cnoreabbrev Vex Vex!
-
-" Enable integrated highlight on yank
-autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("YankRegion", 1000)
 
 "--- Completion neovim ---
 " let g:completion_enable_support = 'UltiSnips'
