@@ -192,3 +192,6 @@
 [submodule ".password-store"]
 	path = .password-store
 	url = git@github.com:MuAlphaOmegaEpsilon/.password-store
+[submodule "prj/piva"]
+	path = prj/piva
+	url = git@github.com:MuAlphaOmegaEpsilon/piva
