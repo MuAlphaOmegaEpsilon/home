@@ -1,0 +1,16 @@
+#!/bin/sh
+set -euf
+
+EXTRA_SPACE=""
+CHARGING=""
+case ${1:-} in
+	--spaced)
+		EXTRA_SPACE=" "
+	;;
+esac
+
+if [ $(cat /sys/class/power_supply/ACAD/online) -eq "1" ]; then
+	CHARGING="~"
+fi
+
+printf "${EXTRA_SPACE}${CHARGING}%s%%${EXTRA_SPACE}\n" $(cat /sys/class/power_supply/BAT0/capacity)
