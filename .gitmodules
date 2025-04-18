@@ -195,3 +195,6 @@
 [submodule "prj/piva"]
 	path = prj/piva
 	url = git@github.com:MuAlphaOmegaEpsilon/piva
+[submodule "prj/consoles-backups"]
+	path = prj/consoles-backups
+	url = git@github.com:MuAlphaOmegaEpsilon/consoles-backups
