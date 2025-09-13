@@ -198,3 +198,6 @@
 [submodule "prj/consoles-backups"]
 	path = prj/consoles-backups
 	url = git@github.com:MuAlphaOmegaEpsilon/consoles-backups
+[submodule "prj/animalia"]
+	path = prj/animalia
+	url = git@github.com:MuAlphaOmegaEpsilon/animalia
