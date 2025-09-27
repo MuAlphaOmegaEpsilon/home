@@ -89,11 +89,12 @@
 [cola]
 	spellcheck = true
 	fontdiff = Terminus (TTF),8,-1,5,50,0,0,0,0,0
-	hidpi = auto
-	theme = flat-dark-grey
+	hidpi = 2
+	theme = flat-dark-blue
 	safemode = true
 	tabwidth = 4
 	statusshowtotals = true
+	icontheme = dark
 
 [gui]
 	editor = nvim

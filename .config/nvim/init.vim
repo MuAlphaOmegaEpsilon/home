@@ -72,11 +72,18 @@ set timeoutlen=1000
 set statusline=%#Moden#%{mode()=='n'?'\ \ NORMAL\ ':''}
 set statusline+=%#Modei#%{mode()=='i'?'\ \ INSERT\ ':''}
 set statusline+=%#Modev#%{mode()=='v'?'\ \ VISUAL\ ':''}
-set statusline+=%#Modev#%{mode()=='\<C-V>'?'\ \ VBLOCK\ ':''}
+set statusline+=%#Modev#%{mode()==''?'\ \ VBLOCK\ ':''}
 set statusline+=%#Modes#%{mode()=='s'?'\ \ S-CHAR\ ':''}
 set statusline+=%#Modes#%{mode()=='S'?'\ \ S-LINE\ ':''}
 set statusline+=%#ModeR#%{mode()=='R'?'\ \ REPLACE\ ':''}
 set statusline+=%{mode()=='Rv'?'\ \ VREPLACE\ ':''}
+" set statusline+=%{mode()}
+" set statusline+=%{mode()=='\\'}
+" set statusline+=%{mode()==''}
+" set statusline+=%{mode()=='\'}
+" set statusline+=%{mode()==\"\"}
+" set statusline+=%{mode()==\"\\"}
+" set statusline+=%{mode()=='Ctrl-\'}
 set statusline+=%#Normal#\ %f%m\ %{&filetype}\ %{&fenc}\ %{&ff}%=Ln\ %l/%L\(%p%%)\ Col\ %v
 
 " Tabulation and indentation config
@@ -278,14 +285,4 @@ cmp.setup({
 lsp.clangd.setup { cmd = { 'clangd', '--background-index', '--function-arg-placeholders', '--header-insertion=never', '--clang-tidy' } }
 lsp.cmake.setup {}
 lsp.openscad_ls.setup {}
-
--- require'nvim-treesitter.configs'.setup {
-	-- ensure_installed = "",
-	-- sync_install = false,
-	-- highlight = {
-		-- enable = true,
-		-- additional_vim_regex_highlighting = false,
-	-- },
--- }
-
 EOF

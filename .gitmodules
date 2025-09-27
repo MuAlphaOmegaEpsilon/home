@@ -62,10 +62,6 @@
 	path = .config/private.d
 	url = git@github.com:MuAlphaOmegaEpsilon/private.d
 	branch = master
-[submodule "3rd-party/GammaRay"]
-	path = 3rd-party/GammaRay
-	url = git@github.com:KDAB/GammaRay
-	branch = master
 [submodule "3rd-party/iOS-Utilities"]
 	path = 3rd-party/iOS-Utilities
 	url = git@github.com:matteyeux/iOS-Utilities
