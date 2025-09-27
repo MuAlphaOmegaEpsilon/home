@@ -1,0 +1,141 @@
+#/bin/sh
+set -euf
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $(basename $0) PROJECT_NAME" >&2
+  exit 1
+fi
+
+CHROOT_DIR="$(echo ${1} | tr -d '/')-root"
+if [ -d "${CHROOT_DIR}" ]; then
+	sudo umount "${CHROOT_DIR}/proc"
+	sudo umount "${CHROOT_DIR}/sys"
+	sudo umount "${CHROOT_DIR}/dev/pts"
+	rm -rf "${CHROOT_DIR}"
+fi
+mkdir "${CHROOT_DIR}"
+cd "${CHROOT_DIR}"
+echo "Created ${CHROOT_DIR}/"
+
+mkdir -p {dev/pts,etc,home/${1},proc,sys,tmp,usr/bin,usr/lib,usr/lib64,var}
+ln -s usr/bin .
+echo "Linked usr/bin to bin"
+ln -s usr/lib .
+echo "Linked usr/lib to lib"
+ln -s usr/lib64 .
+echo "Linked usr/lib64 to lib64"
+chmod 1777 tmp
+
+copy-binary-dependencies()
+{
+	for DEP in $(ldd ${1} | grep -v "dynamic\|dinamico" | cut -d ' ' -f1,3); do
+		DEP_NAME=$(basename ${DEP})
+		DIR=$(dirname ${DEP} | colrm 1 1)
+		if [ ! -f ${DEP}               ]; then continue; fi
+		if [   -f ./${DIR}/${DEP_NAME} ]; then continue; fi
+
+		mkdir -p ${DIR}
+		cp ${DEP} ./${DIR}/
+		echo "Copied ${DEP}"
+	done
+}
+
+copy-binaries()
+{
+	mkdir -p ${1}
+	for FILE in ${2}; do
+		if [ ! -f /${1}/${FILE} ]; then
+			echo -e "\033[0;31m/${1}/${FILE} was not found on the host: will not be available in the container\033[0m"
+			continue
+		fi
+		cp /${1}/${FILE} ./${1}
+		echo "Copied /${1}/${FILE}"
+		copy-binary-dependencies /${1}/${FILE}
+	done
+}
+
+programs()
+{
+	printf ${1}
+	for FILE in $(find /usr/bin/ -type f -name "${1}-*"); do
+		printf " %s" "$(basename ${FILE})"
+	done
+}
+
+# Binaries
+APT=$(programs apt)
+DPKG=$(programs dpkg)
+echo                  "${APT} basename bash cat chmod curl cut dirname ${DPKG} echo env file gpg gpgv grep head hostname ldd less ls man sed sh strace tail top tree wget which whoami"
+copy-binaries usr/bin "${APT} basename bash cat chmod curl cut dirname ${DPKG} echo env file gpg gpgv grep head hostname ldd less ls man sed sh strace tail top tree wget which whoami"
+ln -s usr/bin/less usr/bin/pager
+
+# Package manager (apt+dpkg) stuff
+mkdir -p etc/apt/apt.conf.d
+for FILE in $(ls /etc/apt/apt.conf.d/); do
+	cp /etc/apt/apt.conf.d/${FILE} etc/apt/apt.conf.d/${FILE}
+	echo "Copied /etc/apt/apt.conf.d/${FILE}"
+done
+cp /etc/apt/sources.list etc/apt/sources.list
+echo "Copied /etc/apt/sources.list"
+
+cp /etc/resolv.conf etc/resolv.conf
+echo "Copied /etc/resolv.conf"
+
+mkdir -p usr/share/misc
+cp /usr/share/misc/magic.mgc usr/share/misc/
+
+mkdir -p usr/lib/apt/methods
+for FILE in $(ls /usr/lib/apt/methods/); do
+	cp /usr/lib/apt/methods/${FILE} usr/lib/apt/methods/
+	echo "Copied /usr/lib/apt/methods/${FILE}"
+done
+mkdir -p var/lib/apt/lists/partial
+for FILEPATH in $(find /var/lib/apt/lists/ -type f -name "deb.debian.org*" 2> /dev/null); do
+	cp ${FILEPATH} var/lib/apt/lists/
+	echo "Copied ${FILEPATH}"
+done
+
+mkdir -p usr/lib/x86_64-linux-gnu
+for FILEPATH in $(find /usr/lib/x86_64-linux-gnu/ -type f -name "libapt-*"); do
+	cp ${FILEPATH} usr/lib/x86_64-linux-gnu/
+	echo "Copied ${FILEPATH}"
+done
+
+mkdir -p var/lib/dpkg
+cp /var/lib/dpkg/arch var/lib/dpkg/arch
+echo "Copied /var/lib/dpkg/arch"
+
+cp /etc/debian_version etc/debian_version
+echo "Copied /etc/debian_version"
+cp /etc/os-release etc/os-release
+echo "Copied /etc/os-release"
+
+mkdir -p var/cache/apt/archives/partial
+for FILEPATH in $(find /var/cache/apt/ -type f -not -name lock); do
+	cp ${FILEPATH} $(echo ${FILEPATH} | colrm 1 1)
+	echo "Copied ${FILEPATH}"
+done
+mkdir -p var/lib/apt/{lists/partial,mirrors/partial}
+for FILEPATH in $(find /var/lib/apt/ -type f -not -name lock); do
+	cp ${FILEPATH} $(echo ${FILEPATH} | colrm 1 1)
+	echo "Copied ${FILEPATH}"
+done
+mkdir -p usr/share/dpkg/
+for FILEPATH in $(find /usr/share/dpkg/ -type f -name "*table"); do
+	cp ${FILEPATH} usr/share/dpkg/
+	echo "Copied ${FILEPATH}"
+done
+mkdir -p etc/apt/preferences.d
+mkdir -p var/log/apt
+
+
+sudo mount --types proc   proc   proc
+echo "Mounted proc"
+sudo mount --types sysfs  sys    sys
+echo "Mounted sys"
+sudo mount --types devpts devpts dev/pts
+echo "Mounted dev/pts"
+
+echo "Done"
+
+sudo chroot .
