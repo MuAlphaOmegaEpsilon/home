@@ -6,61 +6,62 @@ endif
 
 let colors_name = "maze"
 
-hi Moden          ctermfg=00 ctermbg=04
+hi Moden          ctermfg=00 ctermbg=07
 hi Modei          ctermfg=00 ctermbg=03
 hi Modev          ctermfg=00 ctermbg=02
 hi Modes          ctermfg=00 ctermbg=05
 hi Moder          ctermfg=00 ctermbg=06
 
-hi Normal         ctermfg=07            cterm=none
+hi Normal         ctermfg=07 term=none
 hi TrailingWhitespace        ctermbg=04
-hi Cursor                               cterm=reverse
-hi Visual                               cterm=reverse
+hi Cursor                    term=reverse
+hi Visual                    term=reverse
 hi Comment        ctermfg=08
 
-hi Constant       ctermfg=13            cterm=none " any constant
-hi String         ctermfg=11            cterm=none " "Hello world!"
-hi Character      ctermfg=11            cterm=none " 'a'
-hi Number         ctermfg=13            cterm=none " 1, 2, 3
-hi Boolean        ctermfg=13            cterm=none " true, false
-hi Float          ctermfg=13            cterm=none " 10.3f
+hi Constant       ctermfg=13 term=none "	any constant
+hi String         ctermfg=11 term=none "	"Hello world!"
+hi Character      ctermfg=11 term=none "	'a'
+hi Number         ctermfg=13 term=none "	1, 2, 3
+hi Boolean        ctermfg=13 term=none "	true, false
+hi Float          ctermfg=13 term=none "	10.3f
 
-hi PreProc        ctermfg=09            cterm=none " generic PreProcessor keyword
-hi Include        ctermfg=09            cterm=none " #include
-hi Define         ctermfg=09            cterm=none " #define
-hi Macro          ctermfg=09            cterm=none " same as Define
-hi PreCondit      ctermfg=09            cterm=none " #if, #else, #endif
+hi PreProc        ctermfg=09 term=none "	generic PreProcessor keyword
+hi Include        ctermfg=09 term=none "	#include
+hi Define         ctermfg=09 term=none "	#define
+hi Macro          ctermfg=09 term=none "	same as Define
+hi PreCondit      ctermfg=09 term=none "	#if, #else, #endif
 
-hi Identifier     ctermfg=15            cterm=none " any variable name
-hi Function       ctermfg=02            cterm=none " function name
+hi Identifier     ctermfg=15 term=none "	any variable name
+hi Function       ctermfg=02 term=none "	function name
 
-hi Statement      ctermfg=09            cterm=none " any statement
-hi Conditional    ctermfg=09            cterm=none " if, then, else, endif, switch
-hi Repeat         ctermfg=09            cterm=none " for, do, while
-hi Label          ctermfg=14            cterm=none " case, default
-hi Operator       ctermfg=07            cterm=none " sizeof, +, *
-hi Exception      ctermfg=09            cterm=none " try, catch, throw
-hi Keyword        ctermfg=07            cterm=none " any other keyword
+hi Statement      ctermfg=09 term=none "	any statement
+hi Conditional    ctermfg=09 term=none "	if, then, else, endif, switch
+hi Repeat         ctermfg=09 term=none "	for, do, while
+hi Label          ctermfg=14 term=none "	case, default
+hi Operator       ctermfg=07 term=none "	sizeof, +, *
+hi Exception      ctermfg=09 term=none "	try, catch, throw
+hi Keyword        ctermfg=07 term=none "	any other keyword
 
-hi Type           ctermfg=06            cterm=none " int, long, double
-hi StorageClass   ctermfg=09            cterm=none " static, register, volatile
-hi Structure      ctermfg=09            cterm=none " struct, union, enum
-hi Typedef        ctermfg=09            cterm=none " typedef
+hi Type           ctermfg=06 term=none "	int, long, double
+hi StorageClass   ctermfg=09 term=none "	static, register, volatile
+hi Structure      ctermfg=09 term=none "	struct, union, enum
+hi Typedef        ctermfg=09 term=none "	typedef
 
-hi Special        ctermfg=15            cterm=none " any special symbol
-hi SpecialChar    ctermfg=15            cterm=none " special character in a constant
-hi Tag            ctermfg=15            cterm=none " CTRL+] can be used on this
-hi Delimiter      ctermfg=15            cterm=none " character that needs attention
-hi Debug          ctermfg=15            cterm=none " debugging statements
-hi SpecialComment ctermfg=15            cterm=none " special things inside a comment
+hi Special        ctermfg=15 term=none "any special symbol
+hi Whitespace     ctermfg=08 term=none "printed out whitespace characters
+hi SpecialChar    ctermfg=15 term=none "special character in a constant
+hi Tag            ctermfg=15 term=none "CTRL+] can be used on this
+hi Delimiter      ctermfg=15 term=none "character that needs attention
+hi SpecialComment ctermfg=15 term=none "special things inside a comment
+hi Debug          ctermfg=15 term=none "	debugging statements
 
 hi Underlined     ctermfg=15 ctermbg=05            " text that stands out, HTML links
 
 hi SignColumn     ctermbg=07
 
 hi LineNr         ctermfg=08 ctermbg=00
-" hi CursorLineNr   ctermfg=01 cterm=none
-" hi CursorLine     ctermfg=01           ctermbg=05 cterm=none
+hi LineNr         ctermfg=00 ctermbg=07
+hi CursorLine     term=none  ctermbg=05
 
 hi DiffAdd        ctermfg=02 ctermbg=05
 hi DiffChange     ctermfg=04 ctermbg=05
@@ -68,6 +69,7 @@ hi DiffDelete     ctermfg=01 ctermbg=05
 
 hi MatchParen     ctermfg=15 ctermbg=00            " Highlight to apply to matching parenthesis
 hi YankRegion     ctermfg=03 ctermbg=07
+hi IncSearch      ctermfg=00 ctermbg=03	"	Default highlight group used when yanking text
 
 hi Pmenu          ctermfg=15 ctermbg=05
 hi PmenuSel       ctermfg=00 ctermbg=07
@@ -112,5 +114,5 @@ hi link TSType Type
 hi link TSNamespace Type
 " hi link TSVariable Normal
 hi link TSAttribute Label
-hi TSVariableBuiltin ctermfg=04 cterm=none
+hi TSVariableBuiltin ctermfg=04 term=none
 

@@ -73,6 +73,7 @@ set statusline=%#Moden#%{mode()=='n'?'\ \ NORMAL\ ':''}
 set statusline+=%#Modei#%{mode()=='i'?'\ \ INSERT\ ':''}
 set statusline+=%#Modev#%{mode()=='v'?'\ \ VISUAL\ ':''}
 set statusline+=%#Modev#%{mode()==''?'\ \ VBLOCK\ ':''}
+set statusline+=%#Modev#%{mode()=='\<C-V>'?'\ \ VBLOCK\ ':mode()}
 set statusline+=%#Modes#%{mode()=='s'?'\ \ S-CHAR\ ':''}
 set statusline+=%#Modes#%{mode()=='S'?'\ \ S-LINE\ ':''}
 set statusline+=%#ModeR#%{mode()=='R'?'\ \ REPLACE\ ':''}
@@ -107,17 +108,13 @@ autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({ timeout = 30
 " Fix issue with statusline disappearing on certain mode changes
 autocmd ModeChanged * lua vim.schedule(function() vim.cmd('redraw') end)
 " Filetype based configuration
- autocmd FileType text setlocal wrap
- autocmd FileType markdown setlocal wrap
- autocmd FileType html setlocal shiftwidth=2 tabstop=2
- autocmd FileType css setlocal shiftwidth=2 tabstop=2
- autocmd FileType svg setlocal shiftwidth=2 tabstop=2
- autocmd FileType,BufNewFile,BufRead openscad setlocal formatprg=clang-format
- autocmd FileType,BufNewFile,BufRead openscad :call system('openscad ' . expand('%:p') . ' &')
- autocmd BufWinLeave openscad :call system('killall openscad')
+autocmd FileType text setlocal wrap
+autocmd FileType markdown setlocal wrap
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType svg setlocal shiftwidth=2 tabstop=2
 
 " Better autocompletion
-set wildmenu
 set wildmode=full
 set wildignore=".git/*,.clangd/*,.cache/*,build/*"
 set completeopt=menuone,noinsert,noselect
@@ -148,7 +145,7 @@ set scrolloff=10    " Show N more rows when scrolling up/down
 set sidescrolloff=5 " Show N more columns when scrolling left/right
 
 " Improve CursorHold responsiveness
- set updatetime=300
+set updatetime=300
 
 " Highlight trailing whitespace
 match TrailingWhitespace /\s\+$/
@@ -181,11 +178,21 @@ nmap <S-Up> <Up>
 vmap <S-Up> <Up>
 nmap <S-Down> <Down>
 vmap <S-Down> <Down>
+"
+" Move cursor by entire words with Ctrl+Arrow
+nnoremap <C-Left> b
+nnoremap <C-Right> e
+inoremap <C-Left> <ESC>bi
+inoremap <C-Right> <ESC>ei
 " Shift plus simple arrow motion applies selection
-imap <S-Left> <ESC>v<Left>
+nmap <S-Left>       v<Left>
+nmap <S-Right>      v<Right>
+nmap <S-Up>         v<Up>
+nmap <S-Down>       v<Down>
+imap <S-Left>  <ESC>v<Left>
 imap <S-Right> <ESC>v<Right>
-imap <S-Up> <ESC>v<Up>
-imap <S-Down> <ESC>v<Down>
+imap <S-Up>    <ESC>v<Up>
+imap <S-Down>  <ESC>v<Down>
 " Map pane switching to more simple keys
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -197,14 +204,11 @@ imap <S-Del> <ESC>ddi
 " Comment line out
 nmap <C-_> <Plug>NERDCommenterToggle
 vmap <C-_> <Plug>NERDCommenterToggle<CR>gv<ESC>
-" Normal and Visual mode tabbing/untabbing
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
+" Go back in cursor history
+nmap <S-Tab> <C-o>
+" Visual mode tabbing/untabbing
 vmap <Tab> >
 vmap <S-Tab> <
-" Tabs cycling
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabNext<CR>
 " Tab/untab without killing the selection in vmode
 vmap > >gv
 vmap < <gv
@@ -220,6 +224,7 @@ nmap <C-S-Down> :move +1<CR>
 " vmap <C-S-Down> dpV >gv
 imap <C-S-Down> <ESC>:move +1<CR>i
 " Language server protocol mappings
+inoremap <C-Space> <C-x><C-o>
 nnoremap <silent> <C-h>   <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-d>   <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap <silent> <C-S-f> <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
@@ -235,53 +240,12 @@ nnoremap <silent> gD    :tab split<CR><cmd>lua vim.lsp.buf.definition()<CR>
 " Alias Vex so that it always open the new pane on the right
 cnoreabbrev Vex Vex!
 
-"--- Completion neovim ---
-" let g:completion_enable_support = 'UltiSnips'
-let g:completion_chain_complete_list = {
-\ 'default' : {
-\   'default': [
-\       {'complete_items': ['lsp', 'path', 'snippet']},
-\       {'mode': '<c-p>'},
-\       {'mode': '<c-n>'}]
-\   }
-\}
-
 "--- NERDCommenter
 let g:NERDSpaceDelims = 1
-
-"--- Ultisnips ---
-" let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/ultisnips/']
 
 "--- LUA SETUP ---
 lua <<EOF
 local lsp = require'lspconfig'
-local cmp = require'cmp'
-cmp.setup({
-	snippet = {
-		expand = function(args)
-        vim.fn["UltiSnips#Anon"](args.body)
-		end,
-	},
-	window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
-    },
-	mapping = cmp.mapping.preset.insert({
-		['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    	['<C-f>'] = cmp.mapping.scroll_docs(4),
-    	['<C-Space>'] = cmp.mapping.complete(),
-    	['<C-e>'] = cmp.mapping.abort(),
-    	['<CR>'] = cmp.mapping.confirm({ select = true }),
-	}),
-	experimental = {
-		ghost_text = true
-	},
-	sources = {
-		{ name = 'nvim_lsp' },
-		{ name = 'buffer' },
-		-- { name = 'ultisnips' },
-	}
-})
 lsp.clangd.setup { cmd = { 'clangd', '--background-index', '--function-arg-placeholders', '--header-insertion=never', '--clang-tidy' } }
 lsp.cmake.setup {}
 lsp.openscad_ls.setup {}
