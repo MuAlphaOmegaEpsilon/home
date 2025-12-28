@@ -12,12 +12,13 @@ if [ -d "${CHROOT_DIR}" ]; then
 	sudo umount "${CHROOT_DIR}/sys"
 	sudo umount "${CHROOT_DIR}/dev/pts"
 	rm -rf "${CHROOT_DIR}"
+	echo "Deleted old ${CHROOT_DIR}/"
 fi
 mkdir "${CHROOT_DIR}"
 cd "${CHROOT_DIR}"
 echo "Created ${CHROOT_DIR}/"
 
-mkdir -p {dev/pts,etc,home/${1},proc,sys,tmp,usr/bin,usr/lib,usr/lib64,var}
+mkdir -p {dev/pts,etc,home/${1},proc,root,sys,tmp,usr/bin,usr/lib,usr/lib64,var}
 ln -s usr/bin .
 echo "Linked usr/bin to bin"
 ln -s usr/lib .
@@ -65,18 +66,23 @@ programs()
 # Binaries
 APT=$(programs apt)
 DPKG=$(programs dpkg)
-echo                  "${APT} basename bash cat chmod curl cut dirname ${DPKG} echo env file gpg gpgv grep head hostname ldd less ls man sed sh strace tail top tree wget which whoami"
-copy-binaries usr/bin "${APT} basename bash cat chmod curl cut dirname ${DPKG} echo env file gpg gpgv grep head hostname ldd less ls man sed sh strace tail top tree wget which whoami"
-ln -s usr/bin/less usr/bin/pager
+echo                  "${APT} basename bash cat chmod clear curl cut dirname ${DPKG} echo env file gpg gpgv grep head hostname ldd less ls man sed sh strace su tail test top tree wget which whoami"
+copy-binaries usr/bin "${APT} basename bash cat chmod clear curl cut dirname ${DPKG} echo env file gpg gpgv grep head hostname ldd less ls man sed sh strace su tail test top tree wget which whoami"
+echo                   "adduser"
+copy-binaries usr/sbin "adduser"
+ln -s less usr/bin/pager
+
+# Bash config
+cp /etc/profile etc/profile
 
 # Package manager (apt+dpkg) stuff
-mkdir -p etc/apt/apt.conf.d
+mkdir -p etc/apt/apt.conf.d etc/apt/sources.list.d
 for FILE in $(ls /etc/apt/apt.conf.d/); do
 	cp /etc/apt/apt.conf.d/${FILE} etc/apt/apt.conf.d/${FILE}
 	echo "Copied /etc/apt/apt.conf.d/${FILE}"
 done
-cp /etc/apt/sources.list etc/apt/sources.list
-echo "Copied /etc/apt/sources.list"
+cp -r /etc/apt/sources.list.d/debian.sources etc/apt/sources.list.d/debian.sources
+echo "Copied /etc/apt/sources.list.d/debian.sources"
 
 cp /etc/resolv.conf etc/resolv.conf
 echo "Copied /etc/resolv.conf"
@@ -110,16 +116,16 @@ echo "Copied /etc/debian_version"
 cp /etc/os-release etc/os-release
 echo "Copied /etc/os-release"
 
-mkdir -p var/cache/apt/archives/partial
-for FILEPATH in $(find /var/cache/apt/ -type f -not -name lock); do
-	cp ${FILEPATH} $(echo ${FILEPATH} | colrm 1 1)
-	echo "Copied ${FILEPATH}"
-done
-mkdir -p var/lib/apt/{lists/partial,mirrors/partial}
-for FILEPATH in $(find /var/lib/apt/ -type f -not -name lock); do
-	cp ${FILEPATH} $(echo ${FILEPATH} | colrm 1 1)
-	echo "Copied ${FILEPATH}"
-done
+# mkdir -p var/cache/apt/archives/partial
+# for FILEPATH in $(find /var/cache/apt/ -type f -not -name lock); do
+	# cp ${FILEPATH} $(echo ${FILEPATH} | colrm 1 1)
+	# echo "Copied ${FILEPATH}"
+# done
+# mkdir -p var/lib/apt/{lists/partial,mirrors/partial}
+# for FILEPATH in $(find /var/lib/apt/ -type f -not -name lock); do
+	# cp ${FILEPATH} $(echo ${FILEPATH} | colrm 1 1)
+	# echo "Copied ${FILEPATH}"
+# done
 mkdir -p usr/share/dpkg/
 for FILEPATH in $(find /usr/share/dpkg/ -type f -name "*table"); do
 	cp ${FILEPATH} usr/share/dpkg/
@@ -138,4 +144,12 @@ echo "Mounted dev/pts"
 
 echo "Done"
 
-sudo chroot .
+sudo chroot . /usr/bin/env -i   \
+    HOME=/root                  \
+    LANG=en_US                  \
+    COLORTERM="$COLORTERM"      \
+    TERM="$TERM"                \
+    TERM_PROGRAM="$TERM_PROGRAM"\
+    /bin/bash --login
+sudo umount proc sys dev/pts
+
