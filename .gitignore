@@ -39,12 +39,14 @@
 .config/evince
 .config/flutter
 .config/FreeCAD
+.config/freerdp
 .config/fontconfig
 .config/.gsd-keyboard.settings-ported
 .config/Gaijin
 .config/gcolor3
 .config/geeqie
 .config/GIMP
+.config/glow
 .config/git/gitk
 .config/gitui/theme.*
 .config/gmic
@@ -59,6 +61,7 @@
 .config/gtk-4.0
 .config/guvcview2
 .config/gwenviewrc
+.config/heaptrack_gui
 .config/inkscape
 .config/iterm2
 .config/JetBrains
@@ -103,6 +106,7 @@
 .config/lutris
 .config/Meltytech
 .config/menus
+.config/mgba
 .config/microsoft-edge-dev
 .config/Microsoft
 .config/mimeapps.list
@@ -123,6 +127,7 @@
 .config/qBittorrent
 .config/Qt*
 .config/RawTherapee
+.config/remmina
 .config/Rygel
 .config/rygel.conf
 .config/session
@@ -141,6 +146,7 @@
 .config/teamviewer
 .config/tiling-assistant
 .config/tool_state
+.config/torbrowser
 .config/totem
 .config/trashrc
 .config/Trolltech.conf
@@ -175,6 +181,7 @@
 .icons
 .java
 .julia
+.juliaup
 .kde
 .launchpadlib
 .lemminx
@@ -235,7 +242,6 @@
 .local/share/localsend_app
 .local/share/IsolatedStorage
 .local/share/JetBrains
-.local/share/julia
 .local/share/kactivitymanagerd
 .local/share/kate
 .local/share/kcookiejar
@@ -273,7 +279,10 @@
 .local/share/qBittorrent
 .local/share/Qt
 .local/share/QtIcon.png
+.local/share/meld
+.local/share/networkmanagement
 .local/share/RecentDocuments
+.local/share/remmina
 .local/share/rhythmbox
 .local/share/safebrowsing
 .local/share/saved-telemetry-pings
@@ -288,6 +297,7 @@
 .local/share/SVP4
 .local/share/storage
 .local/share/teamviewer*
+.local/share/torbrowser
 .local/share/tracker
 .local/share/Trash
 .local/share/vlc
