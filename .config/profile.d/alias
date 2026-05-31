@@ -76,6 +76,9 @@ fi
 # qjoypad
 alias qjoypad='qjoypad --notray'
 
+# pi
+alias pi-maze='pi --system-prompt "$(cat ${HOME}/.pi/agent/maze-prompt.txt)"'
+
 # rm
 alias rm='rm --preserve-root'
 
